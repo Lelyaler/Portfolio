@@ -87,7 +87,6 @@ ol, ul {
 		color: #ffffff;
 		font-weight: bold;
 		line-height: 1.5;
-		margin: 0 0 0.5em 0;
 	}
 
 	h1 {
@@ -108,9 +107,9 @@ ol, ul {
 	.button {
 		appearance: none;
 	   transition: border-color 0.2s ease;
-		background-color: transparent;
-		border: solid 1px ;
-		border-color: rgba(255, 255, 255, 0.15) ;
+      background-color: transparent;
+		border: solid .30em ;
+		border-color: rgba(255, 255, 255, 0.274);
 		border-radius: 3em;
 		color: #ffffff ;
 		cursor: pointer;
@@ -134,8 +133,8 @@ ol, ul {
 		.button:after {
 		   transform: scale(0.25);
 			pointer-events: none;
-			transition: opacity 0.2s ease, transform 0.2s ease;
-			background: #ffffff;
+			transition: opacity 0.6s ease, transform 0.6s ease;
+			background: #ffffff70;
 			border-radius: 3em;
 			content: '';
 			height: 100%;
@@ -153,12 +152,12 @@ ol, ul {
 
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) ;
+			border-color: rgba(255, 255, 255, 0.068) ;
 		}
       
 			button:hover:after,
 			.button:hover:after {
-				opacity: 0.08;
+				opacity: .20;
 				transform: scale(1);
 			}
 
@@ -344,7 +343,6 @@ ol, ul {
 		display: inline-block;
 		position: relative;
       transition: opacity 0.3s;
-      border-radius: 30px; 
 	}
 
 		.image img {
@@ -352,7 +350,7 @@ ol, ul {
 			display: block;
 		}
       .image:hover {
-         opacity: 0.8;
+         opacity: 0.5;
      }
 
 		.image.main {
@@ -479,7 +477,7 @@ ol, ul {
 				position: absolute;
 				top: 0;
 				max-width: 100%;
-            border-radius: 30px;
+            border-radius: 3em;
 			}
 
 		.portfolio > section > .content {
@@ -487,12 +485,16 @@ ol, ul {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+         align-items: center;
 			width: 50em;
 			flex: 1;
 		}
 
 			.portfolio > section > .content > .inner {
+            display: flex;
+            flex-direction: column;
 				transform: translateX(0) translateY(0);
+           align-items: center;
             transition: opacity 1s ease, transform 1s ease;
 				opacity: 1;
 			}
@@ -515,6 +517,10 @@ ol, ul {
 			transform: translateX(-1em);
 			opacity: 0;
 		}
+   
+      .portfolio > section > .content > .inner > h2 {
+         text-align: center;
+      }
 
 		@media screen and (max-width: 1680px) {
 
@@ -542,10 +548,6 @@ ol, ul {
 
             .inner{
                margin: 0 auto;
-            }
-
-            h2 {
-               text-align: center;
             }
 
             ul.summary {
@@ -879,7 +881,7 @@ ol, ul {
 		}
 
 			#sidebar nav a:before, #sidebar nav a:after {
-		      border-radius: 0.3em;
+            border-radius: 3em;
 				bottom: 0;
 				content: '';
 				height: 0.3em;
@@ -987,7 +989,7 @@ ol, ul {
       width: 300px;
       height: 280px;
       object-fit: cover;
-      border-radius: 100px;
+      border-radius: 10em;
       border: 2px solid rgba(255, 255, 255, 0.332);
       box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.7); 
    }

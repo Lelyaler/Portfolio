@@ -975,10 +975,9 @@ ol, ul {
       background-image: url(/images/header/header.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center bottom;
+      background-position: 50% 130%;
       max-width: 100%;
 		background-attachment: fixed;
-
 	}
 
 		#intro p {

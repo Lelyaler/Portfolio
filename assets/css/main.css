@@ -972,7 +972,7 @@ ol, ul {
 /* Intro */
 
 	#intro {
-      background-image: url(/images/header/header.jpg);
+      background-image: url(../../images/header/header.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 130%;

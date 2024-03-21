@@ -12,6 +12,13 @@
     xsmall: [null, "480px"],
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    // Имитируем задержку в 3 секунды (можете изменить время по вашему желанию)
+    setTimeout(function () {
+      document.body.classList.add("loaded");
+    }, 1000); // 3000 миллисекунд = 3 секунды
+  });
+
   // Sidebar.
   if ($sidebar.length > 0) {
     var $sidebar_a = $sidebar.find("a");

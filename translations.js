@@ -48,7 +48,7 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         spinpulse: {
-          desc: "Игровое лобби слотов, краш-игр и live-столов на React 19 с демо-балансом, Web Audio API и быстрой мобильной загрузкой.",
+          desc: "Интерактивное игровое лобби слотов, краш-игр и live-столов с демо-балансом, Web Audio API звуковыми эффектами, Canvas и быстрой мобильной загрузкой 60 FPS.",
           visitAria: "Посетить сайт проекта SpinPulse VIP",
           githubAria: "Исходный код проекта SpinPulse VIP на GitHub"
         },
@@ -58,7 +58,7 @@ const translations = {
           githubAria: "Исходный код проекта NOVA Pay на GitHub"
         },
         security: {
-          desc: "Аналитический дашборд кибербезопасности на React 19 с интерактивной визуализацией сетевых метрик и инцидентов через Recharts.",
+          desc: "Аналитический дашборд кибербезопасности на React 19 и TypeScript с интерактивной визуализацией сетевых метрик и инцидентов через Recharts.",
           visitAria: "Посетить сайт проекта Cybersecurity Operations Center",
           githubAria: "Исходный код проекта Cybersecurity Operations Center на GitHub"
         },
@@ -68,7 +68,7 @@ const translations = {
           githubAria: "Исходный код проекта GameVault на GitHub"
         },
         techwear: {
-          desc: "Концептуальный PWA веб-магазин тактической одежды с 3D-конфигуратором экипировки, Web Audio API синтезатором и Canvas-терминалом.",
+          desc: "Концептуальный PWA веб-магазин тактической одежды на React 19 и TypeScript с 3D-конфигуратором экипировки и Web Audio API.",
           visitAria: "Посетить сайт проекта Techwear Store",
           githubAria: "Исходный код проекта Techwear Store на GitHub"
         },
@@ -175,7 +175,7 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         spinpulse: {
-          desc: "High-end iGaming casino lobby simulator on React 19 featuring demo balance, Web Audio API sound effects, and fast mobile performance.",
+          desc: "Interactive iGaming slot and crash game lobby simulator with virtual demo balance, Web Audio API sound engine, HTML5 Canvas, and ultra-fast 60 FPS mobile UI.",
           visitAria: "Visit SpinPulse VIP project website",
           githubAria: "Source code of SpinPulse VIP on GitHub"
         },
@@ -185,7 +185,7 @@ const translations = {
           githubAria: "Source code of NOVA Pay on GitHub"
         },
         security: {
-          desc: "Cybersecurity analytics dashboard built with React 19, featuring interactive network metrics visualization and incident tracking via Recharts.",
+          desc: "Cybersecurity analytics dashboard built with React 19 and TypeScript, featuring interactive network metrics visualization and incident tracking via Recharts.",
           visitAria: "Visit Cybersecurity Operations Center website",
           githubAria: "Source code of Cybersecurity Operations Center on GitHub"
         },
@@ -195,7 +195,7 @@ const translations = {
           githubAria: "Source code of GameVault on GitHub"
         },
         techwear: {
-          desc: "Conceptual PWA tactical apparel web store with a 3D gear configurator, Web Audio API synthesizer, and Canvas terminal.",
+          desc: "Conceptual PWA tactical apparel web store built with React 19 and TypeScript, featuring a 3D gear configurator and Web Audio API synthesizer.",
           visitAria: "Visit Techwear Store website",
           githubAria: "Source code of Techwear Store on GitHub"
         },

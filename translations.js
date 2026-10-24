@@ -88,7 +88,7 @@ const translations = {
           githubAria: "Исходный код проекта Sneakmax Sneaker Store на GitHub"
         },
         crypto: {
-          desc: "Информационный крипто-лендинг со sticky-навигацией, интерактивными графическими блоками и адаптивным слайдером.",
+          desc: "Адаптивный промо-лендинг маркетплейса криптостикеров: живые аукционы со ставками в ETH, слайдер новинок на Swiper, интерактивные формы и каскадные scroll-анимации на IntersectionObserver.",
           visitAria: "Посетить сайт проекта Crypto-sticky",
           githubAria: "Исходный код проекта Crypto-sticky на GitHub"
         },
@@ -215,7 +215,7 @@ const translations = {
           githubAria: "Source code of Sneakmax Sneaker Store on GitHub"
         },
         crypto: {
-          desc: "Informational crypto landing page with sticky navigation, interactive graphical blocks, and responsive slider.",
+          desc: "Responsive crypto sticker marketplace landing page: live ETH auctions, Swiper release carousel, interactive forms, and cascading scroll animations powered by IntersectionObserver.",
           visitAria: "Visit Crypto-sticky website",
           githubAria: "Source code of Crypto-sticky on GitHub"
         },

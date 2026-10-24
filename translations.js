@@ -83,7 +83,7 @@ const translations = {
           githubAria: "Исходный код проекта Edufree EdTech Landing на GitHub"
         },
         sneakmax: {
-          desc: "Каталог кроссовок с интерактивным подбором моделей, квизом, модальными окнами и адаптивной вёрсткой.",
+          desc: "Интернет-магазин кроссовок с каталогом оригинальных моделей, гибкой фильтрацией по параметрам и размерам, интерактивным квизом подбора обуви, корзиной заказов и мобильной оптимизацией 100/100 Lighthouse.",
           visitAria: "Посетить сайт проекта Sneakmax Sneaker Store",
           githubAria: "Исходный код проекта Sneakmax Sneaker Store на GitHub"
         },
@@ -210,7 +210,7 @@ const translations = {
           githubAria: "Source code of Edufree EdTech Landing on GitHub"
         },
         sneakmax: {
-          desc: "Sneaker catalog featuring interactive shoe quiz selector, modal windows, and responsive layout.",
+          desc: "Sneaker e-commerce store featuring an authentic footwear catalog, dynamic price & size filtering, an interactive shoe-fitting quiz, order cart, and 100/100 Lighthouse mobile optimization.",
           visitAria: "Visit Sneakmax Sneaker Store website",
           githubAria: "Source code of Sneakmax Sneaker Store on GitHub"
         },

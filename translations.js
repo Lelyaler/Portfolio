@@ -78,7 +78,7 @@ const translations = {
           githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
         },
         edufree: {
-          desc: "Посадочная страница образовательной платформы курсов с адаптивной сеткой на Tailwind CSS и быстрой загрузкой.",
+          desc: "Адаптивный Mobile-First лендинг образовательной платформы: живой поиск и фильтрация курсов, корзина на LocalStorage, модальные окна на HTML5 Dialog и sticky-шапка на Tailwind CSS.",
           visitAria: "Посетить сайт проекта Edufree EdTech Landing",
           githubAria: "Исходный код проекта Edufree EdTech Landing на GitHub"
         },
@@ -205,7 +205,7 @@ const translations = {
           githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
         },
         edufree: {
-          desc: "Landing page for an educational course platform featuring a responsive Tailwind CSS grid and ultra-fast loading.",
+          desc: "Responsive Mobile-First landing page for an online academy: live course search and filtering, slide-over cart with LocalStorage, native HTML5 Dialog quick-view, and sticky glassmorphic header on Tailwind CSS.",
           visitAria: "Visit Edufree EdTech Landing website",
           githubAria: "Source code of Edufree EdTech Landing on GitHub"
         },

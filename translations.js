@@ -68,7 +68,7 @@ const translations = {
           githubAria: "Исходный код проекта GameVault на GitHub"
         },
         techwear: {
-          desc: "Концептуальный PWA веб-магазин тактической одежды на React 19 и TypeScript с 3D-конфигуратором экипировки и Web Audio API.",
+          desc: "Концептуальный e-commerce магазин на React 19 и TypeScript: радар логистики на HTML5 Canvas, процедурный Web Audio синтезатор, модульный BEM CSS и PWA.",
           visitAria: "Посетить сайт проекта Techwear Store",
           githubAria: "Исходный код проекта Techwear Store на GitHub"
         },
@@ -195,7 +195,7 @@ const translations = {
           githubAria: "Source code of GameVault on GitHub"
         },
         techwear: {
-          desc: "Conceptual PWA tactical apparel web store built with React 19 and TypeScript, featuring a 3D gear configurator and Web Audio API synthesizer.",
+          desc: "Conceptual tactical apparel store built with React 19 and TypeScript: real-time Canvas 2D logistics radar, procedural Web Audio synthesizer, modular BEM CSS, and PWA.",
           visitAria: "Visit Techwear Store website",
           githubAria: "Source code of Techwear Store on GitHub"
         },

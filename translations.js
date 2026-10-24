@@ -48,7 +48,7 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         spinpulse: {
-          desc: "Интерактивное игровое лобби слотов, краш-игр и live-столов с демо-балансом, Web Audio API звуковыми эффектами, Canvas и быстрой мобильной загрузкой 60 FPS.",
+          desc: "Игровое веб-лобби со слотами, краш-режимом и центром поддержки. Архитектура вёрстки построена строго по методологии БЭМ с модульным CSS/JS, Web Audio API звуками, Canvas и плавной мобильной оптимизацией 60 FPS.",
           visitAria: "Посетить сайт проекта SpinPulse VIP",
           githubAria: "Исходный код проекта SpinPulse VIP на GitHub"
         },
@@ -175,7 +175,7 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         spinpulse: {
-          desc: "Interactive iGaming slot and crash game lobby simulator with virtual demo balance, Web Audio API sound engine, HTML5 Canvas, and ultra-fast 60 FPS mobile UI.",
+          desc: "Interactive iGaming slot and crash lobby simulator with support tickets. Built with strict BEM architecture, modular vanilla JS (ES6+), Web Audio API, HTML5 Canvas, and 60 FPS mobile performance.",
           visitAria: "Visit SpinPulse VIP project website",
           githubAria: "Source code of SpinPulse VIP on GitHub"
         },

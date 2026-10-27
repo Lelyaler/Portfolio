@@ -48,10 +48,10 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         spinpulse: {
-          desc: "Игровое веб-лобби со слотами и краш-режимом. Архитектура по БЭМ, модульный JS, Web Audio API звуки, Canvas и плавная оптимизация 60 FPS.",
-          tech: "HTML5, CSS3, JavaScript (ES6+), БЭМ, Canvas, Web Audio API, Vite",
-          visitAria: "Посетить сайт проекта SpinPulse VIP",
-          githubAria: "Исходный код проекта SpinPulse VIP на GitHub"
+          desc: "Высокопроизводительное лобби на чистом ES6+ без оверхеда фреймворков. Модульная архитектура по БЭМ, нативные Web APIs (Audio, Canvas, LocalStorage) и бандл всего 24 КБ gzip.",
+          tech: "JavaScript (ES6+), Web Audio API, Canvas, HTML5/CSS3 (БЭМ), LocalStorage, Vite",
+          visitAria: "Посетить сайт проекта SpinPulse",
+          githubAria: "Исходный код проекта SpinPulse на GitHub"
         },
         nova: {
           desc: "Финтех-сервис с плавной интерактивной 3D-анимацией на GSAP, современным адаптивным интерфейсом и высокой производительностью.",
@@ -186,10 +186,10 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         spinpulse: {
-          desc: "Interactive iGaming slot and crash lobby simulator with BEM architecture, modular JS, Web Audio API, Canvas, and 60 FPS mobile performance.",
-          tech: "HTML5, CSS3, JavaScript (ES6+), BEM, Canvas, Web Audio API, Vite",
-          visitAria: "Visit SpinPulse VIP project website",
-          githubAria: "Source code of SpinPulse VIP on GitHub"
+          desc: "High-performance gaming lobby built on pure ES6+ without framework overhead. Features modular BEM architecture, native Web APIs (Audio, Canvas, Storage), and 24 KB gzip bundle.",
+          tech: "JavaScript (ES6+), Web Audio API, Canvas, HTML5/CSS3 (BEM), LocalStorage, Vite",
+          visitAria: "Visit SpinPulse project website",
+          githubAria: "Source code of SpinPulse on GitHub"
         },
         nova: {
           desc: "Fintech service featuring smooth interactive 3D animation with GSAP, modern responsive UI, and high performance.",

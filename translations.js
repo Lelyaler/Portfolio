@@ -60,7 +60,7 @@ const translations = {
           githubAria: "Исходный код проекта NOVA Pay на GitHub"
         },
         cyberpunk: {
-          desc: "Атмосферный промо-лендинг в стиле Cyberpunk с динамическими слайдерами Swiper и интеграцией в кастомную тему WordPress (PHP).",
+          desc: "Атмосферный промо-лендинг по макету из Figma в стиле Cyberpunk с 3D-слайдерами Swiper и интеграцией в кастомную тему WordPress (PHP).",
           tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, БЭМ",
           visitAria: "Посетить сайт проекта Cyberpunk Promo",
           githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
@@ -198,7 +198,7 @@ const translations = {
           githubAria: "Source code of NOVA Pay on GitHub"
         },
         cyberpunk: {
-          desc: "Atmospheric Cyberpunk promo landing page with Swiper sliders and custom WordPress theme integration (PHP).",
+          desc: "Atmospheric Cyberpunk promo landing page based on a Figma layout, with 3D Swiper sliders and custom WordPress theme integration (PHP).",
           tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, BEM",
           visitAria: "Visit Cyberpunk Promo website",
           githubAria: "Source code of Cyberpunk WordPress theme on GitHub"

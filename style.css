@@ -745,13 +745,13 @@ section[id] {
   transform: scale(1.02);
 }
 .projects__info {
-  -moz-text-align-last: left;
-  text-align-last: left;
+  text-align: left;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 .projects__info-title {
+  text-align: left;
   margin-bottom: 0.35rem;
   font-size: 1.25rem;
 }
@@ -770,6 +770,7 @@ section[id] {
 }
 .projects__info-tech {
   display: block;
+  text-align: left;
   color: #a8a8a8;
   font-size: 0.875rem;
   line-height: 1.45;

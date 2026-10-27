@@ -48,57 +48,68 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         spinpulse: {
-          desc: "Игровое веб-лобби со слотами, краш-режимом и центром поддержки. Архитектура вёрстки построена строго по методологии БЭМ с модульным CSS/JS, Web Audio API звуками, Canvas и плавной мобильной оптимизацией 60 FPS.",
+          desc: "Игровое веб-лобби со слотами и краш-режимом. Архитектура по БЭМ, модульный JS, Web Audio API звуки, Canvas и плавная оптимизация 60 FPS.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), БЭМ, Canvas, Web Audio API, Vite",
           visitAria: "Посетить сайт проекта SpinPulse VIP",
           githubAria: "Исходный код проекта SpinPulse VIP на GitHub"
         },
         nova: {
           desc: "Финтех-сервис с плавной интерактивной 3D-анимацией на GSAP, современным адаптивным интерфейсом и высокой производительностью.",
+          tech: "JavaScript (ES6+), GSAP, CSS 3D, HTML5 Canvas, Vite",
           visitAria: "Посетить сайт проекта NOVA Pay",
           githubAria: "Исходный код проекта NOVA Pay на GitHub"
         },
+        cyberpunk: {
+          desc: "Атмосферный промо-лендинг в стиле Cyberpunk с динамическими слайдерами Swiper и интеграцией в кастомную тему WordPress (PHP).",
+          tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, БЭМ",
+          visitAria: "Посетить сайт проекта Cyberpunk Promo",
+          githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
+        },
         security: {
-          desc: "Аналитический дашборд кибербезопасности на React 19 и TypeScript с интерактивной визуализацией сетевых метрик и инцидентов через Recharts.",
+          desc: "Аналитический дашборд кибербезопасности на React 19 и TypeScript с визуализацией сетевых метрик и инцидентов через Recharts.",
+          tech: "React 19, TypeScript, Recharts, Lucide, Vite",
           visitAria: "Посетить сайт проекта Cybersecurity Operations Center",
           githubAria: "Исходный код проекта Cybersecurity Operations Center на GitHub"
         },
         gamevault: {
           desc: "Витрина и бэклог-трекер видеоигр в стилистике PS5 на React 19 и TypeScript со строгой типизацией, Gamepad API и Tailwind CSS.",
+          tech: "React 19, TypeScript, Tailwind CSS, Gamepad API, Vitest",
           visitAria: "Посетить сайт проекта GameVault",
           githubAria: "Исходный код проекта GameVault на GitHub"
         },
         techwear: {
-          desc: "Концептуальный e-commerce магазин на React 19 и TypeScript: радар логистики на HTML5 Canvas, процедурный Web Audio синтезатор, биометрический подбор размеров и PWA.",
+          desc: "Концептуальный e-commerce магазин на React 19 и TypeScript: радар логистики на Canvas, процедурный Web Audio синтезатор и PWA.",
+          tech: "React 19, TypeScript, HTML5 Canvas, Web Audio API, PWA, Vite",
           visitAria: "Посетить сайт проекта Techwear Store",
           githubAria: "Исходный код проекта Techwear Store на GitHub"
         },
-        cyberpunk: {
-          desc: "Атмосферный промо-лендинг в стиле Cyberpunk с динамическими слайдерами Swiper и интеграцией в кастомную тему WordPress (PHP).",
-          visitAria: "Посетить сайт проекта Cyberpunk Promo",
-          githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
-        },
         edufree: {
-          desc: "Адаптивный Mobile-First лендинг образовательной платформы: живой поиск и фильтрация курсов, корзина на LocalStorage, модальные окна на HTML5 Dialog и sticky-шапка на Tailwind CSS.",
+          desc: "Адаптивный Mobile-First лендинг образовательной платформы: живой поиск курсов, корзина на LocalStorage, модальные окна Dialog и Tailwind CSS.",
+          tech: "HTML5, Tailwind CSS, JavaScript (ES6+), HTML5 Dialog, Mobile-First",
           visitAria: "Посетить сайт проекта Edufree EdTech Landing",
           githubAria: "Исходный код проекта Edufree EdTech Landing на GitHub"
         },
         sneakmax: {
-          desc: "Интернет-магазин кроссовок с каталогом оригинальных моделей, гибкой фильтрацией по параметрам и размерам, интерактивным квизом подбора обуви, корзиной заказов и мобильной оптимизацией 100/100 Lighthouse.",
+          desc: "Интернет-магазин кроссовок: каталог оригинальных моделей, гибкая фильтрация по параметрам, интерактивный квиз, корзина и оптимизация 100/100.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper, noUiSlider",
           visitAria: "Посетить сайт проекта Sneakmax Sneaker Store",
           githubAria: "Исходный код проекта Sneakmax Sneaker Store на GitHub"
         },
         crypto: {
-          desc: "Адаптивный промо-лендинг маркетплейса криптостикеров: живые аукционы со ставками в ETH, слайдер новинок на Swiper, интерактивные формы и каскадные scroll-анимации на IntersectionObserver.",
+          desc: "Промо-лендинг маркетплейса криптостикеров: аукционы со ставками в ETH, слайдер новинок на Swiper и каскадные scroll-анимации.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper, IntersectionObserver",
           visitAria: "Посетить сайт проекта Crypto-sticky",
           githubAria: "Исходный код проекта Crypto-sticky на GitHub"
         },
         legal: {
           desc: "Корпоративный сайт юридической компании со строгой типографикой, отзывами клиентов и формами обратной связи.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper",
           visitAria: "Посетить сайт проекта Legal Services",
           githubAria: "Исходный код проекта Legal Services на GitHub"
         },
         animation: {
           desc: "Интерактивная галерея веб-анимаций на чистом CSS и JavaScript для демонстрации визуальных возможностей и микроинтеракций.",
+          tech: "HTML5, CSS3 3D Animation, JavaScript (ES6+)",
           visitAria: "Посетить сайт проекта Creative Animation Showcase",
           githubAria: "Исходный код проекта Creative Animation Showcase на GitHub"
         }
@@ -175,57 +186,68 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         spinpulse: {
-          desc: "Interactive iGaming slot and crash lobby simulator with support tickets. Built with strict BEM architecture, modular vanilla JS (ES6+), Web Audio API, HTML5 Canvas, and 60 FPS mobile performance.",
+          desc: "Interactive iGaming slot and crash lobby simulator with BEM architecture, modular JS, Web Audio API, Canvas, and 60 FPS mobile performance.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), BEM, Canvas, Web Audio API, Vite",
           visitAria: "Visit SpinPulse VIP project website",
           githubAria: "Source code of SpinPulse VIP on GitHub"
         },
         nova: {
           desc: "Fintech service featuring smooth interactive 3D animation with GSAP, modern responsive UI, and high performance.",
+          tech: "JavaScript (ES6+), GSAP, CSS 3D, HTML5 Canvas, Vite",
           visitAria: "Visit NOVA Pay project website",
           githubAria: "Source code of NOVA Pay on GitHub"
         },
+        cyberpunk: {
+          desc: "Atmospheric Cyberpunk promo landing page with Swiper sliders and custom WordPress theme integration (PHP).",
+          tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, BEM",
+          visitAria: "Visit Cyberpunk Promo website",
+          githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
+        },
         security: {
-          desc: "Cybersecurity analytics dashboard built with React 19 and TypeScript, featuring interactive network metrics visualization and incident tracking via Recharts.",
+          desc: "Cybersecurity analytics dashboard built with React 19 and TypeScript with network metrics and incident tracking via Recharts.",
+          tech: "React 19, TypeScript, Recharts, Lucide, Vite",
           visitAria: "Visit Cybersecurity Operations Center website",
           githubAria: "Source code of Cybersecurity Operations Center on GitHub"
         },
         gamevault: {
           desc: "PS5-styled video game showcase and backlog tracker built with React 19 and TypeScript with strict typing, Gamepad API, and Tailwind CSS.",
+          tech: "React 19, TypeScript, Tailwind CSS, Gamepad API, Vitest",
           visitAria: "Visit GameVault project website",
           githubAria: "Source code of GameVault on GitHub"
         },
         techwear: {
-          desc: "Conceptual tactical apparel store built with React 19 and TypeScript: real-time Canvas logistics radar, procedural Web Audio synthesizer, cyber-fit size assistant, and PWA.",
+          desc: "Conceptual tactical apparel store built with React 19 and TypeScript: Canvas logistics radar, procedural Web Audio synthesizer, and PWA.",
+          tech: "React 19, TypeScript, HTML5 Canvas, Web Audio API, PWA, Vite",
           visitAria: "Visit Techwear Store website",
           githubAria: "Source code of Techwear Store on GitHub"
         },
-        cyberpunk: {
-          desc: "Atmospheric Cyberpunk promo landing page with Swiper sliders and custom WordPress theme integration (PHP).",
-          visitAria: "Visit Cyberpunk Promo website",
-          githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
-        },
         edufree: {
-          desc: "Responsive Mobile-First landing page for an online academy: live course search and filtering, slide-over cart with LocalStorage, native HTML5 Dialog quick-view, and sticky glassmorphic header on Tailwind CSS.",
+          desc: "Responsive Mobile-First landing page for an online academy: course search and filtering, LocalStorage cart, HTML5 Dialog, and Tailwind CSS.",
+          tech: "HTML5, Tailwind CSS, JavaScript (ES6+), HTML5 Dialog, Mobile-First",
           visitAria: "Visit Edufree EdTech Landing website",
           githubAria: "Source code of Edufree EdTech Landing on GitHub"
         },
         sneakmax: {
-          desc: "Sneaker e-commerce store featuring an authentic footwear catalog, dynamic price & size filtering, an interactive shoe-fitting quiz, order cart, and 100/100 Lighthouse mobile optimization.",
+          desc: "Sneaker store featuring an authentic footwear catalog, parameter filtering, interactive shoe-fitting quiz, cart, and 100/100 Lighthouse score.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), BEM, Swiper, noUiSlider",
           visitAria: "Visit Sneakmax Sneaker Store website",
           githubAria: "Source code of Sneakmax Sneaker Store on GitHub"
         },
         crypto: {
-          desc: "Responsive crypto sticker marketplace landing page: live ETH auctions, Swiper release carousel, interactive forms, and cascading scroll animations powered by IntersectionObserver.",
+          desc: "Crypto sticker marketplace landing page: live ETH auctions, Swiper release carousel, interactive forms, and cascading scroll animations.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), BEM, Swiper, IntersectionObserver",
           visitAria: "Visit Crypto-sticky website",
           githubAria: "Source code of Crypto-sticky on GitHub"
         },
         legal: {
           desc: "Corporate law firm website with elegant typography, client testimonials, and feedback forms.",
+          tech: "HTML5, CSS3, JavaScript (ES6+), BEM, Swiper",
           visitAria: "Visit Legal Services website",
           githubAria: "Source code of Legal Services on GitHub"
         },
         animation: {
           desc: "Interactive web animation gallery built with pure CSS and JavaScript demonstrating visual effects and micro-interactions.",
+          tech: "HTML5, CSS3 3D Animation, JavaScript (ES6+)",
           visitAria: "Visit Creative Animation Showcase website",
           githubAria: "Source code of Creative Animation Showcase on GitHub"
         }

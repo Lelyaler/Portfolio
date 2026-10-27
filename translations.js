@@ -108,10 +108,10 @@ const translations = {
           githubAria: "Исходный код проекта Legal Services на GitHub"
         },
         animation: {
-          desc: "Интерактивная галерея веб-анимаций на чистом CSS и JavaScript для демонстрации визуальных возможностей и микроинтеракций.",
-          tech: "HTML5, CSS3 3D Animation, JavaScript (ES6+)",
-          visitAria: "Посетить сайт проекта Creative Animation Showcase",
-          githubAria: "Исходный код проекта Creative Animation Showcase на GitHub"
+          desc: "Интерактивный промо-лендинг с непрерывной CSS 3D-анимацией барабанов слотов, динамическим калькулятором доходности и мультиязычностью (RU/EN).",
+          tech: "HTML5, CSS3 (Keyframes 60 FPS), JavaScript (ES Modules)",
+          visitAria: "Посетить сайт проекта House of Gambling",
+          githubAria: "Исходный код проекта House of Gambling на GitHub"
         }
       }
     },
@@ -246,10 +246,10 @@ const translations = {
           githubAria: "Source code of Legal Services on GitHub"
         },
         animation: {
-          desc: "Interactive web animation gallery built with pure CSS and JavaScript demonstrating visual effects and micro-interactions.",
-          tech: "HTML5, CSS3 3D Animation, JavaScript (ES6+)",
-          visitAria: "Visit Creative Animation Showcase website",
-          githubAria: "Source code of Creative Animation Showcase on GitHub"
+          desc: "Interactive affiliate landing page with continuous 60 FPS CSS slot reel animations, dynamic ROI calculator, and bilingual support (RU/EN).",
+          tech: "HTML5, CSS3 (Keyframes 60 FPS), JavaScript (ES Modules)",
+          visitAria: "Visit House of Gambling website",
+          githubAria: "Source code of House of Gambling on GitHub"
         }
       }
     },

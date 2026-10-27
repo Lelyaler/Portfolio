@@ -66,10 +66,10 @@ const translations = {
           githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
         },
         security: {
-          desc: "Аналитический дашборд кибербезопасности на React 19 и TypeScript с визуализацией сетевых метрик и инцидентов через Recharts.",
+          desc: "Аналитический дашборд сетевого трафика и производительности API на React 19 и TypeScript с интерактивными графиками Recharts.",
           tech: "React 19, TypeScript, Recharts, Lucide, Vite",
-          visitAria: "Посетить сайт проекта Cybersecurity Operations Center",
-          githubAria: "Исходный код проекта Cybersecurity Operations Center на GitHub"
+          visitAria: "Посетить сайт проекта Traffic & API Analytics Dashboard",
+          githubAria: "Исходный код проекта Traffic & API Analytics Dashboard на GitHub"
         },
         gamevault: {
           desc: "Витрина и бэклог-трекер видеоигр в стилистике PS5 на React 19 и TypeScript со строгой типизацией, Gamepad API и Tailwind CSS.",
@@ -204,10 +204,10 @@ const translations = {
           githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
         },
         security: {
-          desc: "Cybersecurity analytics dashboard built with React 19 and TypeScript with network metrics and incident tracking via Recharts.",
+          desc: "Network traffic and API performance analytics dashboard built with React 19 and TypeScript with interactive Recharts visualizations.",
           tech: "React 19, TypeScript, Recharts, Lucide, Vite",
-          visitAria: "Visit Cybersecurity Operations Center website",
-          githubAria: "Source code of Cybersecurity Operations Center on GitHub"
+          visitAria: "Visit Traffic & API Analytics Dashboard website",
+          githubAria: "Source code of Traffic & API Analytics Dashboard on GitHub"
         },
         gamevault: {
           desc: "PS5-styled video game showcase and backlog tracker built with React 19 and TypeScript with strict typing, Gamepad API, and Tailwind CSS.",

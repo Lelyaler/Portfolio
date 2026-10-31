@@ -187,40 +187,34 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+lenis.on("scroll", ScrollTrigger.update);
 
 let heroTl = gsap.timeline({
   default: {
     ease: "power2.inOut",
-    // duration: 2,
   },
 });
-
-heroTl.pause();
-heroTl.play();
 
 heroTl.fromTo(
   ".header",
   {
-    transform: "scale(0)",
+    opacity: 0,
   },
   {
-    transform: "scale(1)",
-    duration: 1.5,
-  },
-  "-=0.5"
+    opacity: 1,
+    duration: 0.6,
+  }
 );
 heroTl.fromTo(
   ".information",
   {
-    y: 100,
     opacity: 0,
   },
   {
-    y: 0,
     opacity: 1,
-    duration: 1.5,
+    duration: 0.6,
   },
-  "-=0.5"
+  "-=0.3"
 );
 
 ScrollTrigger.create({

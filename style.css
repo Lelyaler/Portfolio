@@ -247,17 +247,21 @@ section[id] {
 .header__logo {
   font-size: 1.4375rem;
   font-weight: 700;
+  color: #f9f9f9;
+  text-decoration: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.header__logo:hover {
+  opacity: 0.85;
 }
 .header__logo-block {
   justify-self: start;
   flex-shrink: 0;
-  transition: 1s all;
-}
-.header__logo-block:hover {
-  transform: rotate(360deg);
 }
 .header__nav {
   justify-self: center;

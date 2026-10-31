@@ -32,7 +32,7 @@
     <link
       rel="preload"
       as="image"
-      href="./images/wwww.webp"
+      href="./images/developer-illustration.webp"
       type="image/webp"
       fetchpriority="high"
     />
@@ -77,7 +77,7 @@
         "alternateName": "Valeriya Cherniavskaya",
         "jobTitle": "Frontend Developer",
         "url": "https://lelyaler.github.io/Portfolio/",
-        "image": "https://lelyaler.github.io/Portfolio/images/wwww.webp",
+        "image": "https://lelyaler.github.io/Portfolio/images/developer-illustration.webp",
         "sameAs": [
           "https://github.com/Lelyaler",
           "https://t.me/lelyaler",
@@ -175,52 +175,55 @@
             </p>
             <div class="information__buttons">
               <a class="button button-yellow link link-btn" href="#projects" data-i18n="hero.projectsBtn"
-                >Список работ</a
+                >Проекты</a
               >
               <a class="link link-btn button" href="#contacts" data-i18n="hero.contactsBtn">Контакты</a>
             </div>
           </div>
-          <img
-            class="information__image"
-            src="./images/wwww.webp"
-            alt="Валерия Чернявская"
-            width="460"
-            height="415"
-            fetchpriority="high"
-            data-i18n-attr="alt:hero.imageAlt"
-          />
+          <picture>
+            <source srcset="./images/developer-illustration.webp" type="image/webp" />
+            <img
+              class="information__image"
+              src="./images/1.jpeg"
+              alt="Валерия Чернявская"
+              width="498"
+              height="384"
+              fetchpriority="high"
+              data-i18n-attr="alt:hero.imageAlt"
+            />
+          </picture>
         </section>
 
         <section id="about" class="about">
           <div class="about__main">
             <h2 class="title" data-splitting="chars" data-i18n="about.title">Обо мне</h2>
             <p class="about__description" data-splitting="words" data-i18n="about.p1">
-              WordPress / Frontend Developer с 3+ годами коммерческого опыта в веб-разработке. Создаю быстрые, интерактивные и адаптивные веб-интерфейсы.
+              WordPress / Frontend Developer с 4 годами коммерческого опыта. Создаю быстрые, интерактивные и адаптивные веб-интерфейсы.
             </p>
             <p class="about__description" data-splitting="words" data-i18n="about.p2" data-i18n-html="true">
-              Работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong>: разрабатывала и кастомизировала темы и плагины WordPress. Писала кастомные темы на объектно-ориентированном PHP (WP_Query, $wpdb) с разделением логики, данных и шаблонов. Создавала кастомные Gutenberg-блоки, интегрировала REST API и PHP-хуки. Устраняла баги и разбиралась в чужом коде: находила причины ошибок, рефакторила и переписывала проблемные участки, улучшая читаемость и поддерживаемость. Системно оптимизировала производительность: Core Web Vitals 90+, семантическая разметка Schema.org (JSON-LD) и SEO-метатеги.
+              Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong>: разрабатывала и кастомизировала темы и плагины WordPress. Писала кастомные темы на объектно-ориентированном PHP (WP_Query, $wpdb) с разделением логики, данных и шаблонов. Создавала кастомные Gutenberg-блоки, интегрировала REST API и PHP-хуки. Разбиралась в чужом коде: находила причины ошибок, рефакторила и переписывала проблемные участки. Оптимизировала производительность Core Web Vitals 90+, семантическая разметка Schema.org (JSON-LD), SEO-метатеги. Работала в связке с SEO-командой, устраняла баги, влияющие на ранжирование.
             </p>
             <div class="about__more" id="about-more">
               <p class="about__description" data-splitting="words" data-i18n="about.p3">
-                На фрилансе разрабатываю проекты «под ключ» для малого и среднего бизнеса: от кастомных тем до интернет-магазинов на WooCommerce. Создаю чистый поддерживаемый код с акцентом на безопасность (валидация, экранирование, защита от XSS и SQL-инъекций) и максимальную скорость загрузки.
+                До этого и параллельно разрабатываю проекты «под ключ» на фрилансе для малого и среднего бизнеса: от кастомных тем до интернет-магазинов на WooCommerce. Создаю чистый поддерживаемый код с акцентом на безопасность (валидация, экранирование, защита от XSS и SQL-инъекций) и максимальную скорость загрузки.
               </p>
               <div class="about__competencies">
                 <div class="about__competency-card">
                   <h3 class="about__competency-title" data-i18n="about.comp1Title">WordPress / PHP</h3>
                   <p class="about__competency-desc" data-i18n="about.comp1Desc">
-                    Разработка тем с нуля на ООП PHP, кастомные блоки Gutenberg, плагины, WP_Query, $wpdb, Rewrite API, WooCommerce, платёжные API, интеграции по REST API.
+                    Кастомные темы и плагины с нуля, Gutenberg, WooCommerce, WP_Query, $wpdb, Hooks, OOP, REST API.
                   </p>
                 </div>
                 <div class="about__competency-card">
-                  <h3 class="about__competency-title" data-i18n="about.comp2Title">Frontend & Интерактив</h3>
+                  <h3 class="about__competency-title" data-i18n="about.comp2Title">JavaScript & React / TypeScript</h3>
                   <p class="about__competency-desc" data-i18n="about.comp2Desc">
-                    JavaScript (ES6+), React (хуки, роутинг, REST API), TypeScript, семантическая вёрстка по БЭМ, анимации (GSAP, CSS 3D), Pixel Perfect и Mobile First.
+                    DOM, fetch, async/await, интерактив, делегирование событий, компоненты, хуки, роутинг.
                   </p>
                 </div>
                 <div class="about__competency-card">
-                  <h3 class="about__competency-title" data-i18n="about.comp3Title">Инструменты & DevOps</h3>
+                  <h3 class="about__competency-title" data-i18n="about.comp3Title">Вёрстка & Инструменты</h3>
                   <p class="about__competency-desc" data-i18n="about.comp3Desc">
-                    Docker, GitLab CI, Vite, Webpack, Git, оптимизация Core Web Vitals и веб-доступность.
+                    Pixel Perfect из Figma, mobile-first, SCSS, Tailwind, БЭМ, Vite, Webpack, Docker, GitLab CI.
                   </p>
                 </div>
               </div>
@@ -319,6 +322,20 @@
                     loading="lazy"
                   />
                   <span class="skills__item-title">React</span>
+                </div>
+              </li>
+              <li class="skills__list-item">
+                <div class="skills__list-item-inner">
+                  <img
+                    class="skills__item-img"
+                    src="./images/vue.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="60"
+                    height="62"
+                    loading="lazy"
+                  />
+                  <span class="skills__item-title">Vue</span>
                 </div>
               </li>
               <li class="skills__list-item">
@@ -468,7 +485,7 @@
           <h2 class="title" data-splitting="chars" data-i18n="projects.title">Проекты</h2>
           <div class="projects__inner">
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/SpinPulse/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта SpinPulse">
                 <img
                   src="./images/SpinPulse.webp"
                   alt="SpinPulse VIP"
@@ -478,11 +495,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">SpinPulse</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.spinpulse.desc">
-                  Высокопроизводительное лобби на чистом ES6+ без оверхеда фреймворков. Модульная архитектура по БЭМ, нативные Web APIs (Audio, Canvas, LocalStorage) и бандл всего 24 КБ gzip.
+                  Игровое лобби на чистом ES6+ без оверхеда фреймворков: реактивный стор на Proxy, Web Audio, Canvas и бандл 24 КБ.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.spinpulse.tech">JavaScript (ES6+), Web Audio API, Canvas, HTML5/CSS3 (БЭМ), LocalStorage, Vite</span>
                 <div class="projects__link-container">
@@ -513,7 +530,7 @@
             </div>
 
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Nova-pay/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта NOVA Pay">
                 <img
                   src="./images/nova-fintech.webp"
                   alt="NOVA Pay"
@@ -523,19 +540,19 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">NOVA Pay</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.nova.desc">
-                  Финтех-сервис с плавной интерактивной 3D-анимацией на GSAP, современным адаптивным интерфейсом и высокой производительностью.
+                  Финтех-сервис с 3D-каруселью карт на GSAP, симуляцией NFC-терминала со звуком, печатью чека и кастомайзером дизайна.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.nova.tech">JavaScript (ES6+), GSAP, CSS 3D, HTML5 Canvas, Vite</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.nova.tech">JavaScript (ES6+), GSAP, CSS 3D, Web Audio API, Canvas Confetti, Vite</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://lelyaler.github.io/Animation/"
+                    href="https://lelyaler.github.io/Nova-pay/"
                     aria-label="Посетить сайт проекта NOVA Pay"
                     data-i18n="projects.visitBtn"
                     data-i18n-attr="aria-label:projects.cards.nova.visitAria"
@@ -546,7 +563,7 @@
                     class="link button"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/Lelyaler/Animation"
+                    href="https://github.com/Lelyaler/Nova-pay"
                     aria-label="Исходный код проекта NOVA Pay на GitHub"
                     data-i18n="projects.githubBtn"
                     data-i18n-attr="aria-label:projects.cards.nova.githubAria"
@@ -558,7 +575,7 @@
             </div>
 
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Cyberpunk-only-html-css-js-/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Cyberpunk Promo">
                 <img
                   src="./images/Cyberpunk.webp"
                   alt="Cyberpunk Promo"
@@ -568,11 +585,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Cyberpunk Promo</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.cyberpunk.desc">
-                  Атмосферный промо-лендинг по макету из Figma в стиле Cyberpunk с 3D-слайдерами Swiper и интеграцией в кастомную тему WordPress (PHP).
+                  Промо-лендинг по макету из Figma в стиле Cyberpunk: слайдер Swiper, модальные окна на HTML5 Dialog и тема для WordPress.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.cyberpunk.tech">WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, БЭМ</span>
                 <div class="projects__link-container">
@@ -603,7 +620,7 @@
             </div>
 
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Security-Operations/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Cybersecurity Operations Center">
                 <img
                   src="./images/Security-Operations.webp"
                   alt="Cybersecurity Operations Center"
@@ -613,15 +630,15 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">
-                  Traffic & API Analytics Dashboard
+                  Traffic &amp; API Analytics Dashboard
                 </h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.security.desc">
-                  Аналитический дашборд сетевого трафика и производительности API на React 19 и TypeScript с интерактивными графиками Recharts.
+                  Дашборд телеметрии и инцидентов шлюзов на React 19 и TypeScript: перцентили задержек p50/p95/p99, фид CISA KEV и экспорт логов.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.security.tech">React 19, TypeScript, Recharts, Lucide, Vite</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.security.tech">React 19, TypeScript, Recharts, CISA KEV API, Vitest, Vite</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
@@ -650,7 +667,7 @@
             </div>
 
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/GameVault/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта GameVault">
                 <img
                   src="./images/game-vault.webp"
                   alt="GameVault"
@@ -660,11 +677,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">GameVault</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.gamevault.desc">
-                  Витрина и бэклог-трекер видеоигр в стилистике PS5 на React 19 и TypeScript со строгой типизацией, Gamepad API и Tailwind CSS.
+                  Каталог и бэклог видеоигр в эстетике PS5 на React 19 и TypeScript: навигация джойстиком через Gamepad API и синхронизация URL.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.gamevault.tech">React 19, TypeScript, Tailwind CSS, Gamepad API, Vitest</span>
                 <div class="projects__link-container">
@@ -672,7 +689,7 @@
                     class="link button button-yellow"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://lelyaler.github.io/React-TypeScript/"
+                    href="https://lelyaler.github.io/GameVault/"
                     aria-label="Посетить сайт проекта GameVault"
                     data-i18n="projects.visitBtn"
                     data-i18n-attr="aria-label:projects.cards.gamevault.visitAria"
@@ -683,7 +700,7 @@
                     class="link button"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/Lelyaler/React-TypeScript"
+                    href="https://github.com/Lelyaler/GameVault"
                     aria-label="Исходный код проекта GameVault на GitHub"
                     data-i18n="projects.githubBtn"
                     data-i18n-attr="aria-label:projects.cards.gamevault.githubAria"
@@ -695,7 +712,7 @@
             </div>
 
             <div class="projects__card">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/techwear-store/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Techwear Store">
                 <img
                   src="./images/techwear.webp"
                   alt="Techwear Store"
@@ -705,11 +722,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Techwear Store</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.techwear.desc">
-                  Концептуальный e-commerce магазин на React 19 и TypeScript: радар логистики на Canvas, процедурный Web Audio синтезатор и PWA.
+                  Киберпанк e-commerce на React 19 и TypeScript: процедурный синтез звука через Web Audio, радар дрона на Canvas и PWA-модуль.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.techwear.tech">React 19, TypeScript, HTML5 Canvas, Web Audio API, PWA, Vite</span>
                 <div class="projects__link-container">
@@ -740,7 +757,7 @@
             </div>
 
             <div class="projects__card projects__card--extra projects__card--hidden">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/tailwind-site/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Edufree EdTech Landing">
                 <img
                   src="./images/Tailwind.webp?v=3"
                   alt="Edufree EdTech Landing"
@@ -750,13 +767,13 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Edufree EdTech Landing</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.edufree.desc">
-                  Адаптивный Mobile-First лендинг образовательной платформы: живой поиск курсов, корзина на LocalStorage, модальные окна Dialog и Tailwind CSS.
+                  Образовательный портал на Tailwind CSS: живой поиск и фильтрация курсов, корзина на LocalStorage и модальный силлабус программ.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.edufree.tech">HTML5, Tailwind CSS, JavaScript (ES6+), HTML5 Dialog, Mobile-First</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.edufree.tech">HTML5, Tailwind CSS, JavaScript (ES6+), LocalStorage, Mobile-First</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
@@ -785,7 +802,7 @@
             </div>
 
             <div class="projects__card projects__card--extra projects__card--hidden">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Sneakmax/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Sneakmax Sneaker Store">
                 <img
                   src="./images/sneakmax.webp"
                   alt="Sneakmax Sneaker Store"
@@ -795,11 +812,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Sneakmax Sneaker Store</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.sneakmax.desc">
-                  Интернет-магазин кроссовок: каталог оригинальных моделей, гибкая фильтрация по параметрам, интерактивный квиз, корзина и оптимизация 100/100.
+                  Магазин кроссовок: слайдер цен noUiSlider, подбор обуви через пошаговый квиз, корзина заказов и галерея ракурсов на Swiper.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.sneakmax.tech">HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper, noUiSlider</span>
                 <div class="projects__link-container">
@@ -830,7 +847,7 @@
             </div>
 
             <div class="projects__card projects__card--extra projects__card--hidden">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/crypto-sticky/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Crypto-sticky">
                 <img
                   src="./images/pg.webp"
                   alt="Crypto-sticky"
@@ -840,11 +857,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Crypto-sticky</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.crypto.desc">
-                  Промо-лендинг маркетплейса криптостикеров: аукционы со ставками в ETH, слайдер новинок на Swiper и каскадные scroll-анимации.
+                  Маркетплейс криптостикеров: таймер аукциона, кастомная пагинация Swiper, каскадные анимации появления и модалка ставок.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.crypto.tech">HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper, IntersectionObserver</span>
                 <div class="projects__link-container">
@@ -875,7 +892,7 @@
             </div>
 
             <div class="projects__card projects__card--extra projects__card--hidden">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Legal-website/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта Legal Services">
                 <img
                   src="./images/Legal.webp"
                   alt="Legal Services"
@@ -885,13 +902,13 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">Legal Services</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.legal.desc">
-                  Корпоративный сайт юридической компании со строгой типографикой, отзывами клиентов и формами обратной связи.
+                  Сайт юридической коллегии по макету из Figma: анимированные счетчики практики на IntersectionObserver, отзывы и модалки.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.legal.tech">HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.legal.tech">HTML5, CSS3, JavaScript (ES6+), БЭМ, Swiper, Figma</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
@@ -920,7 +937,7 @@
             </div>
 
             <div class="projects__card projects__card--extra projects__card--hidden">
-              <div class="projects__card-img">
+              <a class="projects__card-img" href="https://lelyaler.github.io/Animation-web/" target="_blank" rel="noopener noreferrer" aria-label="Посетить сайт проекта House of Gambling">
                 <img
                   src="./images/Animation.webp"
                   alt="Creative Animation Showcase"
@@ -930,11 +947,11 @@
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+              </a>
               <div class="projects__info">
                 <h3 class="projects__info-title">House of Gambling</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.animation.desc">
-                  Интерактивный промо-лендинг с непрерывной CSS 3D-анимацией барабанов слотов, динамическим калькулятором доходности и мультиязычностью (RU/EN).
+                  Промо-лендинг прямого рекламодателя: непрерывное вращение барабанов слота (60 FPS), интерактивный калькулятор доходности и i18n.
                 </p>
                 <span class="projects__info-tech" data-i18n="projects.cards.animation.tech">HTML5, CSS3 (Keyframes 60 FPS), JavaScript (ES Modules)</span>
                 <div class="projects__link-container">

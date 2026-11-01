@@ -13,15 +13,18 @@ const translations = {
       skills: "Навыки",
       projects: "Проекты",
       contacts: "Контакты",
-      anketa: "Анкета",
-      cv: "CV"
+      resume: "Резюме"
     },
     hero: {
       title: 'Привет, меня зовут Лера <span class="information__hand">👋</span>',
       subtitlePrefix: "Я —",
+      roles: [
+        "Frontend-разработчик",
+        "WordPress & PHP разработчик",
+        "UI/UX & Web Performance специалист"
+      ],
       projectsBtn: "Проекты",
-      contactsBtn: "Контакты",
-      imageAlt: "Валерия Чернявская"
+      contactsBtn: "Контакты"
     },
     about: {
       title: "Обо мне",
@@ -35,9 +38,7 @@ const translations = {
       comp3Title: "Фронтенд & Стили",
       comp3Desc: "Адаптивная и семантическая вёрстка по БЭМ, SCSS, Tailwind CSS, Vite, Webpack, оптимизация Core Web Vitals.",
       comp4Title: "Хостинг & CI/CD",
-      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), деплой проектов на хостинги и VPS (SSH, Nginx), Docker, базы данных MySQL и DNS/SSL.",
-      expandOpen: "Свернуть",
-      expandClosed: "Читать полностью"
+      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), деплой проектов на хостинги и VPS (SSH, Nginx), Docker, базы данных MySQL и DNS/SSL."
     },
     skills: {
       title: "Навыки"
@@ -70,8 +71,8 @@ const translations = {
         security: {
           desc: "Панель мониторинга сетевого трафика и безопасности на React и TypeScript с графиками Recharts, фильтрацией инцидентов и экспортом данных.",
           tech: "React, TypeScript, Recharts, REST API, Vite",
-          visitAria: "Посетить сайт проекта Traffic & API Analytics Dashboard",
-          githubAria: "Исходный код проекта Traffic & API Analytics Dashboard на GitHub"
+          visitAria: "Посетить сайт проекта Cybersecurity Operations Center",
+          githubAria: "Исходный код проекта Cybersecurity Operations Center на GitHub"
         },
         gamevault: {
           desc: "Каталог видеоигр и трекер бэклога в стиле консольного интерфейса с фильтрацией по жанрам, поиском и поддержкой геймпада.",
@@ -132,10 +133,10 @@ const translations = {
       phoneAria: "Позвонить по телефону",
       linkedinLabel: "LinkedIn",
       linkedinAria: "Открыть профиль LinkedIn",
-      resumeTitle: "Анкета",
-      resumeDesc: "Открыть анкету",
+      resumeTitle: "Резюме",
+      resumeDesc: "Открыть резюме",
       resumeLink: "https://lelyaler.github.io/anketa/",
-      resumeAria: "Открыть анкету онлайн",
+      resumeAria: "Открыть резюме онлайн",
       copied: "Скопировано!"
     },
     footer: {
@@ -160,15 +161,18 @@ const translations = {
       skills: "Skills",
       projects: "Projects",
       contacts: "Contacts",
-      anketa: "CV (RU)",
-      cv: "CV (EN)"
+      resume: "CV"
     },
     hero: {
       title: 'Hi, I\'m Valeria <span class="information__hand">👋</span>',
-      subtitlePrefix: "I'm",
+      subtitlePrefix: "I'm a",
+      roles: [
+        "Frontend Developer",
+        "WordPress & PHP Developer",
+        "UI/UX & Web Performance Specialist"
+      ],
       projectsBtn: "Projects",
-      contactsBtn: "Contact Me",
-      imageAlt: "Valeriya Cherniavskaya"
+      contactsBtn: "Contact Me"
     },
     about: {
       title: "About Me",
@@ -182,9 +186,7 @@ const translations = {
       comp3Title: "Frontend & Styling",
       comp3Desc: "Responsive semantic layout, BEM, SCSS, Tailwind CSS, Vite, Webpack, Core Web Vitals optimization.",
       comp4Title: "Hosting & CI/CD",
-      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), hosting & VPS deployment (SSH, Nginx), Docker, MySQL databases, and DNS/SSL setup.",
-      expandOpen: "Show Less",
-      expandClosed: "Read More"
+      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), hosting & VPS deployment (SSH, Nginx), Docker, MySQL databases, and DNS/SSL setup."
     },
     skills: {
       title: "Skills"

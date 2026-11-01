@@ -36,7 +36,7 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=9" />
+    <link rel="stylesheet" href="style.css?v=10" />
     <title>Валерия Чернявская — Frontend Developer Portfolio</title>
     <meta
       name="description"
@@ -107,7 +107,7 @@
     <div class="container">
       <header class="header">
         <div class="header__logo-block">
-          <span class="header__logo">Lelyaler</span>
+          <a href="./" class="header__logo" aria-label="Portfolio">Lelyaler</a>
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -127,20 +127,12 @@
         </nav>
         <div class="header__actions">
           <a
-            class="button button-yellow header__btn header__btn--anketa"
+            class="button button-yellow header__btn header__btn--resume"
             href="https://lelyaler.github.io/anketa/"
             target="_blank"
             rel="noopener noreferrer"
-            data-i18n="nav.anketa"
-            >Анкета</a
-          >
-          <a
-            class="button header__btn header__btn--cv"
-            href="https://lelyaler.github.io/cv/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="nav.cv"
-            >CV</a
+            data-i18n="nav.resume"
+            >Резюме</a
           >
           <div class="lang-switch" role="group" aria-label="Выбор языка" data-i18n-attr="aria-label:ui.langSwitchLabel">
             <button
@@ -185,11 +177,10 @@
             <img
               class="information__image"
               src="./images/1.jpeg"
-              alt="Валерия Чернявская"
+              alt=""
               width="498"
               height="384"
               fetchpriority="high"
-              data-i18n-attr="alt:hero.imageAlt"
             />
           </picture>
         </section>
@@ -1202,7 +1193,7 @@
                     href="https://lelyaler.github.io/anketa/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Открыть анкету онлайн"
+                    aria-label="Открыть резюме онлайн"
                     data-i18n-attr="href:contacts.resumeLink,aria-label:contacts.resumeAria"
                   >
                     <img
@@ -1217,7 +1208,7 @@
                   </a>
                 </div>
                 <div class="about__contacts-info">
-                  <h3 class="about__contacts-title about__contacts-resume-title" data-i18n="contacts.resumeTitle">Анкета</h3>
+                  <h3 class="about__contacts-title about__contacts-resume-title" data-i18n="contacts.resumeTitle">Резюме</h3>
                   <a
                     class="about__contacts-description about__contacts-resume-desc"
                     href="https://lelyaler.github.io/anketa/"
@@ -1225,7 +1216,7 @@
                     rel="noopener noreferrer"
                     data-i18n="contacts.resumeDesc"
                     data-i18n-attr="href:contacts.resumeLink"
-                    >Открыть анкету</a
+                    >Открыть резюме</a
                   >
                 </div>
               </li>

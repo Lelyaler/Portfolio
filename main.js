@@ -23,17 +23,6 @@ function getTranslation(path, lang = currentLang) {
   return path.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), dict);
 }
 
-function updateSectionSplittingOpacity(selector) {
-  const sec = document.querySelector(selector);
-  if (!sec) return;
-  const rect = sec.getBoundingClientRect();
-  if (rect.top < window.innerHeight) {
-    sec.querySelectorAll(".char, .word").forEach((el) => {
-      el.style.opacity = "1";
-    });
-  }
-}
-
 function applyTranslations(lang, isDynamicChange = false) {
   document.documentElement.lang = lang;
 
@@ -64,14 +53,10 @@ function applyTranslations(lang, isDynamicChange = false) {
   const transTwDesc = getTranslation("meta.twitterDesc", lang);
   if (twitterDesc && transTwDesc) twitterDesc.setAttribute("content", transTwDesc);
 
-  // Resume buttons links
-  const anketaBtn = document.querySelector(".header__btn--anketa");
-  if (anketaBtn) {
-    anketaBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-  }
-  const cvBtn = document.querySelector(".header__btn--cv");
-  if (cvBtn) {
-    cvBtn.href = lang === "en" ? "https://lelyaler.github.io/anketa/" : "https://lelyaler.github.io/cv/";
+  // Resume button link
+  const resumeBtn = document.querySelector(".header__btn--resume");
+  if (resumeBtn) {
+    resumeBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
   }
 
   // Contact resume item
@@ -80,13 +65,13 @@ function applyTranslations(lang, isDynamicChange = false) {
   const contactResumeDesc = document.querySelector(".about__contacts-resume-desc");
   if (contactResumeLink) {
     contactResumeLink.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-    contactResumeLink.setAttribute("aria-label", lang === "en" ? "Open CV online" : "Открыть анкету онлайн");
+    contactResumeLink.setAttribute("aria-label", lang === "en" ? "Open CV online" : "Открыть резюме онлайн");
   }
   if (contactResumeTitle) {
-    contactResumeTitle.textContent = lang === "en" ? "CV" : "Анкета";
+    contactResumeTitle.textContent = lang === "en" ? "CV" : "Резюме";
   }
   if (contactResumeDesc) {
-    contactResumeDesc.textContent = lang === "en" ? "Open CV" : "Открыть анкету";
+    contactResumeDesc.textContent = lang === "en" ? "Open CV" : "Открыть резюме";
     contactResumeDesc.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
   }
 
@@ -142,13 +127,23 @@ function applyTranslations(lang, isDynamicChange = false) {
   // Dynamic language switch updates Splitting & ScrollTrigger
   if (isDynamicChange && typeof Splitting !== "undefined") {
     Splitting();
-    updateSectionSplittingOpacity(".about");
-    updateSectionSplittingOpacity(".skills");
-    updateSectionSplittingOpacity(".projects");
-    updateSectionSplittingOpacity(".contacts");
+    document.querySelectorAll(".char, .word").forEach((el) => {
+      el.style.opacity = "1";
+    });
     if (typeof ScrollTrigger !== "undefined") {
       setTimeout(() => ScrollTrigger.refresh(), 100);
     }
+  }
+
+  // Update typewriter roles on language change
+  phraseArray = getPhraseArray();
+  if (isDynamicChange) {
+    clearInterval(textInterval);
+    clearInterval(pipeInterval);
+    counter = 0;
+    symbolCounter = 0;
+    if (typeText) typeText.textContent = "";
+    changeTypeText();
   }
 }
 
@@ -318,15 +313,27 @@ ScrollTrigger.create({
   },
 });
 
-// // scroll
-
+// Typewriter Animation
 const typeText = document.querySelector(".information__subtitle-text"),
-  pipe = document.querySelector(".pipe"),
-  phraseArray = [
-    "Frontend Developer",
-    "WordPress & PHP",
-    "UI/UX & Web Performance",
-  ];
+  pipe = document.querySelector(".pipe");
+
+function getPhraseArray() {
+  const roles = getTranslation("hero.roles", currentLang);
+  if (Array.isArray(roles) && roles.length) return roles;
+  return currentLang === "ru"
+    ? [
+        "Frontend-разработчик",
+        "WordPress & PHP разработчик",
+        "UI/UX & Web Performance специалист",
+      ]
+    : [
+        "Frontend Developer",
+        "WordPress & PHP Developer",
+        "UI/UX & Web Performance Specialist",
+      ];
+}
+
+let phraseArray = getPhraseArray();
 let textInterval = null,
   counter = 0,
   symbolCounter = 0,
@@ -334,6 +341,7 @@ let textInterval = null,
   pipeInterval = null;
 
 function getPipe() {
+  if (!pipe) return;
   if (pipeCheck) {
     pipeCheck = false;
     pipe.style.display = "none";
@@ -344,21 +352,22 @@ function getPipe() {
 }
 
 function changeTypeText() {
+  if (!typeText) return;
   if (counter >= phraseArray.length) counter = 0;
   if (symbolCounter === 0) {
     pipeCheck = true;
     setTimeout(() => {
-      textInterval = setInterval(printText, 200, 1);
+      textInterval = setInterval(printText, 140, 1);
       clearInterval(pipeInterval);
-    }, 1001);
+    }, 400);
   }
   if (symbolCounter > 0) {
     pipeCheck = true;
-    pipe.style.display = "inline-block";
+    if (pipe) pipe.style.display = "inline-block";
     pipeInterval = setInterval(getPipe, 500);
     setTimeout(() => {
-      textInterval = setInterval(printText, 80, -1);
-    }, 1001);
+      textInterval = setInterval(printText, 60, -1);
+    }, 1200);
   }
   function typeTextAnimation(phrase) {
     if (symbolCounter >= phrase.length + 1) {
@@ -373,9 +382,10 @@ function changeTypeText() {
     }
   }
   function printText(num) {
-    typeText.innerHTML = `${phraseArray[counter].slice(0, symbolCounter)}`;
+    const currentPhrase = phraseArray[counter] || "";
+    typeText.textContent = currentPhrase.slice(0, symbolCounter);
     symbolCounter += num;
-    typeTextAnimation(phraseArray[counter]);
+    typeTextAnimation(currentPhrase);
   }
 }
 

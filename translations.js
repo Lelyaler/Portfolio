@@ -142,8 +142,8 @@ const translations = {
           githubBtn: "GitHub"
         },
         metaTags: {
-          title: "Cyberpunk Meta Tags",
-          desc: "Кастомный плагин WordPress для управления мета-тегами сайта. Настройка title, description, keywords и OpenGraph-разметки для соцсетей через собственную страницу в меню админки и хук wp_head.",
+          title: "Custom Meta Tags Manager",
+          desc: "Универсальный плагин WordPress для управления мета-тегами сайта. Гибкая настройка title, description, robots, canonical, hreflang, OpenGraph и микроразметки JSON-LD через собственную страницу в меню админки и хук wp_head.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },
@@ -334,8 +334,8 @@ const translations = {
           githubBtn: "GitHub"
         },
         metaTags: {
-          title: "Cyberpunk Meta Tags",
-          desc: "Specialized WordPress plugin for SEO and OpenGraph meta tag management. Configured via custom admin menu with automated generation for wp_head hooks.",
+          title: "Custom Meta Tags Manager",
+          desc: "Universal WordPress plugin for technical SEO, OpenGraph, Twitter Cards, robots directives, canonical URLs, and JSON-LD structured data management with dedicated admin panel.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },

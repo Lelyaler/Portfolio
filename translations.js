@@ -138,8 +138,8 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Тема",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Динамический AJAX-каталог с фильтрами по цене и полу, быстрый просмотр в модальном окне, интерактивный квиз подбора обуви и поддержка архитектуры HPOS.",
-          tech: "WordPress 6.x, WooCommerce, HPOS, PHP 8+, AJAX Catalog",
+          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Встроенные нативные Gutenberg-блоки (интерактивный квиз, AJAX-каталог товаров, FAQ), динамическая фильтрация по цене и полу, быстрый просмотр в модальном окне и поддержка архитектуры HPOS.",
+          tech: "WordPress 6.x, WooCommerce, Gutenberg Blocks, HPOS, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
@@ -346,8 +346,8 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Theme",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Dynamic AJAX catalog with price & attribute filters, modal quick view, interactive sizing quiz, and full WooCommerce HPOS architecture support.",
-          tech: "WordPress 6.x, WooCommerce, HPOS, PHP 8+, AJAX Catalog",
+          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Includes native Gutenberg blocks (interactive sizing quiz, AJAX catalog, FAQ), dynamic price & attribute filters, modal quick view, and full WooCommerce HPOS architecture support.",
+          tech: "WordPress 6.x, WooCommerce, Gutenberg Blocks, HPOS, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },

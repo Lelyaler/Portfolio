@@ -64,8 +64,8 @@ const translations = {
           githubAria: "Исходный код проекта House of Gambling на GitHub"
         },
         sneakmax: {
-          desc: "Интерфейс интернет-магазина с ползунком цен noUiSlider, интерактивным квизом подбора, корзиной и адаптивной галереей под e-commerce.",
-          tech: "HTML5, SCSS, JavaScript (ES6+), Swiper, noUiSlider",
+          desc: "Интернет-магазин кроссовок с интерактивным квизом подбора обуви, AJAX-каталогом, корзиной и интеграцией в кастомную WooCommerce-тему (HPOS, заказ в 1 клик).",
+          tech: "WooCommerce, PHP 8+, JavaScript (ES6+), Swiper, noUiSlider",
           visitAria: "Посетить сайт проекта Sneakmax Sneaker Store",
           githubAria: "Исходный код проекта Sneakmax Sneaker Store на GitHub"
         },
@@ -132,6 +132,14 @@ const translations = {
           title: "Cyberpunk Promo Theme",
           desc: "Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и Google PageSpeed 98/100.",
           tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
+        sneakmaxTheme: {
+          badge: "WooCommerce Тема",
+          title: "Sneakmax WooCommerce Theme",
+          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Динамический AJAX-каталог с фильтрами по цене и полу, быстрый просмотр в модальном окне, интерактивный квиз подбора обуви и поддержка архитектуры HPOS.",
+          tech: "WordPress 6.x, WooCommerce, HPOS, PHP 8+, AJAX Catalog",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
@@ -256,8 +264,8 @@ const translations = {
           githubAria: "Source code of House of Gambling on GitHub"
         },
         sneakmax: {
-          desc: "E-commerce store interface featuring noUiSlider price filtering, interactive sizing quiz, sliding cart drawer, and responsive photo gallery.",
-          tech: "HTML5, SCSS, JavaScript (ES6+), Swiper, noUiSlider",
+          desc: "Sneaker e-commerce store with an interactive sizing quiz, AJAX catalog, cart, and integration into a custom WooCommerce theme (HPOS, 1-click checkout).",
+          tech: "WooCommerce, PHP 8+, JavaScript (ES6+), Swiper, noUiSlider",
           visitAria: "Visit Sneakmax Sneaker Store website",
           githubAria: "Source code of Sneakmax Sneaker Store on GitHub"
         },
@@ -324,6 +332,14 @@ const translations = {
           title: "Cyberpunk Promo Theme",
           desc: "Custom WordPress theme built from scratch with pure PHP (zero heavy page builders). Template hierarchy (WP_Query, hooks), Theme Customizer API for live UI color control, ACF Pro with Local JSON sync, and 98/100 Google PageSpeed score.",
           tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
+        sneakmaxTheme: {
+          badge: "WooCommerce Theme",
+          title: "Sneakmax WooCommerce Theme",
+          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Dynamic AJAX catalog with price & attribute filters, modal quick view, interactive sizing quiz, and full WooCommerce HPOS architecture support.",
+          tech: "WordPress 6.x, WooCommerce, HPOS, PHP 8+, AJAX Catalog",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },

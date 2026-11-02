@@ -126,6 +126,7 @@ const translations = {
       themeBadge: "Кастомная тема",
       pluginBadge: "Кастомный плагин",
       seoBadge: "SEO-плагин",
+      wooBadge: "WooCommerce",
       cards: {
         theme: {
           title: "Cyberpunk Promo Theme",
@@ -150,6 +151,12 @@ const translations = {
           title: "MultiGEO & Satellite Engine",
           desc: "Модуль локализации и управления сателлитами. Автоматическое клонирование посадочных страниц и полей ACF Pro под любые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN-сеток.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
+          githubBtn: "GitHub"
+        },
+        wooCheckout: {
+          title: "Fast Checkout & Slide Cart",
+          desc: "Коммерческий модуль WooCommerce. Интерактивная выезжающая корзина (Slide Cart Drawer) с живым пересчетом количества без перезагрузки (Cart Fragments), прогресс-бар бесплатной доставки и оформление заказа в 1 клик с поддержкой HPOS.",
+          tech: "WooCommerce, HPOS Ready, Cart Fragments, 1-Click Order, REST API",
           githubBtn: "GitHub"
         }
       }
@@ -311,6 +318,7 @@ const translations = {
       themeBadge: "Custom Theme",
       pluginBadge: "Custom Plugin",
       seoBadge: "SEO Plugin",
+      wooBadge: "WooCommerce",
       cards: {
         theme: {
           title: "Cyberpunk Promo Theme",
@@ -335,6 +343,12 @@ const translations = {
           title: "MultiGEO & Satellite Engine",
           desc: "Satellite management and multi-GEO localization engine. Automated landing page and ACF Pro field replication for targeted regions, differentiated canonical routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
+          githubBtn: "GitHub"
+        },
+        wooCheckout: {
+          title: "Fast Checkout & Slide Cart",
+          desc: "Commercial WooCommerce extension. Interactive slide-out cart drawer with live quantity recalculation (Cart Fragments), free shipping dynamic progress bar, and instant 1-click checkout with HPOS compatibility.",
+          tech: "WooCommerce, HPOS Ready, Cart Fragments, 1-Click Order, REST API",
           githubBtn: "GitHub"
         }
       }

@@ -1,6 +1,7 @@
-// scroll animation
-
-gsap.registerPlugin(ScrollTrigger);
+// GSAP & ScrollTrigger Initialization
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 // --- i18n Internationalization ---
 function getInitialLanguage() {
@@ -21,6 +22,83 @@ function getTranslation(path, lang = currentLang) {
   const dict = window.translations && window.translations[lang];
   if (!dict) return null;
   return path.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), dict);
+}
+
+// --- Typewriter State & Functions ---
+const typeText = document.querySelector(".information__subtitle-text");
+const pipe = document.querySelector(".pipe");
+let textInterval = null;
+let counter = 0;
+let symbolCounter = 0;
+let pipeCheck = true;
+let pipeInterval = null;
+
+function getPhraseArray(lang = currentLang) {
+  const roles = getTranslation("hero.roles", lang);
+  if (Array.isArray(roles) && roles.length) return roles;
+  return lang === "ru"
+    ? [
+        "WordPress & PHP разработчик",
+        "Gutenberg & Frontend специалист",
+        "Core Web Vitals & SEO эксперт",
+      ]
+    : [
+        "WordPress & PHP Developer",
+        "Gutenberg & Frontend Specialist",
+        "Core Web Vitals & Technical SEO",
+      ];
+}
+
+let phraseArray = getPhraseArray(currentLang);
+
+function getPipe() {
+  if (!pipe || !pipe.style) return;
+  if (pipeCheck) {
+    pipeCheck = false;
+    pipe.style.display = "none";
+  } else {
+    pipeCheck = true;
+    pipe.style.display = "inline-block";
+  }
+}
+
+function changeTypeText() {
+  if (!typeText) return;
+  if (!phraseArray || !phraseArray.length) phraseArray = getPhraseArray(currentLang);
+  if (counter >= phraseArray.length) counter = 0;
+  if (symbolCounter === 0) {
+    pipeCheck = true;
+    setTimeout(() => {
+      textInterval = setInterval(printText, 140, 1);
+      clearInterval(pipeInterval);
+    }, 400);
+  }
+  if (symbolCounter > 0) {
+    pipeCheck = true;
+    if (pipe && pipe.style) pipe.style.display = "inline-block";
+    pipeInterval = setInterval(getPipe, 500);
+    setTimeout(() => {
+      textInterval = setInterval(printText, 60, -1);
+    }, 1200);
+  }
+  function typeTextAnimation(phrase) {
+    if (symbolCounter >= phrase.length + 1) {
+      clearInterval(textInterval);
+      changeTypeText();
+    }
+    if (symbolCounter < 0) {
+      counter++;
+      symbolCounter = 0;
+      clearInterval(textInterval);
+      changeTypeText();
+    }
+  }
+  function printText(num) {
+    const currentPhrase = phraseArray[counter] || "";
+    typeText.textContent = currentPhrase.slice(0, symbolCounter);
+    symbolCounter += num;
+    typeTextAnimation(currentPhrase);
+  }
 }
 
 function applyTranslations(lang, isDynamicChange = false) {
@@ -54,9 +132,15 @@ function applyTranslations(lang, isDynamicChange = false) {
   if (twitterDesc && transTwDesc) twitterDesc.setAttribute("content", transTwDesc);
 
   // Resume button link
-  const resumeBtn = document.querySelector(".header__btn--resume");
+  const resumeBtn = document.querySelector(".header__btn--resume, .header__btn--anketa");
   if (resumeBtn) {
     resumeBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
+  }
+
+  // Footer resume link
+  const footerResumeLink = document.querySelector(".footer__resume-link");
+  if (footerResumeLink) {
+    footerResumeLink.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
   }
 
   // Contact resume item
@@ -136,7 +220,7 @@ function applyTranslations(lang, isDynamicChange = false) {
   }
 
   // Update typewriter roles on language change
-  phraseArray = getPhraseArray();
+  phraseArray = getPhraseArray(lang);
   if (isDynamicChange) {
     clearInterval(textInterval);
     clearInterval(pipeInterval);
@@ -164,233 +248,167 @@ document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
   });
 });
 
-Splitting();
-
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const lenis = new Lenis({
-  duration: prefersReducedMotion ? 0 : 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  direction: "vertical",
-  gestureDirection: "vertical",
-  smooth: !prefersReducedMotion,
-  mouseMultiplier: 1,
-  smoothTouch: false,
-  touchMultiplier: 2,
-  infinite: false,
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
+// Initialize Splitting
+if (typeof Splitting !== "undefined") {
+  Splitting();
 }
 
-requestAnimationFrame(raf);
-lenis.on("scroll", ScrollTrigger.update);
-
-let heroTl = gsap.timeline({
-  default: {
-    ease: "power2.inOut",
-  },
-});
-
-heroTl.fromTo(
-  ".header",
-  {
-    opacity: 0,
-  },
-  {
-    opacity: 1,
-    duration: 0.6,
-  }
-);
-heroTl.fromTo(
-  ".information",
-  {
-    opacity: 0,
-  },
-  {
-    opacity: 1,
-    duration: 0.6,
-  },
-  "-=0.3"
-);
-
-ScrollTrigger.create({
-  trigger: ".about",
-  start: "top bottom-=100",
-  once: true,
-  // markers: true,
-  onEnter: () => {
-    gsap.to(".about .title .char", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-    });
-    gsap.to(".about .about__description .word", {
-      stagger: 0.015,
-      opacity: 1,
-      ease: "power2.inOut",
-    });
-  },
-});
-
-ScrollTrigger.create({
-  trigger: ".about",
-  start: "top bottom-=150",
-  once: true,
-  // markers: true,
-  onEnter: () => {
-    gsap.to(".about__list li", {
-      y: 0,
-      // stagger: 0.03,
-      opacity: 1,
-      ease: "circ.out",
-      duration: 0.8,
-    });
-  },
-});
-
-ScrollTrigger.create({
-  trigger: ".skills",
-  start: "top bottom-=150",
-  once: true,
-  // markers: true,
-  onEnter: () => {
-    gsap.to(".skills .skills__inner h2 .char", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-    });
-    gsap.to(".skills__list", {
-      y: 0,
-      // stagger: 0.03,
-      opacity: 1,
-      ease: "circ.out",
-      duration: 0.8,
-    });
-  },
-});
-
-ScrollTrigger.create({
-  trigger: ".projects",
-  start: "top bottom-=150",
-  once: true,
-  // markers: true,
-  onEnter: () => {
-    gsap.to(".projects__card:not(.projects__card--hidden)", {
-      y: 0,
-      // stagger: 0.03,
-      opacity: 1,
-      ease: "circ.out",
-      duration: 0.8,
-    }),
-      gsap.to(".projects h2 .char", {
-        stagger: 0.03,
-        opacity: 1,
-        ease: "power2.inOut",
-      });
-  },
-});
-
-ScrollTrigger.create({
-  trigger: ".contacts",
-  start: "top bottom-=150",
-  once: true,
-  onEnter: () => {
-    gsap.to(".contacts h2 .char", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-    });
-    gsap.to(".contacts__list li", {
-      y: 0,
-      opacity: 1,
-      ease: "circ.out",
-      duration: 0.8,
-      stagger: 0.05,
-    });
-  },
-});
-
-// Typewriter Animation
-const typeText = document.querySelector(".information__subtitle-text"),
-  pipe = document.querySelector(".pipe");
-
-function getPhraseArray() {
-  const roles = getTranslation("hero.roles", currentLang);
-  if (Array.isArray(roles) && roles.length) return roles;
-  return currentLang === "ru"
-    ? [
-        "Frontend-разработчик",
-        "WordPress & PHP разработчик",
-        "UI/UX & Web Performance специалист",
-      ]
-    : [
-        "Frontend Developer",
-        "WordPress & PHP Developer",
-        "UI/UX & Web Performance Specialist",
-      ];
-}
-
-let phraseArray = getPhraseArray();
-let textInterval = null,
-  counter = 0,
-  symbolCounter = 0,
-  pipeCheck = true,
-  pipeInterval = null;
-
-function getPipe() {
-  if (!pipe) return;
-  if (pipeCheck) {
-    pipeCheck = false;
-    pipe.style.display = "none";
-  } else {
-    pipeCheck = true;
-    pipe.style.display = "inline-block";
-  }
-}
-
-function changeTypeText() {
-  if (!typeText) return;
-  if (counter >= phraseArray.length) counter = 0;
-  if (symbolCounter === 0) {
-    pipeCheck = true;
-    setTimeout(() => {
-      textInterval = setInterval(printText, 140, 1);
-      clearInterval(pipeInterval);
-    }, 400);
-  }
-  if (symbolCounter > 0) {
-    pipeCheck = true;
-    if (pipe) pipe.style.display = "inline-block";
-    pipeInterval = setInterval(getPipe, 500);
-    setTimeout(() => {
-      textInterval = setInterval(printText, 60, -1);
-    }, 1200);
-  }
-  function typeTextAnimation(phrase) {
-    if (symbolCounter >= phrase.length + 1) {
-      clearInterval(textInterval);
-      changeTypeText();
-    }
-    if (symbolCounter < 0) {
-      counter++;
-      symbolCounter = 0;
-      clearInterval(textInterval);
-      changeTypeText();
-    }
-  }
-  function printText(num) {
-    const currentPhrase = phraseArray[counter] || "";
-    typeText.textContent = currentPhrase.slice(0, symbolCounter);
-    symbolCounter += num;
-    typeTextAnimation(currentPhrase);
-  }
-}
-
+// Start Typewriter
 changeTypeText();
 
+// Smooth Scroll with Lenis
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let lenis = null;
+if (typeof Lenis !== "undefined") {
+  lenis = new Lenis({
+    duration: prefersReducedMotion ? 0 : 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    smooth: !prefersReducedMotion,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+  });
+
+  function raf(time) {
+    if (lenis) lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  if (typeof ScrollTrigger !== "undefined") {
+    lenis.on("scroll", ScrollTrigger.update);
+  }
+}
+
+// GSAP Animations
+if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
+  let heroTl = gsap.timeline({
+    default: {
+      ease: "power2.inOut",
+    },
+  });
+
+  heroTl.fromTo(
+    ".header",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 0.6,
+    }
+  );
+  heroTl.fromTo(
+    ".information",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 0.6,
+    },
+    "-=0.3"
+  );
+
+  if (typeof ScrollTrigger !== "undefined") {
+    ScrollTrigger.create({
+      trigger: ".about",
+      start: "top bottom-=100",
+      once: true,
+      onEnter: () => {
+        gsap.to(".about .title .char", {
+          stagger: 0.03,
+          opacity: 1,
+          ease: "power2.inOut",
+        });
+        gsap.to(".about .about__description .word", {
+          stagger: 0.015,
+          opacity: 1,
+          ease: "power2.inOut",
+        });
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".about",
+      start: "top bottom-=150",
+      once: true,
+      onEnter: () => {
+        gsap.to(".about__list li", {
+          y: 0,
+          opacity: 1,
+          ease: "circ.out",
+          duration: 0.8,
+        });
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".skills",
+      start: "top bottom-=150",
+      once: true,
+      onEnter: () => {
+        gsap.to(".skills .skills__inner h2 .char", {
+          stagger: 0.03,
+          opacity: 1,
+          ease: "power2.inOut",
+        });
+        gsap.to(".skills__list", {
+          y: 0,
+          opacity: 1,
+          ease: "circ.out",
+          duration: 0.8,
+        });
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".projects",
+      start: "top bottom-=150",
+      once: true,
+      onEnter: () => {
+        gsap.to(".projects__card:not(.projects__card--hidden)", {
+          y: 0,
+          opacity: 1,
+          ease: "circ.out",
+          duration: 0.8,
+        });
+        gsap.to(".projects h2 .char", {
+          stagger: 0.03,
+          opacity: 1,
+          ease: "power2.inOut",
+        });
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".contacts",
+      start: "top bottom-=150",
+      once: true,
+      onEnter: () => {
+        gsap.to(".contacts h2 .char", {
+          stagger: 0.03,
+          opacity: 1,
+          ease: "power2.inOut",
+        });
+        gsap.to(".contacts__list li", {
+          y: 0,
+          opacity: 1,
+          ease: "circ.out",
+          duration: 0.8,
+          stagger: 0.05,
+        });
+      },
+    });
+  }
+}
+
+// Navigation & Smooth Scroll
 function smoothScrollTo(targetSelector) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
@@ -410,6 +428,8 @@ document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
     }
   });
 });
+
+// Interactive skill hover animation
 const skillsArr = document.querySelectorAll(".skills__list-item-inner");
 skillsArr.forEach((skill) => {
   skill.addEventListener("mouseover", (e) => {
@@ -421,6 +441,7 @@ skillsArr.forEach((skill) => {
   });
 });
 
+// Scroll to top button
 const scrollTopBtn = document.getElementById("scroll-top-btn");
 if (scrollTopBtn) {
   window.addEventListener("scroll", () => {
@@ -440,6 +461,7 @@ if (scrollTopBtn) {
   });
 }
 
+// Project Archive Accordion
 const projectsExpandBtn = document.getElementById("projects-expand-btn");
 const extraProjectCards = document.querySelectorAll(".projects__card--extra");
 
@@ -450,35 +472,44 @@ if (projectsExpandBtn && extraProjectCards.length) {
     projectsExpandBtn.classList.toggle("is-open", isProjectsOpen);
     const btnText = projectsExpandBtn.querySelector(".projects__expand-btn-text");
     if (btnText) {
-      const closedFn = getTranslation("projects.expandClosed");
+      const closedFn = getTranslation("projects.expandClosed", currentLang);
       btnText.textContent = isProjectsOpen
-        ? getTranslation("projects.expandOpen")
+        ? getTranslation("projects.expandOpen", currentLang)
         : (typeof closedFn === "function" ? closedFn(extraProjectCards.length) : `Показать все проекты (ещё ${extraProjectCards.length})`);
     }
 
     extraProjectCards.forEach((card, index) => {
       if (isProjectsOpen) {
         card.classList.remove("projects__card--hidden");
-        gsap.fromTo(
-          card,
-          { y: 30, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            delay: index * 0.04,
-            ease: "circ.out",
-          }
-        );
+        if (typeof gsap !== "undefined") {
+          gsap.fromTo(
+            card,
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              delay: index * 0.04,
+              ease: "circ.out",
+            }
+          );
+        } else {
+          card.style.opacity = "1";
+          card.style.transform = "none";
+        }
       } else {
-        gsap.to(card, {
-          y: 20,
-          opacity: 0,
-          duration: 0.25,
-          onComplete: () => {
-            card.classList.add("projects__card--hidden");
-          },
-        });
+        if (typeof gsap !== "undefined") {
+          gsap.to(card, {
+            y: 20,
+            opacity: 0,
+            duration: 0.25,
+            onComplete: () => {
+              card.classList.add("projects__card--hidden");
+            },
+          });
+        } else {
+          card.classList.add("projects__card--hidden");
+        }
       }
     });
 
@@ -490,6 +521,7 @@ if (projectsExpandBtn && extraProjectCards.length) {
   });
 }
 
+// Scrollspy for Header Navigation
 const navItems = document.querySelectorAll(".header__nav-item");
 const navSections = document.querySelectorAll("main section[id]");
 
@@ -554,4 +586,45 @@ document.querySelectorAll(".about__copy-btn").forEach((btn) => {
   });
 });
 
+// WordPress Solutions Filter Tabs
+const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
+const wpCards = document.querySelectorAll(".wp-card[data-category]");
 
+if (wpTabBtns.length && wpCards.length) {
+  wpTabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      wpTabBtns.forEach((b) => {
+        const isActive = b === btn;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      let visibleCount = 0;
+      wpCards.forEach((card) => {
+        const cat = card.getAttribute("data-category");
+        const shouldShow = filter === "all" || cat === filter;
+        if (shouldShow) {
+          card.classList.remove("is-hidden");
+          if (typeof gsap !== "undefined") {
+            gsap.fromTo(
+              card,
+              { opacity: 0, y: 15 },
+              { opacity: 1, y: 0, duration: 0.35, delay: visibleCount * 0.04, ease: "power2.out" }
+            );
+          } else {
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          }
+          visibleCount++;
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+
+      if (typeof ScrollTrigger !== "undefined") {
+        setTimeout(() => ScrollTrigger.refresh(), 200);
+      }
+    });
+  });
+}

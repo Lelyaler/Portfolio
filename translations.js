@@ -51,10 +51,16 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         cyberpunk: {
-          desc: "Кастомная тема WordPress с чистой структурой шаблонов на PHP (WP_Query, хуки, ACF), слайдерами Swiper, модальными окнами и оптимизацией скорости загрузки.",
-          tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, ACF",
+          desc: "Кастомная тема WordPress с чистой структурой шаблонов на PHP (WP_Query, хуки, ACF Pro), слайдерами Swiper, кастомайзером темы и экосистемой авторских плагинов.",
+          tech: "WordPress, PHP, ACF Pro, SCSS, JavaScript (ES6+), Swiper",
           visitAria: "Посетить сайт проекта Cyberpunk Promo",
           githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
+        },
+        cookieNotice: {
+          desc: "Легковесный плагин WordPress для уведомления о файлах cookie (GDPR). Настройки в админке через Settings API, кастомизация цветов и текста, Vanilla JS без jQuery (~1.2 KB).",
+          tech: "WordPress Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
+          visitAria: "Посетить репозиторий плагина WP Cookie Notice",
+          githubAria: "Исходный код плагина WP Cookie Notice на GitHub"
         },
         animation: {
           desc: "Промо-лендинг для iGaming и партнёрских программ с плавной CSS-анимацией слота, интерактивным калькулятором дохода и мультиязычностью.",
@@ -200,10 +206,16 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         cyberpunk: {
-          desc: "Custom WordPress theme from scratch with clean PHP templates (WP_Query, hooks, ACF), Swiper carousels, modals, and optimized loading speed.",
-          tech: "WordPress, PHP, SCSS, JavaScript (ES6+), Swiper, ACF",
+          desc: "Custom WordPress theme with clean PHP template architecture (WP_Query, hooks, ACF Pro), Swiper sliders, Theme Customizer, and custom companion plugins.",
+          tech: "WordPress, PHP, ACF Pro, SCSS, JavaScript (ES6+), Swiper",
           visitAria: "Visit Cyberpunk Promo website",
           githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
+        },
+        cookieNotice: {
+          desc: "Lightweight WordPress plugin for GDPR cookie notice compliance. Admin panel configured via WordPress Settings API, color customization, zero jQuery (~1.2 KB Vanilla JS).",
+          tech: "WordPress Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
+          visitAria: "Visit WP Cookie Notice plugin repository",
+          githubAria: "Source code of WP Cookie Notice plugin on GitHub"
         },
         animation: {
           desc: "iGaming & affiliate promo landing page featuring smooth CSS slot animations, an interactive revenue calculator, and multi-language support.",

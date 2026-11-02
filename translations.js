@@ -145,6 +145,12 @@ const translations = {
           desc: "Кастомный плагин WordPress для управления мета-тегами сайта. Настройка title, description, keywords и OpenGraph-разметки для соцсетей через собственную страницу в меню админки и хук wp_head.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
+        },
+        multigeo: {
+          title: "MultiGEO & Satellite Engine",
+          desc: "Модуль локализации и управления сателлитами. Автоматическое клонирование посадочных страниц и полей ACF Pro под любые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN-сеток.",
+          tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
+          githubBtn: "GitHub"
         }
       }
     },
@@ -323,6 +329,12 @@ const translations = {
           title: "Cyberpunk Meta Tags",
           desc: "Specialized WordPress plugin for SEO and OpenGraph meta tag management. Configured via custom admin menu with automated generation for wp_head hooks.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
+          githubBtn: "GitHub"
+        },
+        multigeo: {
+          title: "MultiGEO & Satellite Engine",
+          desc: "Satellite management and multi-GEO localization engine. Automated landing page and ACF Pro field replication for targeted regions, differentiated canonical routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
+          tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
           githubBtn: "GitHub"
         }
       }

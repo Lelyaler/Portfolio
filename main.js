@@ -322,14 +322,14 @@ function getPhraseArray() {
   if (Array.isArray(roles) && roles.length) return roles;
   return currentLang === "ru"
     ? [
-        "Frontend-разработчик",
         "WordPress & PHP разработчик",
-        "UI/UX & Web Performance специалист",
+        "Gutenberg & Frontend специалист",
+        "Core Web Vitals & SEO эксперт",
       ]
     : [
-        "Frontend Developer",
         "WordPress & PHP Developer",
-        "UI/UX & Web Performance Specialist",
+        "Gutenberg & Frontend Specialist",
+        "Core Web Vitals & Technical SEO",
       ];
 }
 

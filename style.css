@@ -1,4 +1,24 @@
-@import url('./css2');
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZthTg.ttf') format('truetype');
+}
 * {
   box-sizing: border-box;
 }
@@ -361,35 +381,26 @@ section[id] {
   border-radius: 0;
   transition: all 0.2s ease;
 }
-.header__btn--anketa {
+.header__btn--resume {
   background-color: #fdca40;
   color: #171717;
   border: 0.0625rem solid #fdca40;
-  animation: anketa-pulse 1.5s infinite ease-in-out;
+  animation: resume-pulse 1.5s infinite ease-in-out;
   transform-origin: center;
   will-change: transform;
 }
-.header__btn--anketa:hover {
+.header__btn--resume:hover {
   animation-play-state: paused;
 }
 
-@keyframes anketa-pulse {
+@keyframes resume-pulse {
   0%,
   100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.06);
   }
-}
-.header__btn--cv {
-  background-color: transparent;
-  color: #f9f9f9;
-  border: 0.0625rem solid #333;
-}
-.header__btn--cv:hover {
-  border-color: #fdca40;
-  color: #fdca40;
 }
 
 .pipe {
@@ -1179,7 +1190,7 @@ section[id] {
     transition-duration: 0.01ms !important;
   }
   .information__hand,
-  .header__btn--anketa {
+  .header__btn--resume {
     animation: none !important;
   }
   .char,

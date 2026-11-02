@@ -140,7 +140,8 @@ const translations = {
       copied: "Скопировано!"
     },
     footer: {
-      copy: "© 2026 Валерия Чернявская. WordPress & Frontend Developer Portfolio."
+      copy: "© 2026 Валерия Чернявская. WordPress & Frontend Developer Portfolio.",
+      resume: "Резюме"
     },
     ui: {
       scrollTop: "Наверх",
@@ -288,7 +289,8 @@ const translations = {
       copied: "Copied!"
     },
     footer: {
-      copy: "© 2026 Valeriya Cherniavskaya. WordPress & Frontend Developer Portfolio."
+      copy: "© 2026 Valeriya Cherniavskaya. WordPress & Frontend Developer Portfolio.",
+      resume: "CV"
     },
     ui: {
       scrollTop: "Back to top",

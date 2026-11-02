@@ -54,9 +54,15 @@ function applyTranslations(lang, isDynamicChange = false) {
   if (twitterDesc && transTwDesc) twitterDesc.setAttribute("content", transTwDesc);
 
   // Resume button link
-  const resumeBtn = document.querySelector(".header__btn--resume");
+  const resumeBtn = document.querySelector(".header__btn--resume, .header__btn--anketa");
   if (resumeBtn) {
     resumeBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
+  }
+
+  // Footer resume link
+  const footerResumeLink = document.querySelector(".footer__resume-link");
+  if (footerResumeLink) {
+    footerResumeLink.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
   }
 
   // Contact resume item

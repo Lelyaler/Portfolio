@@ -138,15 +138,15 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Тема",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Встроенные нативные Gutenberg-блоки (интерактивный квиз, AJAX-каталог товаров, FAQ), динамическая фильтрация по цене и полу, быстрый просмотр в модальном окне и поддержка архитектуры HPOS.",
-          tech: "WordPress 6.x, WooCommerce, Gutenberg Blocks, HPOS, PHP 8+",
+          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Динамический AJAX-каталог с фильтрами по цене и полу, быстрый просмотр в модальном окне, интерактивный квиз подбора обуви и поддержка архитектуры HPOS.",
+          tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
-        gutenbergBlocks: {
-          badge: "Gutenberg Блоки",
-          title: "Nova Gutenberg Blocks",
-          desc: "Пакет нативных интерактивных блоков Gutenberg для WordPress на Block API v3. Интерактивный калькулятор доходности и ROI с динамическим расчетом сложных процентов, тарифная сетка с переключателем периодов и SEO-аккордеон с автоматической генерацией микроразметки Schema.org FAQPage JSON-LD.",
+        legalTheme: {
+          badge: "Gutenberg Тема",
+          title: "Legal Corporate Theme",
+          desc: "Корпоративная тема для юридических фирм и адвокатских бюро со встроенными нативными блоками Gutenberg (Block API v3). Баннер с фоновым слайдером и модальным окном консультации, сетка юридических практик, таймлайн ведения дел, показатели доверия, слайдер отзывов на Swiper и аккордеон FAQ с автоматической микроразметкой Schema.org FAQPage JSON-LD.",
           tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
@@ -346,15 +346,15 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Theme",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Includes native Gutenberg blocks (interactive sizing quiz, AJAX catalog, FAQ), dynamic price & attribute filters, modal quick view, and full WooCommerce HPOS architecture support.",
-          tech: "WordPress 6.x, WooCommerce, Gutenberg Blocks, HPOS, PHP 8+",
+          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Dynamic AJAX catalog with price & attribute filters, modal quick view, interactive sizing quiz, and full WooCommerce HPOS architecture support.",
+          tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
-        gutenbergBlocks: {
-          badge: "Gutenberg Blocks",
-          title: "Nova Gutenberg Blocks",
-          desc: "Suite of native interactive Gutenberg blocks for WordPress built on Block API v3. Interactive investment ROI & yield compounding calculator, dynamic pricing matrix with billing cycle toggle, and accessible FAQ accordion with automated Schema.org FAQPage JSON-LD rich snippet generation.",
+        legalTheme: {
+          badge: "Gutenberg Theme",
+          title: "Legal Corporate Theme",
+          desc: "Corporate theme for law firms and legal agencies powered by native Gutenberg blocks (Block API v3). Consultation hero banner with background slider, practice areas grid, case workflow timeline, trust metrics, Swiper testimonials carousel, and accessible FAQ accordion with automated Schema.org FAQPage JSON-LD.",
           tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"

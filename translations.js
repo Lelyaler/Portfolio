@@ -143,7 +143,7 @@ const translations = {
         },
         metaTags: {
           title: "Custom Meta Tags Manager",
-          desc: "Универсальный плагин WordPress для управления мета-тегами сайта. Гибкая настройка title, description, robots, canonical, hreflang, OpenGraph и микроразметки JSON-LD через собственную страницу в меню админки и хук wp_head.",
+          desc: "Универсальный плагин WordPress для управления мета-тегами сайта. Гибкая настройка title, description, поисковой индексации (noindex, follow), canonical, hreflang, OpenGraph и микроразметки JSON-LD через собственную страницу в меню админки и хук wp_head.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },
@@ -335,7 +335,7 @@ const translations = {
         },
         metaTags: {
           title: "Custom Meta Tags Manager",
-          desc: "Universal WordPress plugin for technical SEO, OpenGraph, Twitter Cards, robots directives, canonical URLs, and JSON-LD structured data management with dedicated admin panel.",
+          desc: "Universal WordPress plugin for technical SEO, OpenGraph, Twitter Cards, search indexing directives, canonical URLs, and JSON-LD structured data management with dedicated admin panel.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },

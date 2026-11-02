@@ -585,3 +585,46 @@ document.querySelectorAll(".about__copy-btn").forEach((btn) => {
     }
   });
 });
+
+// WordPress Solutions Filter Tabs
+const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
+const wpCards = document.querySelectorAll(".wp-card[data-category]");
+
+if (wpTabBtns.length && wpCards.length) {
+  wpTabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      wpTabBtns.forEach((b) => {
+        const isActive = b === btn;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      let visibleCount = 0;
+      wpCards.forEach((card) => {
+        const cat = card.getAttribute("data-category");
+        const shouldShow = filter === "all" || cat === filter;
+        if (shouldShow) {
+          card.classList.remove("is-hidden");
+          if (typeof gsap !== "undefined") {
+            gsap.fromTo(
+              card,
+              { opacity: 0, y: 15 },
+              { opacity: 1, y: 0, duration: 0.35, delay: visibleCount * 0.04, ease: "power2.out" }
+            );
+          } else {
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          }
+          visibleCount++;
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+
+      if (typeof ScrollTrigger !== "undefined") {
+        setTimeout(() => ScrollTrigger.refresh(), 200);
+      }
+    });
+  });
+}

@@ -1062,8 +1062,36 @@
               Разработка кастомных тем без конструкторов, авторские плагины на ООП PHP и разработка расширений для экосистемы WordPress.
             </p>
           </div>
+
+          <div class="wp-solutions__tabs" role="tablist" aria-label="WordPress Solutions categories">
+            <button class="wp-tab-btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">
+              <span data-i18n="wpSection.filterAll">Все решения</span>
+              <span class="wp-tab-btn__count">6</span>
+            </button>
+            <button class="wp-tab-btn" type="button" role="tab" aria-selected="false" data-filter="theme">
+              <span data-i18n="wpSection.filterThemes">Темы WordPress</span>
+              <span class="wp-tab-btn__count">3</span>
+            </button>
+            <button class="wp-tab-btn" type="button" role="tab" aria-selected="false" data-filter="plugin">
+              <span data-i18n="wpSection.filterPlugins">Плагины &amp; Архитектура</span>
+              <span class="wp-tab-btn__count">3</span>
+            </button>
+          </div>
+
           <div class="wp-solutions__grid">
-            <div class="wp-card">
+            <div class="wp-card wp-card--theme wp-card--cyberpunk" data-category="theme">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title">cyberpunk.theme/app</span>
+              </div>
+              <a class="wp-card__preview" href="https://lelyaler.github.io/Cyberpunk-only-html-css-js-/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo Cyberpunk Promo Theme">
+                <img class="wp-card__preview-img" src="./images/Cyberpunk.webp" alt="Cyberpunk Promo Theme" width="380" height="215" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge" data-i18n="wpSection.previewDemo">Live Demo ↗</span>
+                </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--theme" data-i18n="wpSection.themeBadge">Кастомная тема</span>
                 <div class="wp-card__icon-box">
@@ -1087,7 +1115,19 @@
               </div>
             </div>
 
-            <div class="wp-card">
+            <div class="wp-card wp-card--theme wp-card--woo" data-category="theme">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title">sneakmax-store.local/hpos</span>
+              </div>
+              <a class="wp-card__preview" href="https://lelyaler.github.io/Sneakmax/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo Sneakmax WooCommerce Theme">
+                <img class="wp-card__preview-img" src="./images/sneakmax.webp" alt="Sneakmax WooCommerce Theme" width="380" height="215" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge" data-i18n="wpSection.previewDemo">Live Demo ↗</span>
+                </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--woo" data-i18n="wpSection.cards.sneakmaxTheme.badge">WooCommerce Тема</span>
                 <div class="wp-card__icon-box">
@@ -1115,7 +1155,19 @@
               </div>
             </div>
 
-            <div class="wp-card">
+            <div class="wp-card wp-card--theme wp-card--gutenberg" data-category="theme">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title">legal-agency.local/gutenberg</span>
+              </div>
+              <a class="wp-card__preview" href="https://lelyaler.github.io/Legal-website/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo Legal Corporate Theme">
+                <img class="wp-card__preview-img" src="./images/Legal.webp" alt="Legal Corporate Theme" width="380" height="215" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge" data-i18n="wpSection.previewDemo">Live Demo ↗</span>
+                </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--gutenberg" data-i18n="wpSection.cards.legalTheme.badge">Gutenberg Тема</span>
                 <div class="wp-card__icon-box">
@@ -1143,7 +1195,18 @@
               </div>
             </div>
 
-            <div class="wp-card">
+            <div class="wp-card wp-card--plugin wp-card--cookie" data-category="plugin">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/wp-cookie-notice/</span>
+              </div>
+              <div class="wp-card__code-banner" aria-hidden="true">
+                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'wp_enqueue_scripts'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'enqueue'</span>]);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">register_setting</span>(<span class="wp-code-str">'wp_cookie_group'</span>, <span class="wp-code-str">'wp_cookie_options'</span>);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">add_settings_field</span>(<span class="wp-code-str">'banner_bg'</span>, <span class="wp-code-str">'Color'</span>, <span class="wp-code-var">...</span>);</div>
+              </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--plugin" data-i18n="wpSection.pluginBadge">Кастомный плагин</span>
                 <div class="wp-card__icon-box">
@@ -1171,7 +1234,18 @@
               </div>
             </div>
 
-            <div class="wp-card">
+            <div class="wp-card wp-card--plugin wp-card--seo" data-category="plugin">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/custom-meta-tags/</span>
+              </div>
+              <div class="wp-card__code-banner" aria-hidden="true">
+                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'wp_head'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'render_meta_tags'</span>], 1);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">apply_filters</span>(<span class="wp-code-str">'custom_meta_tags_output'</span>, <span class="wp-code-var">$meta_data</span>);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">echo</span> <span class="wp-code-str">'&lt;script type="application/ld+json"&gt;'</span>;</div>
+              </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--seo" data-i18n="wpSection.seoBadge">SEO-плагин</span>
                 <div class="wp-card__icon-box">
@@ -1198,7 +1272,18 @@
               </div>
             </div>
 
-            <div class="wp-card">
+            <div class="wp-card wp-card--plugin wp-card--multigeo" data-category="plugin">
+              <div class="wp-card__window-bar">
+                <span class="wp-card__window-dot wp-card__window-dot--red"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--yellow"></span>
+                <span class="wp-card__window-dot wp-card__window-dot--green"></span>
+                <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/wp-multigeo-engine/</span>
+              </div>
+              <div class="wp-card__code-banner" aria-hidden="true">
+                <div class="wp-card__code-line"><span class="wp-code-keyword">register_rest_route</span>(<span class="wp-code-str">'multigeo/v1'</span>, <span class="wp-code-str">'/sync'</span>, [<span class="wp-code-var">...</span>]);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'template_redirect'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'geo_target_route'</span>]);</div>
+                <div class="wp-card__code-line"><span class="wp-code-keyword">do_action</span>(<span class="wp-code-str">'multigeo_pbn_replicate'</span>, <span class="wp-code-var">$target_geo</span>);</div>
+              </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--multigeo">iGaming / MultiGEO</span>
                 <div class="wp-card__icon-box">

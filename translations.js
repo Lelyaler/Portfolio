@@ -143,6 +143,14 @@ const translations = {
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
+        gutenbergBlocks: {
+          badge: "Gutenberg Блоки",
+          title: "Nova Gutenberg Blocks",
+          desc: "Пакет нативных интерактивных блоков Gutenberg для WordPress на Block API v3. Интерактивный калькулятор доходности и ROI с динамическим расчетом сложных процентов, тарифная сетка с переключателем периодов и SEO-аккордеон с автоматической генерацией микроразметки Schema.org FAQPage JSON-LD.",
+          tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
         cookieNotice: {
           title: "WP Cookie Notice",
           desc: "Легковесный плагин WordPress для отображения уведомления о cookie (GDPR). Управление через нативный Settings API, колорпикер wp-color-picker, чистый Vanilla JS без jQuery (~1.2 KB) и нулевой Layout Shift (CLS).",
@@ -340,6 +348,14 @@ const translations = {
           title: "Sneakmax WooCommerce Theme",
           desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Dynamic AJAX catalog with price & attribute filters, modal quick view, interactive sizing quiz, and full WooCommerce HPOS architecture support.",
           tech: "WordPress 6.x, WooCommerce, HPOS, PHP 8+, AJAX Catalog",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
+        gutenbergBlocks: {
+          badge: "Gutenberg Blocks",
+          title: "Nova Gutenberg Blocks",
+          desc: "Suite of native interactive Gutenberg blocks for WordPress built on Block API v3. Interactive investment ROI & yield compounding calculator, dynamic pricing matrix with billing cycle toggle, and accessible FAQ accordion with automated Schema.org FAQPage JSON-LD rich snippet generation.",
+          tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },

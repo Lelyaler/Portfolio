@@ -1228,4 +1228,182 @@ section[id] {
     opacity: 1 !important;
     transform: none !important;
   }
-} /*# sourceMappingURL=style.css.map */
+/* WordPress Solutions Section */
+.wp-solutions {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3.5rem;
+}
+
+.wp-solutions__header {
+  margin-bottom: 2.5rem;
+}
+
+.wp-solutions__badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fdca40;
+  border: 1px solid rgba(253, 202, 64, 0.4);
+  background: rgba(253, 202, 64, 0.08);
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.wp-solutions__subtitle {
+  color: #b5b5b5;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 44rem;
+  margin: 0.75rem auto 0;
+}
+
+.wp-solutions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.wp-card {
+  background: #121212;
+  border: 1px solid #282828;
+  border-radius: 0.75rem;
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.wp-card:hover {
+  transform: translateY(-4px);
+  border-color: #fdca40;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(253, 202, 64, 0.12);
+}
+
+.wp-card:hover::before {
+  background: linear-gradient(90deg, #fdca40, #ff8c00);
+}
+
+.wp-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.wp-card__badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.375rem;
+  letter-spacing: 0.02em;
+}
+
+.wp-card__badge--theme {
+  background: rgba(33, 117, 155, 0.2);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.wp-card__badge--plugin {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.wp-card__badge--seo {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.wp-card__icon-box {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+}
+
+.wp-card__icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.wp-card__icon-svg {
+  stroke: #fdca40;
+}
+
+.wp-card__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.wp-card__desc {
+  color: #a8a8a8;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.wp-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.wp-card__tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #d1d5db;
+  border-radius: 0.25rem;
+  font-family: inherit;
+}
+
+.wp-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.wp-card__actions .button {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 992px) {
+  .wp-solutions__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+

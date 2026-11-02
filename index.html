@@ -36,7 +36,7 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=28" />
+    <link rel="stylesheet" href="style.css?v=29" />
     <title>Валерия Чернявская — WordPress &amp; Frontend Developer Portfolio</title>
     <meta
       name="description"
@@ -120,6 +120,9 @@
             </li>
             <li class="header__nav-item">
               <a href="#projects" class="header__nav-link" data-i18n="nav.projects">Проекты</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#wordpress" class="header__nav-link" data-i18n="nav.wordpress">WordPress</a>
             </li>
             <li class="header__nav-item">
               <a href="#contacts" class="header__nav-link" data-i18n="nav.contacts">Контакты</a>
@@ -1051,6 +1054,96 @@
           </div>
         </section>
 
+        <section id="wordpress" class="wp-solutions">
+          <div class="wp-solutions__header">
+            <span class="wp-solutions__badge" data-i18n="wpSection.badge">WordPress Architecture</span>
+            <h2 class="title" data-splitting="chars" data-i18n="wpSection.title">WordPress &amp; PHP Решения</h2>
+            <p class="wp-solutions__subtitle" data-i18n="wpSection.subtitle">
+              Разработка кастомных тем без конструкторов, авторские плагины на ООП PHP и разработка расширений для экосистемы WordPress.
+            </p>
+          </div>
+          <div class="wp-solutions__grid">
+            <div class="wp-card">
+              <div class="wp-card__header">
+                <span class="wp-card__badge wp-card__badge--theme" data-i18n="wpSection.themeBadge">Кастомная тема</span>
+                <div class="wp-card__icon-box">
+                  <img src="./images/wordpress.svg" alt="WordPress" class="wp-card__icon" width="22" height="22" loading="lazy" />
+                </div>
+              </div>
+              <h3 class="wp-card__title" data-i18n="wpSection.cards.theme.title">Cyberpunk Promo Theme</h3>
+              <p class="wp-card__desc" data-i18n="wpSection.cards.theme.desc">
+                Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и Google PageSpeed 98/100.
+              </p>
+              <div class="wp-card__tags">
+                <span class="wp-card__tag">WordPress 6.x</span>
+                <span class="wp-card__tag">PHP 8+</span>
+                <span class="wp-card__tag">ACF Pro</span>
+                <span class="wp-card__tag">Customizer API</span>
+                <span class="wp-card__tag">WebP</span>
+              </div>
+              <div class="wp-card__actions">
+                <a class="link button button-yellow" href="https://lelyaler.github.io/Cyberpunk-only-html-css-js-/" target="_blank" rel="noopener noreferrer" data-i18n="wpSection.cards.theme.visitBtn">Live Demo</a>
+                <a class="link button" href="https://github.com/Lelyaler/Cyberpunk-wordpress" target="_blank" rel="noopener noreferrer" data-i18n="wpSection.cards.theme.githubBtn">GitHub</a>
+              </div>
+            </div>
+
+            <div class="wp-card">
+              <div class="wp-card__header">
+                <span class="wp-card__badge wp-card__badge--plugin" data-i18n="wpSection.pluginBadge">Кастомный плагин</span>
+                <div class="wp-card__icon-box">
+                  <svg class="wp-card__icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="wp-card__title" data-i18n="wpSection.cards.cookieNotice.title">WP Cookie Notice</h3>
+              <p class="wp-card__desc" data-i18n="wpSection.cards.cookieNotice.desc">
+                Легковесный плагин WordPress для отображения уведомления о cookie (GDPR). Управление через нативный Settings API, колорпикер wp-color-picker, чистый Vanilla JS без jQuery (~1.2 KB) и нулевой Layout Shift (CLS).
+              </p>
+              <div class="wp-card__tags">
+                <span class="wp-card__tag">Plugin API</span>
+                <span class="wp-card__tag">OOP PHP</span>
+                <span class="wp-card__tag">Settings API</span>
+                <span class="wp-card__tag">Vanilla JS</span>
+                <span class="wp-card__tag">GDPR</span>
+              </div>
+              <div class="wp-card__actions">
+                <a class="link button button-yellow" href="https://github.com/Lelyaler/wp-cookie-notice" target="_blank" rel="noopener noreferrer" data-i18n="wpSection.cards.cookieNotice.githubBtn">GitHub</a>
+              </div>
+            </div>
+
+            <div class="wp-card">
+              <div class="wp-card__header">
+                <span class="wp-card__badge wp-card__badge--seo" data-i18n="wpSection.seoBadge">SEO-плагин</span>
+                <div class="wp-card__icon-box">
+                  <svg class="wp-card__icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="wp-card__title" data-i18n="wpSection.cards.metaTags.title">Cyberpunk Meta Tags</h3>
+              <p class="wp-card__desc" data-i18n="wpSection.cards.metaTags.desc">
+                Кастомный плагин WordPress для управления мета-тегами сайта. Настройка title, description, keywords и OpenGraph-разметки для соцсетей через собственную страницу в меню админки и хук wp_head.
+              </p>
+              <div class="wp-card__tags">
+                <span class="wp-card__tag">WordPress Plugin</span>
+                <span class="wp-card__tag">PHP</span>
+                <span class="wp-card__tag">SEO</span>
+                <span class="wp-card__tag">Admin Menu</span>
+                <span class="wp-card__tag">OpenGraph</span>
+              </div>
+              <div class="wp-card__actions">
+                <a class="link button button-yellow" href="https://github.com/Lelyaler/Cyberpunk-custom-meta-tags" target="_blank" rel="noopener noreferrer" data-i18n="wpSection.cards.metaTags.githubBtn">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="contacts" class="contacts">
           <div class="contacts__inner">
             <h2 class="title" data-splitting="chars" data-i18n="contacts.title">Контакты</h2>
@@ -1260,7 +1353,7 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <script defer src="translations.js?v=28"></script>
-    <script defer src="main.js?v=28"></script>
+    <script defer src="translations.js?v=29"></script>
+    <script defer src="main.js?v=29"></script>
   </body>
 </html>

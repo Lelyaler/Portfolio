@@ -12,6 +12,7 @@ const translations = {
       about: "Обо мне",
       skills: "Навыки",
       projects: "Проекты",
+      wordpress: "WordPress",
       contacts: "Контакты",
       resume: "Резюме"
     },
@@ -118,6 +119,35 @@ const translations = {
         }
       }
     },
+    wpSection: {
+      badge: "WordPress Architecture",
+      title: "WordPress & PHP Решения",
+      subtitle: "Кастомные темы без конструкторов, авторские плагины на ООП PHP и разработка расширений для экосистемы WordPress.",
+      themeBadge: "Кастомная тема",
+      pluginBadge: "Кастомный плагин",
+      seoBadge: "SEO-плагин",
+      cards: {
+        theme: {
+          title: "Cyberpunk Promo Theme",
+          desc: "Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и Google PageSpeed 98/100.",
+          tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
+        cookieNotice: {
+          title: "WP Cookie Notice",
+          desc: "Легковесный плагин WordPress для отображения уведомления о cookie (GDPR). Управление через нативный Settings API, колорпикер wp-color-picker, чистый Vanilla JS без jQuery (~1.2 KB) и нулевой Layout Shift (CLS).",
+          tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
+          githubBtn: "GitHub"
+        },
+        metaTags: {
+          title: "Cyberpunk Meta Tags",
+          desc: "Кастомный плагин WordPress для управления мета-тегами сайта. Настройка title, description, keywords и OpenGraph-разметки для соцсетей через собственную страницу в меню админки и хук wp_head.",
+          tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
+          githubBtn: "GitHub"
+        }
+      }
+    },
     contacts: {
       title: "Контакты",
       subtitle: "Открыта к предложениям по разработке на WordPress & PHP, созданию кастомных тем и плагинов, вёрстке и коммерческому фронтенду.",
@@ -161,6 +191,7 @@ const translations = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      wordpress: "WordPress",
       contacts: "Contacts",
       resume: "CV"
     },
@@ -264,6 +295,35 @@ const translations = {
           tech: "HTML5, CSS3, JavaScript (ES6+), Swiper, BEM",
           visitAria: "Visit Legal Services website",
           githubAria: "Source code of Legal Services on GitHub"
+        }
+      }
+    },
+    wpSection: {
+      badge: "WordPress Architecture",
+      title: "WordPress & PHP Solutions",
+      subtitle: "Custom themes without page builders, companion OOP PHP plugins, and extensions for the WordPress ecosystem.",
+      themeBadge: "Custom Theme",
+      pluginBadge: "Custom Plugin",
+      seoBadge: "SEO Plugin",
+      cards: {
+        theme: {
+          title: "Cyberpunk Promo Theme",
+          desc: "Custom WordPress theme built from scratch with pure PHP (zero heavy page builders). Template hierarchy (WP_Query, hooks), Theme Customizer API for live UI color control, ACF Pro with Local JSON sync, and 98/100 Google PageSpeed score.",
+          tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
+          visitBtn: "Live Demo",
+          githubBtn: "GitHub"
+        },
+        cookieNotice: {
+          title: "WP Cookie Notice",
+          desc: "Lightweight WordPress plugin for GDPR cookie notice compliance. Admin panel powered by native WordPress Settings API, built-in wp-color-picker, zero jQuery (~1.2 KB Vanilla JS), and zero Cumulative Layout Shift.",
+          tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
+          githubBtn: "GitHub"
+        },
+        metaTags: {
+          title: "Cyberpunk Meta Tags",
+          desc: "Specialized WordPress plugin for SEO and OpenGraph meta tag management. Configured via custom admin menu with automated generation for wp_head hooks.",
+          tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
+          githubBtn: "GitHub"
         }
       }
     },

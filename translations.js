@@ -47,13 +47,10 @@ const translations = {
       groupTooling: "Инструменты & Деплой"
     },
     projects: {
-      badge: "WordPress Architecture",
-      title: "WordPress & PHP Решения",
-      subtitle: "Кастомные темы без конструкторов, авторские плагины на ООП PHP и разработка расширений для экосистемы WordPress.",
-      filterAll: "Все решения",
+      title: "Проекты",
       filterThemes: "Темы WordPress",
-      filterPlugins: "Плагины & Архитектура",
-      filterFrontend: "Фронтенд & UI",
+      filterPlugins: "Плагины WordPress",
+      filterFrontend: "Фронтенд & Интерфейсы",
       visitBtn: "Live Demo",
       githubBtn: "GitHub",
       cards: {
@@ -223,13 +220,10 @@ const translations = {
       groupTooling: "DevOps & Tooling"
     },
     projects: {
-      badge: "WordPress Architecture",
-      title: "WordPress & PHP Solutions",
-      subtitle: "Custom themes without page builders, companion OOP PHP plugins, and extensions for the WordPress ecosystem.",
-      filterAll: "All Solutions",
+      title: "Projects",
       filterThemes: "WordPress Themes",
-      filterPlugins: "Plugins & Architecture",
-      filterFrontend: "Frontend & UI",
+      filterPlugins: "WordPress Plugins",
+      filterFrontend: "Frontend & Interfaces",
       visitBtn: "Live Demo",
       githubBtn: "GitHub",
       cards: {

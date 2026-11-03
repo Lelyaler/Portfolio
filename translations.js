@@ -60,19 +60,19 @@ const translations = {
           badge: "Кастомная тема",
           title: "Cyberpunk Promo Theme",
           desc: "Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией Local JSON и 98+ PageSpeed.",
-          tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP"
+          tech: "WordPress, PHP, ACF Pro, Customizer API, WebP"
         },
         sneakmaxTheme: {
           badge: "WooCommerce",
           title: "Sneakmax WooCommerce Theme",
           desc: "Полнофункциональная кастомная тема для WooCommerce на чистом PHP без Elementor. Поддержка High-Performance Order Storage (HPOS), динамический AJAX-каталог товаров с фильтрацией цен на лету и модальный просмотр.",
-          tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+"
+          tech: "WordPress, WooCommerce, HPOS Ready, AJAX Catalog, PHP"
         },
         legalTheme: {
           badge: "Gutenberg Тема",
           title: "Legal Corporate Theme",
-          desc: "Корпоративная тема на 6 нативных Gutenberg-блоках (Block API v3) с поддержкой прямого inline-редактирования RichText на странице, слайдерами отзывов Swiper и автоматической JSON-LD микроразметкой Schema.org.",
-          tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+"
+          desc: "Корпоративная тема на 6 нативных Gutenberg-блоках (Block API) с поддержкой прямого inline-редактирования RichText на странице, слайдерами отзывов Swiper и автоматической JSON-LD микроразметкой Schema.org.",
+          tech: "WordPress, Block API, Gutenberg, JSON-LD Schema, PHP"
         },
         cookieNotice: {
           badge: "Плагин WP",
@@ -144,7 +144,7 @@ const translations = {
           badge: "E-Commerce UI",
           title: "Techwear Store",
           desc: "Концепт интернет-магазина технологичной одежды с асимметричной типографикой, фильтрами категорий и интерактивной галереей лукбука.",
-          tech: "React 19, TypeScript, Vite, Web Audio API"
+          tech: "React, TypeScript, Vite, Web Audio API"
         },
         cryptosticky: {
           badge: "Scroll Experience",
@@ -265,19 +265,19 @@ const translations = {
           badge: "Custom Theme",
           title: "Cyberpunk Promo Theme",
           desc: "Custom WordPress theme built with pure PHP template hierarchy (zero heavy builders). Real-time UI styling via WP Theme Customizer API, ACF Pro with Local JSON synchronization, and 98+ Google PageSpeed score.",
-          tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP"
+          tech: "WordPress, PHP, ACF Pro, Customizer API, WebP"
         },
         sneakmaxTheme: {
           badge: "WooCommerce",
           title: "Sneakmax WooCommerce Theme",
           desc: "Full-featured custom e-commerce theme on pure WooCommerce. High-Performance Order Storage (HPOS) ready, dynamic AJAX product catalog with instant price filters, and modal quick view.",
-          tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+"
+          tech: "WordPress, WooCommerce, HPOS Ready, AJAX Catalog, PHP"
         },
         legalTheme: {
           badge: "Gutenberg Theme",
           title: "Legal Corporate Theme",
-          desc: "Corporate theme powered by 6 native Gutenberg blocks (Block API v3). Features direct inline RichText editing on the page, Swiper testimonials slider, and automated Schema.org FAQPage JSON-LD markup.",
-          tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+"
+          desc: "Corporate theme powered by 6 native Gutenberg blocks (Block API). Features direct inline RichText editing on the page, Swiper testimonials slider, and automated Schema.org FAQPage JSON-LD markup.",
+          tech: "WordPress, Block API, Gutenberg, JSON-LD Schema, PHP"
         },
         cookieNotice: {
           badge: "WordPress Plugin",
@@ -349,7 +349,7 @@ const translations = {
           badge: "E-Commerce UI",
           title: "Techwear Store",
           desc: "Urban techwear e-commerce concept featuring asymmetrical typography, category filters, and an interactive lookbook carousel.",
-          tech: "React 19, TypeScript, Vite, Web Audio API"
+          tech: "React, TypeScript, Vite, Web Audio API"
         },
         cryptosticky: {
           badge: "Scroll Experience",

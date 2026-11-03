@@ -120,6 +120,12 @@ const translations = {
           desc: "Современный посадочный интерфейс финтех-сервиса с тёмной темой, интерактивной визуализацией платёжных карт и микроанимациями UI-компонентов.",
           tech: "JavaScript (ES6+), SCSS, Vite, Mobile-First"
         },
+        security: {
+          badge: "React & TypeScript",
+          title: "Cybersecurity Operations Center",
+          desc: "Панель мониторинга сетевой безопасности и сетевого трафика на React и TypeScript с интерактивными графиками Recharts, фильтрацией инцидентов и аналитикой в реальном времени.",
+          tech: "React, TypeScript, Recharts, REST API, Vite"
+        },
         edufree: {
           badge: "Tailwind CSS",
           title: "Edufree EdTech Landing",
@@ -304,6 +310,12 @@ const translations = {
           title: "NOVA Pay Fintech Landing",
           desc: "Modern fintech banking interface featuring dark theme styling, interactive payment card visualization, and smooth component micro-interactions.",
           tech: "JavaScript (ES6+), SCSS, Vite, Mobile-First"
+        },
+        security: {
+          badge: "React & TypeScript",
+          title: "Cybersecurity Operations Center",
+          desc: "Network security and traffic monitoring dashboard built with React and TypeScript featuring interactive Recharts visualization, incident filtering, and real-time analytics.",
+          tech: "React, TypeScript, Recharts, REST API, Vite"
         },
         edufree: {
           badge: "Tailwind CSS",

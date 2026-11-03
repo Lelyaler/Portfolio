@@ -16,19 +16,19 @@ const translations = {
       resume: "Резюме"
     },
     hero: {
-      title: 'Привет, меня зовут Лера <span class="information__hand">👋</span>',
+      title: "Привет, меня зовут Лера",
       subtitlePrefix: "Я —",
       roles: [
         "WordPress & PHP разработчик",
         "Gutenberg & Frontend специалист",
-        "Оптимизация Core Web Vitals & SEO"
+        "Специалист по Core Web Vitals & SEO"
       ],
       projectsBtn: "Проекты",
       contactsBtn: "Контакты"
     },
     about: {
       title: "Обо мне",
-      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Создаю быстрые и надежные веб-проекты: от кастомных тем и плагинов на ООП PHP до e-commerce решений на WooCommerce. Разрабатываю блоки Gutenberg для удобства контент-менеджеров и уделяю особое внимание технической оптимизации — ускоряю сайты и вывожу метрики Core Web Vitals в «зеленую зону».",
+      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на ООП PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.",
       p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
       p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
       comp1Title: "Кастомный WordPress & PHP",
@@ -131,7 +131,7 @@ const translations = {
         edufree: {
           badge: "Tailwind CSS",
           title: "Edufree EdTech Landing",
-          desc: "Адаптивный лендинг образовательной платформы с гибкой сеткой Tailwind CSS, фильтрацией курсов и оптимизацией Core Web Vitals.",
+          desc: "Адаптивный лендинг образовательной платформы на Tailwind CSS с интерактивной фильтрацией курсов и оптимизацией Core Web Vitals.",
           tech: "Tailwind CSS, HTML5, JavaScript (ES6+), Vite"
         },
         gamevault: {
@@ -221,19 +221,19 @@ const translations = {
       resume: "CV"
     },
     hero: {
-      title: 'Hi, I\'m Lera <span class="information__hand">👋</span>',
+      title: "Hi, I'm Lera",
       subtitlePrefix: "I am a",
       roles: [
         "WordPress & PHP Developer",
         "Gutenberg & Frontend Engineer",
-        "Core Web Vitals & SEO Optimization"
+        "Performance & SEO Specialist"
       ],
       projectsBtn: "Projects",
       contactsBtn: "Contacts"
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Crafting fast and reliable web solutions: from custom themes and OOP PHP plugins to WooCommerce e-commerce platforms. Building custom Gutenberg blocks for streamlined content editing and prioritizing performance — accelerating load times and bringing Core Web Vitals into the green zone.",
+      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Developing custom themes and OOP PHP plugins, WooCommerce stores, and native Gutenberg blocks. Engineering interfaces with a strong focus on performance: minimizing bundle size, eliminating render-blocking scripts, and keeping Core Web Vitals in the green zone.",
       p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on OOP PHP (WP_Query, hooks, filters), built custom Gutenberg blocks and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
       p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores, including REST API integrations and hosting deployment. Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and maximum loading speed.",
       comp1Title: "Custom WordPress & PHP",
@@ -336,7 +336,7 @@ const translations = {
         edufree: {
           badge: "Tailwind CSS",
           title: "Edufree EdTech Landing",
-          desc: "Responsive education platform landing page featuring flexible Tailwind CSS grid, course filtering, and Core Web Vitals optimization.",
+          desc: "Responsive education platform landing page built with Tailwind CSS, featuring course filtering and Core Web Vitals optimization.",
           tech: "Tailwind CSS, HTML5, JavaScript (ES6+), Vite"
         },
         gamevault: {

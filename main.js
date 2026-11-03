@@ -50,12 +50,12 @@ function getPhraseArray(lang = currentLang) {
     ? [
         "WordPress & PHP разработчик",
         "Gutenberg & Frontend специалист",
-        "Оптимизация Core Web Vitals & SEO",
+        "Специалист по Core Web Vitals & SEO",
       ]
     : [
         "WordPress & PHP Developer",
         "Gutenberg & Frontend Specialist",
-        "Core Web Vitals & Technical SEO",
+        "Performance & SEO Specialist",
       ];
 }
 

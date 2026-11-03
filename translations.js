@@ -108,12 +108,6 @@ const translations = {
           desc: "Современный посадочный интерфейс финтех-сервиса с тёмной темой, интерактивной визуализацией платёжных карт и микроанимациями UI-компонентов.",
           tech: "JavaScript (ES6+), SCSS, Vite, Mobile-First"
         },
-        traffic: {
-          badge: "Dashboard / Charts",
-          title: "Traffic & API Analytics Dashboard",
-          desc: "Интерфейс аналитической панели управления для мониторинга API-трафика, веб-метрик и распределения запросов с динамическими графиками.",
-          tech: "JavaScript (ES6+), CSS Grid, Charts, SPA"
-        },
         edufree: {
           badge: "Tailwind CSS",
           title: "Edufree EdTech Landing",
@@ -280,12 +274,6 @@ const translations = {
           title: "NOVA Pay Fintech Landing",
           desc: "Modern fintech banking interface featuring dark theme styling, interactive payment card visualization, and smooth component micro-interactions.",
           tech: "JavaScript (ES6+), SCSS, Vite, Mobile-First"
-        },
-        traffic: {
-          badge: "Dashboard / Charts",
-          title: "Traffic & API Analytics Dashboard",
-          desc: "Real-time network traffic and API performance analytics dashboard with responsive data grids and dynamic metric charts.",
-          tech: "JavaScript (ES6+), CSS Grid, Charts, SPA"
         },
         edufree: {
           badge: "Tailwind CSS",

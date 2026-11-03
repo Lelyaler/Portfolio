@@ -155,6 +155,18 @@ const translations = {
           title: "Legal Services",
           desc: "Корпоративный сайт юридической компании: адаптивная семантическая вёрстка по БЭМ, слайдер отзывов Swiper, аккордеон FAQ и модальные формы заявок.",
           tech: "JavaScript (ES6+), SCSS, Swiper, HTML5, БЭМ"
+        },
+        survive505: {
+          badge: "Gaming / Promo",
+          title: "Survive at all costs (505)",
+          desc: "Промо-лендинг для ПК-игры в жанре survival с переключением языков (ENG/RU), интерактивным блоком системных требований, аккордеонами и адаптивной семантической вёрсткой.",
+          tech: "JavaScript (ES6+), SCSS, Multilingual, BEM, Responsive"
+        },
+        travel: {
+          badge: "Travel / Booking",
+          title: "2rism Travel Platform",
+          desc: "Интерфейс платформы для путешествий и бронирования с автозаполнением поиска направлений (AutoComplete.js), кастомными селектами и адаптивной сеткой отелей и туров.",
+          tech: "JavaScript (ES6+), AutoComplete.js, CSS3 Flexbox, Custom Select, Mobile-First"
         }
       }
     },
@@ -346,6 +358,18 @@ const translations = {
           title: "Legal Services",
           desc: "Corporate website for a legal practice: responsive semantic BEM markup, Swiper testimonials slider, accessible FAQ accordion, and contact modal forms.",
           tech: "JavaScript (ES6+), SCSS, Swiper, HTML5, BEM"
+        },
+        survive505: {
+          badge: "Gaming / Promo",
+          title: "Survive at all costs (505)",
+          desc: "Promotional landing page for a PC survival game featuring real-time language switching (ENG/RU), interactive system requirements block, feature accordions, and fully responsive layout.",
+          tech: "JavaScript (ES6+), SCSS, Multilingual, BEM, Responsive"
+        },
+        travel: {
+          badge: "Travel / Booking",
+          title: "2rism Travel Platform",
+          desc: "Modern travel booking platform interface featuring smart destination search autocomplete (AutoComplete.js), custom dropdown selectors, and responsive tour grid.",
+          tech: "JavaScript (ES6+), AutoComplete.js, CSS3 Flexbox, Custom Select, Mobile-First"
         }
       }
     },

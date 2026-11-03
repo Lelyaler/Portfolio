@@ -358,12 +358,11 @@ if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
           opacity: 1,
           ease: "power2.inOut",
         });
-        gsap.to(".skills__group", {
+        gsap.to(".skills__list", {
           y: 0,
           opacity: 1,
-          stagger: 0.15,
-          ease: "power2.out",
-          duration: 0.7,
+          ease: "circ.out",
+          duration: 0.8,
         });
       },
     });
@@ -433,13 +432,15 @@ document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
 // Interactive skill hover animation
 const skillsArr = document.querySelectorAll(".skills__list-item-inner");
 skillsArr.forEach((skill) => {
-  skill.addEventListener("mouseover", (e) => {
-    e.preventDefault();
+  const triggerFlip = () => {
+    if (skill.classList.contains("animated-skill")) return;
     skill.classList.add("animated-skill");
     setTimeout(() => {
       skill.classList.remove("animated-skill");
     }, 1500);
-  });
+  };
+  skill.addEventListener("mouseover", triggerFlip);
+  skill.addEventListener("touchstart", triggerFlip, { passive: true });
 });
 
 // Scroll to top button

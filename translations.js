@@ -28,17 +28,17 @@ const translations = {
     },
     about: {
       title: "Обо мне",
-      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Специализируюсь на создании кастомных тем и плагинов WordPress с нуля на PHP, блоках Gutenberg, интернет-магазинах на WooCommerce и оптимизации производительности под высокие нагрузки.",
-      p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в SEO-отделе. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры, REST API), создавала кастомные блоки Gutenberg и плагины под бизнес-задачи. Ускоряла сайты по метрикам Core Web Vitals (LCP, FID, CLS в зелёной зоне Google), внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
-      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce и их развёртывания на VPS/хостингах (Nginx, Docker). Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
+      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Создаю быстрые и надежные веб-проекты: от кастомных тем и плагинов на ООП PHP до e-commerce решений на WooCommerce. Разрабатываю блоки Gutenberg для удобства контент-менеджеров и уделяю особое внимание технической оптимизации — ускоряю сайты и вывожу метрики Core Web Vitals в «зеленую зону».",
+      p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
+      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на VPS и хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
       comp1Title: "Кастомный WordPress & PHP",
-      comp1Desc: "Разработка кастомных тем с нуля на ООП PHP, плагины, WP_Query, REST API, хуки, фильтры и интеграции сервисов.",
-      comp2Title: "Gutenberg & React",
-      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg на React, ACF Pro, гибкая и удобная админка для контент-менеджеров.",
-      comp3Title: "Mobile-First & Стили",
-      comp3Desc: "Адаптивная семантическая вёрстка под 90%+ мобильного трафика по БЭМ, SCSS, Tailwind CSS, Vite, Webpack.",
+      comp1Desc: "Разработка тем с нуля на ООП PHP, написание плагинов, работа с WP_Query, хуками и фильтрами. Интеграция сторонних сервисов.",
+      comp2Title: "Gutenberg & Админка",
+      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg. Настройка гибкой и удобной админки через ACF Pro, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.",
+      comp3Title: "Mobile-First & Вёрстка",
+      comp3Desc: "Адаптивная семантическая вёрстка (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.",
       comp4Title: "Деплой, Хостинг & SEO",
-      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), деплой на VPS (Nginx, SSH), Docker, MySQL, Schema.org и техническое SEO."
+      comp4Desc: "Настройка CI/CD (GitLab CI, GitHub Actions) и деплой на VPS (Nginx, SSH). Работа с Docker и MySQL. Внедрение Schema.org и техническое SEO."
     },
     skills: {
       title: "Навыки",
@@ -231,17 +231,17 @@ const translations = {
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Specialized in custom WordPress themes and OOP PHP plugins from scratch, custom Gutenberg blocks, WooCommerce e-commerce stores, and high-load web performance optimization.",
-      p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, HTP resident)</strong> in the SEO engineering department. Developed custom themes on OOP PHP (WP_Query, hooks, filters, REST API), created custom Gutenberg blocks, and built custom plugins tailored to business workflows. Optimized sites for Core Web Vitals (Google green-zone LCP, FID, CLS), implemented Schema.org JSON-LD structured data, and improved search engine indexing.",
-      p3: "Concurrently delivered end-to-end client projects: from high-converting promo landing pages to WooCommerce stores deployed on VPS environments (Nginx, Docker). Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and blazing-fast loading speeds.",
+      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Crafting fast and reliable web solutions: from custom themes and OOP PHP plugins to WooCommerce e-commerce platforms. Building custom Gutenberg blocks for streamlined content editing and prioritizing performance — accelerating load times and bringing Core Web Vitals into the green zone.",
+      p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on OOP PHP (WP_Query, hooks, filters), built custom Gutenberg blocks and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
+      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores, including REST API integrations and VPS/hosting deployment. Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and maximum loading speed.",
       comp1Title: "Custom WordPress & PHP",
-      comp1Desc: "Custom themes from scratch on OOP PHP, custom plugins, WP_Query, REST API, hooks, filters, and third-party integrations.",
-      comp2Title: "Gutenberg & React",
-      comp2Desc: "Custom Gutenberg blocks and patterns with React, ACF Pro, intuitive admin workflows for content management teams.",
-      comp3Title: "Mobile-First & Styling",
-      comp3Desc: "Responsive semantic layout optimized for 90%+ mobile traffic with BEM, SCSS, Tailwind CSS, Vite, and Webpack.",
+      comp1Desc: "Theme development from scratch on OOP PHP, custom plugin development, WP_Query, hooks, and filters. Third-party API integrations.",
+      comp2Title: "Gutenberg & Admin UI",
+      comp2Desc: "Custom Gutenberg blocks and patterns. Flexible admin dashboard setup via ACF Pro, enabling content managers to easily maintain sites independently.",
+      comp3Title: "Mobile-First & Markup",
+      comp3Desc: "Responsive semantic layout (BEM, SCSS, Tailwind CSS) prioritizing mobile traffic (90%+). Rapid project builds using Vite and Webpack.",
       comp4Title: "Deployment, Hosting & SEO",
-      comp4Desc: "CI/CD (GitLab CI, GitHub Actions), VPS hosting deployment (Nginx, SSH), Docker, MySQL, Schema.org, and technical SEO."
+      comp4Desc: "CI/CD setup (GitLab CI, GitHub Actions) and VPS deployment (Nginx, SSH). Docker and MySQL environments. Schema.org implementation and technical SEO."
     },
     skills: {
       title: "Skills",

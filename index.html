@@ -36,7 +36,7 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=32" />
+    <link rel="stylesheet" href="style.css?v=33" />
     <title>Валерия Чернявская — WordPress &amp; Frontend Developer Portfolio</title>
     <meta
       name="description"
@@ -232,302 +232,350 @@
         <section id="skills" class="skills">
           <div class="skills__inner">
             <h2 class="title" data-splitting="chars" data-i18n="skills.title">Навыки</h2>
-            <ul class="skills__list">
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/wordpress.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">WordPress</span>
+            
+            <div class="skills__clusters">
+              <!-- Cluster 1: WordPress & Backend -->
+              <div class="skills__cluster">
+                <div class="skills__cluster-header">
+                  <span class="skills__cluster-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                      <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                      <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                    <span data-i18n="skills.groupWp">WordPress &amp; Backend</span>
+                  </span>
                 </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/php.png"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">PHP</span>
+                <ul class="skills__list">
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/wordpress.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">WordPress</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/php.png"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">PHP</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/woocommerce.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">WooCommerce</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/mysql.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">MySQL</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/rest-api.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">REST API</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Cluster 2: Frontend & UI Engineering -->
+              <div class="skills__cluster">
+                <div class="skills__cluster-header">
+                  <span class="skills__cluster-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span data-i18n="skills.groupFrontend">Frontend &amp; UI Engineering</span>
+                  </span>
                 </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/woocommerce.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">WooCommerce</span>
+                <ul class="skills__list">
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/javascript.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">JavaScript</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/react.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">React</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/typescript.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="60"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">TypeScript</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/html.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">HTML5</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/css.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">CSS3</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/sass.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Sass</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/tailwind.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Tailwind</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/gsap.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">GSAP</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Cluster 3: Tooling & Infrastructure -->
+              <div class="skills__cluster">
+                <div class="skills__cluster-header">
+                  <span class="skills__cluster-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span data-i18n="skills.groupTooling">DevOps &amp; Tooling</span>
+                  </span>
                 </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/mysql.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">MySQL</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/rest-api.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">REST API</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/javascript.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">JavaScript</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/react.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">React</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/typescript.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="60"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">TypeScript</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/html.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">HTML5</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/css.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">CSS3</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/sass.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Sass</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/tailwind.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Tailwind</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/gsap.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">GSAP</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/free-icon-docker-919853.png"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Docker</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/gitlab (1).svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">GitLab CI</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/git.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Git</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/linux.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Linux / SSH</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/vite.png"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Vite</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/webpack-original.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Webpack</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/gulp.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Gulp</span>
-                </div>
-              </li>
-              <li class="skills__list-item">
-                <div class="skills__list-item-inner">
-                  <img
-                    class="skills__item-img"
-                    src="./images/figma.svg"
-                    alt=""
-                    aria-hidden="true"
-                    width="60"
-                    height="62"
-                    loading="lazy"
-                  />
-                  <span class="skills__item-title">Figma</span>
-                </div>
-              </li>
-            </ul>
+                <ul class="skills__list">
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/free-icon-docker-919853.png"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Docker</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/gitlab (1).svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">GitLab CI</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/git.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Git</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/linux.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Linux / SSH</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/vite.png"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Vite</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/webpack-original.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Webpack</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/gulp.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Gulp</span>
+                    </div>
+                  </li>
+                  <li class="skills__list-item">
+                    <div class="skills__list-item-inner">
+                      <img
+                        class="skills__item-img"
+                        src="./images/figma.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="60"
+                        height="62"
+                        loading="lazy"
+                      />
+                      <span class="skills__item-title">Figma</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
         <section id="projects" class="projects">
@@ -638,9 +686,9 @@
               <div class="projects__info">
                 <h3 class="projects__info-title">Cyberpunk Promo</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.cyberpunk.desc">
-                  Кастомная тема WordPress с чистой структурой шаблонов на PHP (WP_Query, хуки, ACF Pro), слайдерами Swiper, кастомайзером темы и экосистемой авторских плагинов.
+                  Промо-лендинг с неоновым киберпанк-интерфейсом: кастомные параллакс-слайдеры Swiper, интерактивные формы, звуковые эффекты и адаптивная семантическая вёрстка по БЭМ.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.cyberpunk.tech">WordPress, PHP, ACF Pro, SCSS, JavaScript (ES6+), Swiper</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.cyberpunk.tech">JavaScript (ES6+), SCSS, Swiper, Mobile-First, БЭМ</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
@@ -657,8 +705,8 @@
                     class="link button"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/Lelyaler/Cyberpunk-wordpress"
-                    aria-label="Исходный код темы WordPress для Cyberpunk Promo на GitHub"
+                    href="https://github.com/Lelyaler/Cyberpunk-only-html-css-js-"
+                    aria-label="Исходный код проекта Cyberpunk Promo на GitHub"
                     data-i18n="projects.githubBtn"
                     data-i18n-attr="aria-label:projects.cards.cyberpunk.githubAria"
                   >
@@ -865,9 +913,9 @@
               <div class="projects__info">
                 <h3 class="projects__info-title">Sneakmax Sneaker Store</h3>
                 <p class="projects__info-desc" data-i18n="projects.cards.sneakmax.desc">
-                  Интернет-магазин кроссовок с интерактивным квизом подбора обуви, AJAX-каталогом, корзиной и интеграцией в кастомную WooCommerce-тему (HPOS, заказ в 1 клик).
+                  Фронтенд интернет-магазина обуви: интерактивный квиз подбора кроссовок, динамическая фильтрация цены на noUiSlider, модальное быстрое превью и корзина.
                 </p>
-                <span class="projects__info-tech" data-i18n="projects.cards.sneakmax.tech">WooCommerce, PHP 8+, JavaScript (ES6+), Swiper, noUiSlider</span>
+                <span class="projects__info-tech" data-i18n="projects.cards.sneakmax.tech">JavaScript (ES6+), SCSS, Swiper, noUiSlider, БЭМ</span>
                 <div class="projects__link-container">
                   <a
                     class="link button button-yellow"
@@ -1100,7 +1148,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.theme.title">Cyberpunk Promo Theme</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.theme.desc">
-                Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и Google PageSpeed 98/100.
+                Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без тяжелых конструкторов. Управление стилями через WP Theme Customizer, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и 98+ баллов по Google PageSpeed.
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">WordPress 6.x</span>
@@ -1140,7 +1188,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.sneakmaxTheme.title">Sneakmax WooCommerce Theme</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.sneakmaxTheme.desc">
-                Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Динамический AJAX-каталог с фильтрами по цене и полу, быстрый просмотр в модальном окне, интерактивный квиз подбора обуви и поддержка архитектуры HPOS.
+                Кастомная тема интернет-магазина на чистом WooCommerce. Поддержка High-Performance Order Storage (HPOS), динамический AJAX-каталог с фильтрами по цене и характеристикам, модальный просмотр и быстрый заказ.
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">WordPress 6.x</span>
@@ -1180,7 +1228,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.legalTheme.title">Legal Corporate Theme</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.legalTheme.desc">
-                Корпоративная тема для юридических фирм и адвокатских бюро со встроенными нативными блоками Gutenberg (Block API v3). Баннер с фоновым слайдером и модальным окном консультации, сетка юридических практик, таймлайн ведения дел, показатели доверия, слайдер отзывов на Swiper и аккордеон FAQ с автоматической микроразметкой Schema.org FAQPage JSON-LD.
+                Корпоративная тема со встроенными нативными блоками Gutenberg (Block API v3). Поддержка прямого RichText редактирования прямо на странице, адаптивная карусель отзывов на Swiper и автогенерация Schema.org FAQPage JSON-LD.
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">WordPress 6.x</span>
@@ -1202,10 +1250,20 @@
                 <span class="wp-card__window-dot wp-card__window-dot--green"></span>
                 <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/wp-cookie-notice/</span>
               </div>
-              <div class="wp-card__code-banner" aria-hidden="true">
-                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'wp_enqueue_scripts'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'enqueue'</span>]);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">register_setting</span>(<span class="wp-code-str">'wp_cookie_group'</span>, <span class="wp-code-str">'wp_cookie_options'</span>);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">add_settings_field</span>(<span class="wp-code-str">'banner_bg'</span>, <span class="wp-code-str">'Color'</span>, <span class="wp-code-var">...</span>);</div>
+              <div class="wp-card__mockup wp-card__mockup--cookie" aria-hidden="true">
+                <div class="wp-mockup-bar">
+                  <span class="wp-mockup-tag">Settings API • CLS 0</span>
+                  <span class="wp-mockup-status">Vanilla JS 1.2KB</span>
+                </div>
+                <div class="wp-mockup-cookie-box">
+                  <div class="wp-mockup-cookie-text">
+                    <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+                  </div>
+                  <div class="wp-mockup-cookie-actions">
+                    <span class="wp-mockup-cookie-btn">Принять</span>
+                    <span class="wp-mockup-cookie-link">Политика</span>
+                  </div>
+                </div>
               </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--plugin" data-i18n="wpSection.pluginBadge">Кастомный плагин</span>
@@ -1220,7 +1278,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.cookieNotice.title">WP Cookie Notice</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.cookieNotice.desc">
-                Легковесный плагин WordPress для отображения уведомления о cookie (GDPR). Управление через нативный Settings API, колорпикер wp-color-picker, чистый Vanilla JS без jQuery (~1.2 KB) и нулевой Layout Shift (CLS).
+                Легковесный плагин уведомления о cookie (GDPR compliance). Страница настроек на нативном WordPress Settings API, встроенный колорпикер wp-color-picker, чистый Vanilla JS (~1.2 KB) и нулевой сдвиг верстки (CLS 0).
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">Plugin API</span>
@@ -1241,10 +1299,25 @@
                 <span class="wp-card__window-dot wp-card__window-dot--green"></span>
                 <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/custom-meta-tags/</span>
               </div>
-              <div class="wp-card__code-banner" aria-hidden="true">
-                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'wp_head'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'render_meta_tags'</span>], 1);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">apply_filters</span>(<span class="wp-code-str">'custom_meta_tags_output'</span>, <span class="wp-code-var">$meta_data</span>);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">echo</span> <span class="wp-code-str">'&lt;script type="application/ld+json"&gt;'</span>;</div>
+              <div class="wp-card__mockup wp-card__mockup--seo" aria-hidden="true">
+                <div class="wp-mockup-bar">
+                  <span class="wp-mockup-tag">SEO Meta Suite</span>
+                  <span class="wp-mockup-status">wp_head Hook</span>
+                </div>
+                <div class="wp-mockup-seo-box">
+                  <div class="wp-mockup-seo-row">
+                    <span class="wp-mockup-label">title:</span>
+                    <span class="wp-mockup-val">Title &amp; OpenGraph Snippet</span>
+                  </div>
+                  <div class="wp-mockup-seo-row">
+                    <span class="wp-mockup-label">robots:</span>
+                    <span class="wp-mockup-val wp-mockup-val--green">index, follow, max-snippet</span>
+                  </div>
+                  <div class="wp-mockup-seo-row">
+                    <span class="wp-mockup-label">schema:</span>
+                    <span class="wp-mockup-val wp-mockup-val--blue">application/ld+json ✓</span>
+                  </div>
+                </div>
               </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--seo" data-i18n="wpSection.seoBadge">SEO-плагин</span>
@@ -1258,7 +1331,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.metaTags.title">Custom Meta Tags Manager</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.metaTags.desc">
-                Универсальный плагин WordPress для управления мета-тегами сайта. Гибкая настройка title, description, поисковой индексации (noindex, follow), canonical, hreflang, OpenGraph и микроразметки JSON-LD через собственную страницу в меню админки и хук wp_head.
+                Плагин технического SEO и микроразметки. Управление директивами индексации (noindex/follow), canonical, hreflang, OpenGraph, Twitter Cards и генерация валидного JSON-LD через хук wp_head.
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">WordPress Plugin</span>
@@ -1279,10 +1352,22 @@
                 <span class="wp-card__window-dot wp-card__window-dot--green"></span>
                 <span class="wp-card__window-title wp-card__window-title--code">wp-content/plugins/wp-multigeo-engine/</span>
               </div>
-              <div class="wp-card__code-banner" aria-hidden="true">
-                <div class="wp-card__code-line"><span class="wp-code-keyword">register_rest_route</span>(<span class="wp-code-str">'multigeo/v1'</span>, <span class="wp-code-str">'/sync'</span>, [<span class="wp-code-var">...</span>]);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">add_action</span>(<span class="wp-code-str">'template_redirect'</span>, [<span class="wp-code-var">$this</span>, <span class="wp-code-str">'geo_target_route'</span>]);</div>
-                <div class="wp-card__code-line"><span class="wp-code-keyword">do_action</span>(<span class="wp-code-str">'multigeo_pbn_replicate'</span>, <span class="wp-code-var">$target_geo</span>);</div>
+              <div class="wp-card__mockup wp-card__mockup--multigeo" aria-hidden="true">
+                <div class="wp-mockup-bar">
+                  <span class="wp-mockup-tag">MultiGEO / PBN Engine</span>
+                  <span class="wp-mockup-status">REST API v1</span>
+                </div>
+                <div class="wp-mockup-geo-grid">
+                  <div class="wp-mockup-geo-node">
+                    <span class="wp-mockup-flag">🇷🇺 RU</span>
+                    <span class="wp-mockup-route">YandexBot ➔ Root</span>
+                  </div>
+                  <div class="wp-mockup-geo-arrow">⇄</div>
+                  <div class="wp-mockup-geo-node">
+                    <span class="wp-mockup-flag">🇧🇷 PT-BR</span>
+                    <span class="wp-mockup-route">Googlebot ➔ /br/</span>
+                  </div>
+                </div>
               </div>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--multigeo">iGaming / MultiGEO</span>
@@ -1296,7 +1381,7 @@
               </div>
               <h3 class="wp-card__title" data-i18n="wpSection.cards.multigeo.title">MultiGEO & Satellite Engine</h3>
               <p class="wp-card__desc" data-i18n="wpSection.cards.multigeo.desc">
-                Модуль локализации и управления сателлитами. Автоматическое клонирование посадочных страниц и полей ACF Pro под любые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN-сеток.
+                Модуль локализации и управления сателлитными сетками. Автоматическое клонирование посадочных страниц под целевые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN.
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">OOP PHP</span>

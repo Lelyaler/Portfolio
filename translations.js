@@ -22,7 +22,7 @@ const translations = {
       roles: [
         "WordPress & PHP разработчик",
         "Gutenberg & Frontend специалист",
-        "Core Web Vitals & SEO эксперт"
+        "Оптимизация Core Web Vitals & SEO"
       ],
       projectsBtn: "Проекты",
       contactsBtn: "Контакты"
@@ -42,7 +42,10 @@ const translations = {
       comp4Desc: "CI/CD (GitLab CI, GitHub Actions), деплой на VPS (Nginx, SSH), Docker, MySQL, Schema.org и техническое SEO."
     },
     skills: {
-      title: "Навыки"
+      title: "Навыки",
+      groupWp: "WordPress & Backend",
+      groupFrontend: "Frontend & Интерфейсы",
+      groupTooling: "Инструменты & Деплой"
     },
     projects: {
       title: "Проекты",
@@ -52,10 +55,10 @@ const translations = {
       expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         cyberpunk: {
-          desc: "Кастомная тема WordPress с чистой структурой шаблонов на PHP (WP_Query, хуки, ACF Pro), слайдерами Swiper, кастомайзером темы и экосистемой авторских плагинов.",
-          tech: "WordPress, PHP, ACF Pro, SCSS, JavaScript (ES6+), Swiper",
+          desc: "Промо-лендинг с неоновым киберпанк-интерфейсом: кастомные параллакс-слайдеры Swiper, интерактивные формы, звуковые эффекты и адаптивная семантическая вёрстка по БЭМ.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, Mobile-First, БЭМ",
           visitAria: "Посетить сайт проекта Cyberpunk Promo",
-          githubAria: "Исходный код темы WordPress для Cyberpunk Promo на GitHub"
+          githubAria: "Исходный код проекта Cyberpunk Promo на GitHub"
         },
         animation: {
           desc: "Промо-лендинг для iGaming и партнёрских программ с плавной CSS-анимацией слота, интерактивным калькулятором дохода и мультиязычностью.",
@@ -64,8 +67,8 @@ const translations = {
           githubAria: "Исходный код проекта House of Gambling на GitHub"
         },
         sneakmax: {
-          desc: "Интернет-магазин кроссовок с интерактивным квизом подбора обуви, AJAX-каталогом, корзиной и интеграцией в кастомную WooCommerce-тему (HPOS, заказ в 1 клик).",
-          tech: "WooCommerce, PHP 8+, JavaScript (ES6+), Swiper, noUiSlider",
+          desc: "Фронтенд интернет-магазина: интерактивный квиз подбора кроссовок, динамическая фильтрация с noUiSlider, модальные окна быстрого просмотра и корзина.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, noUiSlider, БЭМ",
           visitAria: "Посетить сайт проекта Sneakmax Sneaker Store",
           githubAria: "Исходный код проекта Sneakmax Sneaker Store на GitHub"
         },
@@ -134,7 +137,7 @@ const translations = {
       cards: {
         theme: {
           title: "Cyberpunk Promo Theme",
-          desc: "Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без конструкторов (Elementor). Кастомайзер темы (WP Theme Customizer) для изменения цветов из админки, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и Google PageSpeed 98/100.",
+          desc: "Кастомная тема WordPress с чистой архитектурой шаблонов на PHP без тяжелых конструкторов. Управление стилями через WP Theme Customizer, гибкие поля ACF Pro с автосинхронизацией (Local JSON) и 98+ баллов по Google PageSpeed.",
           tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
@@ -142,7 +145,7 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Тема",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Полнофункциональная кастомная тема интернет-магазина оригинальных кроссовок на WooCommerce без сторонних конструкторов. Динамический AJAX-каталог с фильтрами по цене и полу, быстрый просмотр в модальном окне, интерактивный квиз подбора обуви и поддержка архитектуры HPOS.",
+          desc: "Кастомная тема интернет-магазина на чистом WooCommerce. Поддержка High-Performance Order Storage (HPOS), динамический AJAX-каталог с фильтрами по цене и характеристикам, модальный просмотр и быстрый заказ.",
           tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
@@ -150,26 +153,26 @@ const translations = {
         legalTheme: {
           badge: "Gutenberg Тема",
           title: "Legal Corporate Theme",
-          desc: "Корпоративная тема для юридических фирм и адвокатских бюро со встроенными нативными блоками Gutenberg (Block API v3). Баннер с фоновым слайдером и модальным окном консультации, сетка юридических практик, таймлайн ведения дел, показатели доверия, слайдер отзывов на Swiper и аккордеон FAQ с автоматической микроразметкой Schema.org FAQPage JSON-LD.",
+          desc: "Корпоративная тема со встроенными нативными блоками Gutenberg (Block API v3). Поддержка прямого RichText редактирования прямо на странице, адаптивная карусель отзывов на Swiper и автогенерация Schema.org FAQPage JSON-LD.",
           tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
         cookieNotice: {
           title: "WP Cookie Notice",
-          desc: "Легковесный плагин WordPress для отображения уведомления о cookie (GDPR). Управление через нативный Settings API, колорпикер wp-color-picker, чистый Vanilla JS без jQuery (~1.2 KB) и нулевой Layout Shift (CLS).",
+          desc: "Легковесный плагин уведомления о cookie (GDPR compliance). Страница настроек на нативном WordPress Settings API, встроенный колорпикер wp-color-picker, чистый Vanilla JS (~1.2 KB) и нулевой сдвиг верстки (CLS 0).",
           tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
           githubBtn: "GitHub"
         },
         metaTags: {
           title: "Custom Meta Tags Manager",
-          desc: "Универсальный плагин WordPress для управления мета-тегами сайта. Гибкая настройка title, description, поисковой индексации (noindex, follow), canonical, hreflang, OpenGraph и микроразметки JSON-LD через собственную страницу в меню админки и хук wp_head.",
+          desc: "Плагин технического SEO и микроразметки. Управление директивами индексации (noindex/follow), canonical, hreflang, OpenGraph, Twitter Cards и генерация валидного JSON-LD через хук wp_head.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },
         multigeo: {
           title: "MultiGEO & Satellite Engine",
-          desc: "Модуль локализации и управления сателлитами. Автоматическое клонирование посадочных страниц и полей ACF Pro под любые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN-сеток.",
+          desc: "Модуль локализации и управления сателлитными сетками. Автоматическое клонирование посадочных страниц под целевые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
           githubBtn: "GitHub"
         },
@@ -254,7 +257,10 @@ const translations = {
       comp4Desc: "CI/CD (GitLab CI, GitHub Actions), VPS hosting deployment (Nginx, SSH), Docker, MySQL, Schema.org, and technical SEO."
     },
     skills: {
-      title: "Skills"
+      title: "Skills",
+      groupWp: "WordPress & Backend",
+      groupFrontend: "Frontend & UI Engineering",
+      groupTooling: "DevOps & Tooling"
     },
     projects: {
       title: "Projects",
@@ -264,10 +270,10 @@ const translations = {
       expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         cyberpunk: {
-          desc: "Custom WordPress theme with clean PHP template architecture (WP_Query, hooks, ACF Pro), Swiper sliders, Theme Customizer, and custom companion plugins.",
-          tech: "WordPress, PHP, ACF Pro, SCSS, JavaScript (ES6+), Swiper",
+          desc: "Interactive promo landing page with a cyberpunk aesthetic: custom Swiper parallax sliders, sound effects, modal popups, and responsive BEM markup.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, Mobile-First, BEM",
           visitAria: "Visit Cyberpunk Promo website",
-          githubAria: "Source code of Cyberpunk WordPress theme on GitHub"
+          githubAria: "Source code of Cyberpunk Promo on GitHub"
         },
         animation: {
           desc: "iGaming & affiliate promo landing page featuring smooth CSS slot animations, an interactive revenue calculator, and multi-language support.",
@@ -276,8 +282,8 @@ const translations = {
           githubAria: "Source code of House of Gambling on GitHub"
         },
         sneakmax: {
-          desc: "Sneaker e-commerce store with an interactive sizing quiz, AJAX catalog, cart, and integration into a custom WooCommerce theme (HPOS, 1-click checkout).",
-          tech: "WooCommerce, PHP 8+, JavaScript (ES6+), Swiper, noUiSlider",
+          desc: "E-commerce store frontend: interactive sneaker sizing quiz, dynamic noUiSlider price filtering, modal quick view, and cart drawer.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, noUiSlider, BEM",
           visitAria: "Visit Sneakmax Sneaker Store website",
           githubAria: "Source code of Sneakmax Sneaker Store on GitHub"
         },
@@ -346,7 +352,7 @@ const translations = {
       cards: {
         theme: {
           title: "Cyberpunk Promo Theme",
-          desc: "Custom WordPress theme built from scratch with pure PHP (zero heavy page builders). Template hierarchy (WP_Query, hooks), Theme Customizer API for live UI color control, ACF Pro with Local JSON sync, and 98/100 Google PageSpeed score.",
+          desc: "Custom WordPress theme built with pure PHP template hierarchy (zero heavy builders). Real-time UI styling via WP Theme Customizer API, ACF Pro with Local JSON synchronization, and 98+ Google PageSpeed score.",
           tech: "WordPress 6.x, PHP 8+, ACF Pro, Customizer API, WebP",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
@@ -354,7 +360,7 @@ const translations = {
         sneakmaxTheme: {
           badge: "WooCommerce Theme",
           title: "Sneakmax WooCommerce Theme",
-          desc: "Full-featured custom sneaker e-commerce theme for WooCommerce built without page builders. Dynamic AJAX catalog with price & attribute filters, modal quick view, interactive sizing quiz, and full WooCommerce HPOS architecture support.",
+          desc: "Full-featured custom e-commerce theme on pure WooCommerce. High-Performance Order Storage (HPOS) ready, dynamic AJAX product catalog with instant price filters, and modal quick view.",
           tech: "WordPress 6.x, WooCommerce, HPOS Ready, AJAX Catalog, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
@@ -362,26 +368,26 @@ const translations = {
         legalTheme: {
           badge: "Gutenberg Theme",
           title: "Legal Corporate Theme",
-          desc: "Corporate theme for law firms and legal agencies powered by native Gutenberg blocks (Block API v3). Consultation hero banner with background slider, practice areas grid, case workflow timeline, trust metrics, Swiper testimonials carousel, and accessible FAQ accordion with automated Schema.org FAQPage JSON-LD.",
+          desc: "Corporate theme powered by 6 native Gutenberg blocks (Block API v3). Features direct inline RichText editing on the page, Swiper testimonials slider, and automated Schema.org FAQPage JSON-LD markup.",
           tech: "WordPress 6.x, Block API v3, Gutenberg, JSON-LD Schema, PHP 8+",
           visitBtn: "Live Demo",
           githubBtn: "GitHub"
         },
         cookieNotice: {
           title: "WP Cookie Notice",
-          desc: "Lightweight WordPress plugin for GDPR cookie notice compliance. Admin panel powered by native WordPress Settings API, built-in wp-color-picker, zero jQuery (~1.2 KB Vanilla JS), and zero Cumulative Layout Shift.",
+          desc: "Lightweight GDPR cookie consent plugin. Admin options built with native WordPress Settings API, integrated wp-color-picker, Vanilla JS (~1.2 KB), and zero Cumulative Layout Shift.",
           tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3",
           githubBtn: "GitHub"
         },
         metaTags: {
           title: "Custom Meta Tags Manager",
-          desc: "Universal WordPress plugin for technical SEO, OpenGraph, Twitter Cards, search indexing directives, canonical URLs, and JSON-LD structured data management with dedicated admin panel.",
+          desc: "Technical SEO plugin for WordPress. Full control over indexing directives (noindex/follow), canonical tags, hreflang, OpenGraph, Twitter Cards, and valid JSON-LD schema via wp_head.",
           tech: "WordPress Plugin API, PHP, SEO, Admin Menu, OpenGraph",
           githubBtn: "GitHub"
         },
         multigeo: {
           title: "MultiGEO & Satellite Engine",
-          desc: "Satellite management and multi-GEO localization engine. Automated landing page and ACF Pro field replication for targeted regions, differentiated canonical routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
+          desc: "Multi-region localization and satellite management engine. Automated landing page replication across target GEOs, differentiated bot routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting",
           githubBtn: "GitHub"
         },

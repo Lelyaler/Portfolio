@@ -40,7 +40,7 @@ function getPhraseArray(lang = currentLang) {
     ? [
         "WordPress & PHP разработчик",
         "Gutenberg & Frontend специалист",
-        "Core Web Vitals & SEO эксперт",
+        "Оптимизация Core Web Vitals & SEO",
       ]
     : [
         "WordPress & PHP Developer",
@@ -358,9 +358,10 @@ if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
           opacity: 1,
           ease: "power2.inOut",
         });
-        gsap.to(".skills__list", {
+        gsap.to(".skills__cluster, .skills__list", {
           y: 0,
           opacity: 1,
+          stagger: 0.12,
           ease: "circ.out",
           duration: 0.8,
         });

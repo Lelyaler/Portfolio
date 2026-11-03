@@ -30,7 +30,7 @@ const translations = {
       title: "Обо мне",
       p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Создаю быстрые и надежные веб-проекты: от кастомных тем и плагинов на ООП PHP до e-commerce решений на WooCommerce. Разрабатываю блоки Gutenberg для удобства контент-менеджеров и уделяю особое внимание технической оптимизации — ускоряю сайты и вывожу метрики Core Web Vitals в «зеленую зону».",
       p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
-      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на VPS и хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
+      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
       comp1Title: "Кастомный WordPress & PHP",
       comp1Desc: "Разработка тем с нуля на ООП PHP, написание плагинов, работа с WP_Query, хуками и фильтрами. Интеграция сторонних сервисов.",
       comp2Title: "Gutenberg & Админка",
@@ -235,7 +235,7 @@ const translations = {
       title: "About Me",
       p1: "WordPress & Frontend Developer with 4 years of commercial experience. Crafting fast and reliable web solutions: from custom themes and OOP PHP plugins to WooCommerce e-commerce platforms. Building custom Gutenberg blocks for streamlined content editing and prioritizing performance — accelerating load times and bringing Core Web Vitals into the green zone.",
       p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on OOP PHP (WP_Query, hooks, filters), built custom Gutenberg blocks and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
-      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores, including REST API integrations and VPS/hosting deployment. Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and maximum loading speed.",
+      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores, including REST API integrations and hosting deployment. Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and maximum loading speed.",
       comp1Title: "Custom WordPress & PHP",
       comp1Desc: "Theme development from scratch on OOP PHP, custom plugin development, WP_Query, hooks, and filters. Third-party API integrations.",
       comp2Title: "Gutenberg & Admin UI",
@@ -410,3 +410,10 @@ const translations = {
     }
   }
 };
+
+if (typeof window !== "undefined") {
+  window.translations = translations;
+}
+if (typeof module !== "undefined") {
+  module.exports = translations;
+}

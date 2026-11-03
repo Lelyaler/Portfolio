@@ -7,9 +7,17 @@
     <script>
       (function () {
         try {
-          var saved = localStorage.getItem('portfolio_lang');
-          var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-          var lang = saved || (navLang.toLowerCase().startsWith('ru') ? 'ru' : 'en');
+          var params = new URLSearchParams(window.location.search);
+          var urlLang = params.get('lang');
+          var lang;
+          if (urlLang) {
+            var lower = urlLang.toLowerCase();
+            lang = (lower === 'en' || lower === 'eng') ? 'en' : 'ru';
+          } else {
+            var saved = localStorage.getItem('portfolio_lang');
+            var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+            lang = saved || (navLang.toLowerCase().startsWith('ru') ? 'ru' : 'en');
+          }
           document.documentElement.lang = lang;
           window.__initialLang = lang;
         } catch (e) {
@@ -196,7 +204,7 @@
               Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.
             </p>
             <p class="about__description" data-splitting="words" data-i18n="about.p3">
-              Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на VPS и хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.
+              Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.
             </p>
             <div class="about__competencies">
               <div class="about__competency-card">
@@ -1338,7 +1346,7 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <script defer src="translations.js?v=30"></script>
-    <script defer src="main.js?v=30"></script>
+    <script defer src="translations.js?v=45"></script>
+    <script defer src="main.js?v=45"></script>
   </body>
 </html>

@@ -5,6 +5,15 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
 // --- i18n Internationalization ---
 function getInitialLanguage() {
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
+    if (urlLang) {
+      const lower = urlLang.toLowerCase();
+      if (lower === "ru" || lower === "en") return lower;
+      if (lower === "eng") return "en";
+    }
+  } catch (e) {}
   if (window.__initialLang) return window.__initialLang;
   try {
     const saved = localStorage.getItem("portfolio_lang");
@@ -19,7 +28,8 @@ function getInitialLanguage() {
 let currentLang = getInitialLanguage();
 
 function getTranslation(path, lang = currentLang) {
-  const dict = window.translations && window.translations[lang];
+  const dict = (typeof window !== "undefined" && window.translations && window.translations[lang])
+    || (typeof translations !== "undefined" && translations[lang]);
   if (!dict) return null;
   return path.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), dict);
 }
@@ -205,7 +215,9 @@ function applyTranslations(lang, isDynamicChange = false) {
 
   // Dynamic language switch updates Splitting & ScrollTrigger
   if (isDynamicChange && typeof Splitting !== "undefined") {
-    Splitting();
+    try {
+      Splitting({ target: "[data-splitting]", force: true });
+    } catch (e) {}
     document.querySelectorAll(".char, .word").forEach((el) => {
       el.style.opacity = "1";
     });
@@ -237,6 +249,9 @@ document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
       currentLang = selectedLang;
       try {
         localStorage.setItem("portfolio_lang", currentLang);
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", currentLang);
+        window.history.replaceState({}, "", url.toString());
       } catch (e) {}
       applyTranslations(currentLang, true);
     }

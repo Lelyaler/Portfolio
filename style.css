@@ -1507,6 +1507,47 @@ section[id] {
   font-size: 0.875rem;
 }
 
+.projects__more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
+
+.projects__expand-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  background: #141417;
+  color: #e5e5e5;
+  border: 1px solid #282832;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.projects__expand-btn:hover {
+  background: #1c1c22;
+  border-color: #fdca40;
+  color: #fdca40;
+  transform: translateY(-2px);
+}
+
+.projects__expand-btn-icon {
+  transition: transform 0.3s ease;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.projects__expand-btn.is-open .projects__expand-btn-icon {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 1024px) {
   .wp-solutions__grid {
     grid-template-columns: repeat(2, 1fr);

@@ -53,6 +53,8 @@ const translations = {
       filterFrontend: "Фронтенд & Интерфейсы",
       visitBtn: "Live Demo",
       githubBtn: "GitHub",
+      expandOpen: "Свернуть",
+      expandClosed: (count) => `Показать все проекты (ещё ${count})`,
       cards: {
         cyberpunkTheme: {
           badge: "Кастомная тема",
@@ -256,6 +258,8 @@ const translations = {
       filterFrontend: "Frontend & Interfaces",
       visitBtn: "Live Demo",
       githubBtn: "GitHub",
+      expandOpen: "Collapse",
+      expandClosed: (count) => `Show all projects (${count} more)`,
       cards: {
         cyberpunkTheme: {
           badge: "Custom Theme",

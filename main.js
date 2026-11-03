@@ -183,14 +183,14 @@ function applyTranslations(lang, isDynamicChange = false) {
 
   // Project archive button label
   const projectsExpandBtn = document.getElementById("projects-expand-btn");
-  const extraCards = document.querySelectorAll(".projects__card--extra");
+  const extraCards = document.querySelectorAll(".wp-card--extra");
   if (projectsExpandBtn && extraCards.length) {
     const isProjOpen = projectsExpandBtn.classList.contains("is-open");
     const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
     if (textEl) {
       const closedFn = getTranslation("projects.expandClosed", lang);
       textEl.textContent = isProjOpen
-        ? getTranslation("projects.expandOpen", lang)
+        ? (getTranslation("projects.expandOpen", lang) || "Свернуть")
         : (typeof closedFn === "function" ? closedFn(extraCards.length) : `Показать все проекты (ещё ${extraCards.length})`);
     }
   }
@@ -525,6 +525,10 @@ document.querySelectorAll(".about__copy-btn").forEach((btn) => {
 
 const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
 const wpCards = document.querySelectorAll(".wp-card[data-category]");
+const projectsExpandBtn = document.getElementById("projects-expand-btn");
+const projectsMoreContainer = document.querySelector(".projects__more-container");
+let isProjectsOpen = false;
+const INITIAL_LIMIT = 9;
 
 function updateLoneCards() {
   if (!wpCards.length) return;
@@ -544,6 +548,68 @@ function updateLoneCards() {
   }
 }
 
+function updateExpandButton(categoryCards) {
+  if (!projectsExpandBtn || !projectsMoreContainer) return;
+  const extraCount = categoryCards.length - INITIAL_LIMIT;
+  if (extraCount <= 0) {
+    projectsMoreContainer.style.display = "none";
+    return;
+  }
+
+  projectsMoreContainer.style.display = "flex";
+  projectsExpandBtn.classList.toggle("is-open", isProjectsOpen);
+  const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
+  if (textEl) {
+    const closedFn = getTranslation("projects.expandClosed");
+    textEl.textContent = isProjectsOpen
+      ? (getTranslation("projects.expandOpen") || "Свернуть")
+      : (typeof closedFn === "function" ? closedFn(extraCount) : `Показать все проекты (ещё ${extraCount})`);
+  }
+}
+
+function applyCategoryFilter(filter, animate = false) {
+  const categoryCards = Array.from(wpCards).filter((c) => filter === "all" || c.getAttribute("data-category") === filter);
+
+  wpCards.forEach((card) => {
+    const cat = card.getAttribute("data-category");
+    const matches = filter === "all" || cat === filter;
+    if (!matches) {
+      card.classList.add("is-hidden");
+    }
+  });
+
+  let visibleCount = 0;
+  categoryCards.forEach((card, index) => {
+    const isExtra = index >= INITIAL_LIMIT;
+    card.classList.toggle("wp-card--extra", isExtra);
+
+    if (isExtra && !isProjectsOpen) {
+      card.classList.add("is-hidden");
+    } else {
+      const wasHidden = card.classList.contains("is-hidden");
+      card.classList.remove("is-hidden");
+      if (animate && wasHidden && typeof gsap !== "undefined") {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.35, delay: (visibleCount % 3) * 0.05, ease: "power2.out" }
+        );
+      } else if (!animate) {
+        card.style.opacity = "1";
+        card.style.transform = "none";
+      }
+      visibleCount++;
+    }
+  });
+
+  updateLoneCards();
+  updateExpandButton(categoryCards);
+
+  if (typeof ScrollTrigger !== "undefined") {
+    setTimeout(() => ScrollTrigger.refresh(), 200);
+  }
+}
+
 if (wpTabBtns.length && wpCards.length) {
   wpTabBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -554,36 +620,33 @@ if (wpTabBtns.length && wpCards.length) {
         b.setAttribute("aria-selected", isActive ? "true" : "false");
       });
 
-      let visibleCount = 0;
-      wpCards.forEach((card) => {
-        const cat = card.getAttribute("data-category");
-        const shouldShow = filter === "all" || cat === filter;
-        if (shouldShow) {
-          card.classList.remove("is-hidden");
-          if (typeof gsap !== "undefined") {
-            gsap.fromTo(
-              card,
-              { opacity: 0, y: 15 },
-              { opacity: 1, y: 0, duration: 0.35, delay: visibleCount * 0.04, ease: "power2.out" }
-            );
-          } else {
-            card.style.opacity = "1";
-            card.style.transform = "none";
-          }
-          visibleCount++;
-        } else {
-          card.classList.add("is-hidden");
-        }
-      });
-
-      updateLoneCards();
-
-      if (typeof ScrollTrigger !== "undefined") {
-        setTimeout(() => ScrollTrigger.refresh(), 200);
-      }
+      applyCategoryFilter(filter, true);
     });
   });
 
-  updateLoneCards();
+  if (projectsExpandBtn) {
+    projectsExpandBtn.addEventListener("click", () => {
+      isProjectsOpen = !isProjectsOpen;
+      const activeTab = document.querySelector(".wp-tab-btn.is-active");
+      const currentFilter = activeTab ? activeTab.getAttribute("data-filter") : "frontend";
+
+      if (!isProjectsOpen) {
+        const projectsSec = document.getElementById("projects");
+        if (projectsSec) {
+          const rect = projectsSec.getBoundingClientRect();
+          if (rect.top < 0) {
+            projectsSec.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+
+      applyCategoryFilter(currentFilter, isProjectsOpen);
+    });
+  }
+
+  const initialTab = document.querySelector(".wp-tab-btn.is-active");
+  const initialFilter = initialTab ? initialTab.getAttribute("data-filter") : "frontend";
+  applyCategoryFilter(initialFilter, false);
+
   window.addEventListener("resize", updateLoneCards);
 }

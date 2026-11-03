@@ -527,9 +527,26 @@ document.querySelectorAll(".about__copy-btn").forEach((btn) => {
   });
 });
 
-// WordPress Solutions Filter Tabs
 const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
 const wpCards = document.querySelectorAll(".wp-card[data-category]");
+
+function updateLoneCards() {
+  if (!wpCards.length) return;
+  const visibleCards = Array.from(wpCards).filter((c) => !c.classList.contains("is-hidden"));
+  wpCards.forEach((c) => c.classList.remove("is-lone-card"));
+
+  if (!visibleCards.length) return;
+  const width = window.innerWidth;
+  if (width > 1024) {
+    if (visibleCards.length % 3 === 1) {
+      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
+    }
+  } else if (width > 680) {
+    if (visibleCards.length % 2 === 1) {
+      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
+    }
+  }
+}
 
 if (wpTabBtns.length && wpCards.length) {
   wpTabBtns.forEach((btn) => {
@@ -563,9 +580,14 @@ if (wpTabBtns.length && wpCards.length) {
         }
       });
 
+      updateLoneCards();
+
       if (typeof ScrollTrigger !== "undefined") {
         setTimeout(() => ScrollTrigger.refresh(), 200);
       }
     });
   });
+
+  updateLoneCards();
+  window.addEventListener("resize", updateLoneCards);
 }

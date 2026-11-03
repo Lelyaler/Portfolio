@@ -1226,6 +1226,23 @@ section[id] {
   display: none !important;
 }
 
+@media (min-width: 1025px) {
+  .wp-card.is-lone-card,
+  .wp-solutions__grid > .wp-card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  .wp-card.is-lone-card,
+  .wp-solutions__grid > .wp-card:last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+}
+
 .wp-card:hover {
   transform: translateY(-5px);
   border-color: rgba(253, 202, 64, 0.5);

@@ -544,15 +544,12 @@ section[id] {
   text-align: left;
 }
 .about__competency-card {
-  background-color: #121212;
-  border: 0.0625rem solid #262626;
-  border-radius: 0.625rem;
-  padding: 1.25rem;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 .about__competency-card:hover {
-  border-color: rgba(253, 202, 64, 0.4);
-  background-color: #161616;
+  background: transparent;
 }
 .about__competency-title {
   color: #fdca40;

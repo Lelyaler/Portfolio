@@ -90,6 +90,18 @@ const translations = {
           desc: "Модуль локализации и управления сателлитными сетками. Автоматическое клонирование посадочных страниц под целевые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
         },
+        cyberpunkFrontend: {
+          badge: "Promo / Анимации",
+          title: "Cyberpunk Promo",
+          desc: "Промо-лендинг с неоновым киберпанк-интерфейсом: кастомные параллакс-слайдеры Swiper, интерактивные формы, звуковые эффекты и адаптивная семантическая вёрстка по БЭМ.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, Canvas, БЭМ"
+        },
+        sneakmaxFrontend: {
+          badge: "E-Commerce / Quiz",
+          title: "Sneakmax Sneaker Store",
+          desc: "Фронтенд интернет-магазина обуви: интерактивный квиз подбора кроссовок, динамическая фильтрация цены на noUiSlider, модальное быстрое превью и корзина.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, noUiSlider, БЭМ"
+        },
         animation: {
           badge: "iGaming / Анимации",
           title: "House of Gambling",
@@ -256,6 +268,18 @@ const translations = {
           title: "MultiGEO & Satellite Engine",
           desc: "Multi-region localization and satellite management engine. Automated landing page replication across target GEOs, differentiated bot routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
           tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
+        },
+        cyberpunkFrontend: {
+          badge: "Promo / Animations",
+          title: "Cyberpunk Promo",
+          desc: "Interactive promo landing page with a cyberpunk aesthetic: custom Swiper parallax sliders, sound effects, modal popups, and responsive BEM markup.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, Canvas, BEM"
+        },
+        sneakmaxFrontend: {
+          badge: "E-Commerce / Quiz",
+          title: "Sneakmax Sneaker Store",
+          desc: "E-commerce store frontend: interactive sneaker sizing quiz, dynamic noUiSlider price filtering, modal quick view, and cart drawer.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, noUiSlider, BEM"
         },
         animation: {
           badge: "iGaming / Animations",

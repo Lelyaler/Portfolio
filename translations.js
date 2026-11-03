@@ -142,7 +142,7 @@ const translations = {
           badge: "E-Commerce UI",
           title: "Techwear Store",
           desc: "Концепт интернет-магазина технологичной одежды с асимметричной типографикой, фильтрами категорий и интерактивной галереей лукбука.",
-          tech: "JavaScript (ES6+), SCSS, CSS Grid, Swiper"
+          tech: "React 19, TypeScript, Vite, Web Audio API"
         },
         cryptosticky: {
           badge: "Scroll Experience",

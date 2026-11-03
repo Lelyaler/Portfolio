@@ -143,6 +143,12 @@ const translations = {
           title: "Crypto-sticky Platform",
           desc: "Интерфейс крипто-платформы с фиксацией секций при скролле (sticky scroll experience), интерактивными таблицами курсов и анимацией переходов.",
           tech: "CSS Sticky, JavaScript, CSS3 Animations, BEM"
+        },
+        legalFrontend: {
+          badge: "Корпоративный сайт",
+          title: "Legal Services",
+          desc: "Корпоративный сайт юридической компании: адаптивная семантическая вёрстка по БЭМ, слайдер отзывов Swiper, аккордеон FAQ и модальные формы заявок.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, HTML5, БЭМ"
         }
       }
     },
@@ -322,6 +328,12 @@ const translations = {
           title: "Crypto-sticky Platform",
           desc: "Crypto marketplace interface utilizing CSS sticky scroll sections, interactive exchange rate tables, and smooth reveal animations.",
           tech: "CSS Sticky, JavaScript, CSS3 Animations, BEM"
+        },
+        legalFrontend: {
+          badge: "Corporate Website",
+          title: "Legal Services",
+          desc: "Corporate website for a legal practice: responsive semantic BEM markup, Swiper testimonials slider, accessible FAQ accordion, and contact modal forms.",
+          tech: "JavaScript (ES6+), SCSS, Swiper, HTML5, BEM"
         }
       }
     },

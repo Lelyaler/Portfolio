@@ -519,7 +519,7 @@ section[id] {
 }
 
 .about {
-  margin-top: 1rem;
+  margin-top: 4.5rem;
 }
 .about__main {
   width: 100%;
@@ -687,7 +687,8 @@ section[id] {
 
 .contacts {
   text-align: center;
-  padding-top: 6.25rem;
+  margin-top: 4.5rem;
+  padding-top: 0;
   padding-bottom: 4rem;
 }
 .contacts__subtitle {
@@ -723,10 +724,14 @@ section[id] {
   opacity: 0;
 }
 
+.skills {
+  margin-top: 4.5rem;
+}
+
 .skills__inner {
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 4.25rem;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .skills__list {
   display: grid;
@@ -904,9 +909,15 @@ section[id] {
   html {
     font-size: clamp(15px, 2.3vw, 16px);
   }
+  .about,
+  .skills,
+  .wp-solutions,
+  .contacts {
+    margin-top: 3.25rem;
+  }
   .skills__inner {
-    padding-top: 1.75rem;
-    padding-bottom: 3rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .skills__list {
     grid-template-columns: repeat(3, 1fr);
@@ -964,9 +975,15 @@ section[id] {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .about,
+  .skills,
+  .wp-solutions,
+  .contacts {
+    margin-top: 2.75rem;
+  }
   .skills__inner {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .skills__list {
     grid-template-columns: repeat(3, 1fr);
@@ -1070,8 +1087,8 @@ section[id] {
 /* WordPress Solutions Section */
 .wp-solutions {
   text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 3.5rem;
+  margin-top: 4.5rem;
+  margin-bottom: 0;
 }
 
 .wp-solutions__header {

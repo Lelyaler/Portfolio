@@ -5,6 +5,15 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
 // --- i18n Internationalization ---
 function getInitialLanguage() {
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
+    if (urlLang) {
+      const lower = urlLang.toLowerCase();
+      if (lower === "ru" || lower === "en") return lower;
+      if (lower === "eng") return "en";
+    }
+  } catch (e) {}
   if (window.__initialLang) return window.__initialLang;
   try {
     const saved = localStorage.getItem("portfolio_lang");
@@ -19,7 +28,8 @@ function getInitialLanguage() {
 let currentLang = getInitialLanguage();
 
 function getTranslation(path, lang = currentLang) {
-  const dict = window.translations && window.translations[lang];
+  const dict = (typeof window !== "undefined" && window.translations && window.translations[lang])
+    || (typeof translations !== "undefined" && translations[lang]);
   if (!dict) return null;
   return path.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), dict);
 }
@@ -137,11 +147,6 @@ function applyTranslations(lang, isDynamicChange = false) {
     resumeBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
   }
 
-  // Footer resume link
-  const footerResumeLink = document.querySelector(".footer__resume-link");
-  if (footerResumeLink) {
-    footerResumeLink.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-  }
 
   // Contact resume item
   const contactResumeLink = document.querySelector(".about__contacts-resume-link");
@@ -188,14 +193,14 @@ function applyTranslations(lang, isDynamicChange = false) {
 
   // Project archive button label
   const projectsExpandBtn = document.getElementById("projects-expand-btn");
-  const extraCards = document.querySelectorAll(".projects__card--extra");
+  const extraCards = document.querySelectorAll(".wp-card--extra");
   if (projectsExpandBtn && extraCards.length) {
     const isProjOpen = projectsExpandBtn.classList.contains("is-open");
     const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
     if (textEl) {
       const closedFn = getTranslation("projects.expandClosed", lang);
       textEl.textContent = isProjOpen
-        ? getTranslation("projects.expandOpen", lang)
+        ? (getTranslation("projects.expandOpen", lang) || "Свернуть")
         : (typeof closedFn === "function" ? closedFn(extraCards.length) : `Показать все проекты (ещё ${extraCards.length})`);
     }
   }
@@ -210,7 +215,9 @@ function applyTranslations(lang, isDynamicChange = false) {
 
   // Dynamic language switch updates Splitting & ScrollTrigger
   if (isDynamicChange && typeof Splitting !== "undefined") {
-    Splitting();
+    try {
+      Splitting({ target: "[data-splitting]", force: true });
+    } catch (e) {}
     document.querySelectorAll(".char, .word").forEach((el) => {
       el.style.opacity = "1";
     });
@@ -242,6 +249,9 @@ document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
       currentLang = selectedLang;
       try {
         localStorage.setItem("portfolio_lang", currentLang);
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", currentLang);
+        window.history.replaceState({}, "", url.toString());
       } catch (e) {}
       applyTranslations(currentLang, true);
     }
@@ -358,12 +368,11 @@ if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
           opacity: 1,
           ease: "power2.inOut",
         });
-        gsap.to(".skills__group", {
+        gsap.to(".skills__list", {
           y: 0,
           opacity: 1,
-          stagger: 0.15,
-          ease: "power2.out",
-          duration: 0.7,
+          ease: "circ.out",
+          duration: 0.8,
         });
       },
     });
@@ -433,13 +442,15 @@ document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
 // Interactive skill hover animation
 const skillsArr = document.querySelectorAll(".skills__list-item-inner");
 skillsArr.forEach((skill) => {
-  skill.addEventListener("mouseover", (e) => {
-    e.preventDefault();
+  const triggerFlip = () => {
+    if (skill.classList.contains("animated-skill")) return;
     skill.classList.add("animated-skill");
     setTimeout(() => {
       skill.classList.remove("animated-skill");
     }, 1500);
-  });
+  };
+  skill.addEventListener("mouseover", triggerFlip);
+  skill.addEventListener("touchstart", triggerFlip, { passive: true });
 });
 
 // Scroll to top button
@@ -527,9 +538,92 @@ document.querySelectorAll(".about__copy-btn").forEach((btn) => {
   });
 });
 
-// WordPress Solutions Filter Tabs
 const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
 const wpCards = document.querySelectorAll(".wp-card[data-category]");
+const projectsExpandBtn = document.getElementById("projects-expand-btn");
+const projectsMoreContainer = document.querySelector(".projects__more-container");
+let isProjectsOpen = false;
+const INITIAL_LIMIT = 9;
+
+function updateLoneCards() {
+  if (!wpCards.length) return;
+  const visibleCards = Array.from(wpCards).filter((c) => !c.classList.contains("is-hidden"));
+  wpCards.forEach((c) => c.classList.remove("is-lone-card"));
+
+  if (!visibleCards.length) return;
+  const width = window.innerWidth;
+  if (width > 1024) {
+    if (visibleCards.length % 3 === 1) {
+      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
+    }
+  } else if (width > 680) {
+    if (visibleCards.length % 2 === 1) {
+      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
+    }
+  }
+}
+
+function updateExpandButton(categoryCards) {
+  if (!projectsExpandBtn || !projectsMoreContainer) return;
+  const extraCount = categoryCards.length - INITIAL_LIMIT;
+  if (extraCount <= 0) {
+    projectsMoreContainer.style.display = "none";
+    return;
+  }
+
+  projectsMoreContainer.style.display = "flex";
+  projectsExpandBtn.classList.toggle("is-open", isProjectsOpen);
+  const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
+  if (textEl) {
+    const closedFn = getTranslation("projects.expandClosed");
+    textEl.textContent = isProjectsOpen
+      ? (getTranslation("projects.expandOpen") || "Свернуть")
+      : (typeof closedFn === "function" ? closedFn(extraCount) : `Показать все проекты (ещё ${extraCount})`);
+  }
+}
+
+function applyCategoryFilter(filter, animate = false) {
+  const categoryCards = Array.from(wpCards).filter((c) => filter === "all" || c.getAttribute("data-category") === filter);
+
+  wpCards.forEach((card) => {
+    const cat = card.getAttribute("data-category");
+    const matches = filter === "all" || cat === filter;
+    if (!matches) {
+      card.classList.add("is-hidden");
+    }
+  });
+
+  let visibleCount = 0;
+  categoryCards.forEach((card, index) => {
+    const isExtra = index >= INITIAL_LIMIT;
+    card.classList.toggle("wp-card--extra", isExtra);
+
+    if (isExtra && !isProjectsOpen) {
+      card.classList.add("is-hidden");
+    } else {
+      const wasHidden = card.classList.contains("is-hidden");
+      card.classList.remove("is-hidden");
+      if (animate && wasHidden && typeof gsap !== "undefined") {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.35, delay: (visibleCount % 3) * 0.05, ease: "power2.out" }
+        );
+      } else if (!animate) {
+        card.style.opacity = "1";
+        card.style.transform = "none";
+      }
+      visibleCount++;
+    }
+  });
+
+  updateLoneCards();
+  updateExpandButton(categoryCards);
+
+  if (typeof ScrollTrigger !== "undefined") {
+    setTimeout(() => ScrollTrigger.refresh(), 200);
+  }
+}
 
 if (wpTabBtns.length && wpCards.length) {
   wpTabBtns.forEach((btn) => {
@@ -541,31 +635,33 @@ if (wpTabBtns.length && wpCards.length) {
         b.setAttribute("aria-selected", isActive ? "true" : "false");
       });
 
-      let visibleCount = 0;
-      wpCards.forEach((card) => {
-        const cat = card.getAttribute("data-category");
-        const shouldShow = filter === "all" || cat === filter;
-        if (shouldShow) {
-          card.classList.remove("is-hidden");
-          if (typeof gsap !== "undefined") {
-            gsap.fromTo(
-              card,
-              { opacity: 0, y: 15 },
-              { opacity: 1, y: 0, duration: 0.35, delay: visibleCount * 0.04, ease: "power2.out" }
-            );
-          } else {
-            card.style.opacity = "1";
-            card.style.transform = "none";
-          }
-          visibleCount++;
-        } else {
-          card.classList.add("is-hidden");
-        }
-      });
-
-      if (typeof ScrollTrigger !== "undefined") {
-        setTimeout(() => ScrollTrigger.refresh(), 200);
-      }
+      applyCategoryFilter(filter, true);
     });
   });
+
+  if (projectsExpandBtn) {
+    projectsExpandBtn.addEventListener("click", () => {
+      isProjectsOpen = !isProjectsOpen;
+      const activeTab = document.querySelector(".wp-tab-btn.is-active");
+      const currentFilter = activeTab ? activeTab.getAttribute("data-filter") : "frontend";
+
+      if (!isProjectsOpen) {
+        const projectsSec = document.getElementById("projects");
+        if (projectsSec) {
+          const rect = projectsSec.getBoundingClientRect();
+          if (rect.top < 0) {
+            projectsSec.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+
+      applyCategoryFilter(currentFilter, isProjectsOpen);
+    });
+  }
+
+  const initialTab = document.querySelector(".wp-tab-btn.is-active");
+  const initialFilter = initialTab ? initialTab.getAttribute("data-filter") : "frontend";
+  applyCategoryFilter(initialFilter, false);
+
+  window.addEventListener("resize", updateLoneCards);
 }

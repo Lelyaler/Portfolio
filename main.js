@@ -40,7 +40,7 @@ function getPhraseArray(lang = currentLang) {
     ? [
         "WordPress & PHP разработчик",
         "Gutenberg & Frontend специалист",
-        "Core Web Vitals & SEO эксперт",
+        "Оптимизация Core Web Vitals & SEO",
       ]
     : [
         "WordPress & PHP Developer",
@@ -358,11 +358,12 @@ if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
           opacity: 1,
           ease: "power2.inOut",
         });
-        gsap.to(".skills__list", {
+        gsap.to(".skills__group", {
           y: 0,
           opacity: 1,
-          ease: "circ.out",
-          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out",
+          duration: 0.7,
         });
       },
     });
@@ -457,66 +458,6 @@ if (scrollTopBtn) {
       lenis.scrollTo(0);
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  });
-}
-
-// Project Archive Accordion
-const projectsExpandBtn = document.getElementById("projects-expand-btn");
-const extraProjectCards = document.querySelectorAll(".projects__card--extra");
-
-if (projectsExpandBtn && extraProjectCards.length) {
-  let isProjectsOpen = false;
-  projectsExpandBtn.addEventListener("click", () => {
-    isProjectsOpen = !isProjectsOpen;
-    projectsExpandBtn.classList.toggle("is-open", isProjectsOpen);
-    const btnText = projectsExpandBtn.querySelector(".projects__expand-btn-text");
-    if (btnText) {
-      const closedFn = getTranslation("projects.expandClosed", currentLang);
-      btnText.textContent = isProjectsOpen
-        ? getTranslation("projects.expandOpen", currentLang)
-        : (typeof closedFn === "function" ? closedFn(extraProjectCards.length) : `Показать все проекты (ещё ${extraProjectCards.length})`);
-    }
-
-    extraProjectCards.forEach((card, index) => {
-      if (isProjectsOpen) {
-        card.classList.remove("projects__card--hidden");
-        if (typeof gsap !== "undefined") {
-          gsap.fromTo(
-            card,
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.5,
-              delay: index * 0.04,
-              ease: "circ.out",
-            }
-          );
-        } else {
-          card.style.opacity = "1";
-          card.style.transform = "none";
-        }
-      } else {
-        if (typeof gsap !== "undefined") {
-          gsap.to(card, {
-            y: 20,
-            opacity: 0,
-            duration: 0.25,
-            onComplete: () => {
-              card.classList.add("projects__card--hidden");
-            },
-          });
-        } else {
-          card.classList.add("projects__card--hidden");
-        }
-      }
-    });
-
-    if (typeof ScrollTrigger !== "undefined") {
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 350);
     }
   });
 }

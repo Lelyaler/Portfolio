@@ -717,20 +717,6 @@ section[id] {
   color: #a8a8a8;
   font-size: 0.875rem;
 }
-.footer__links {
-  margin-top: 0.75rem;
-}
-.footer__resume-link {
-  color: #fdca40;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  transition: opacity 0.2s ease;
-}
-.footer__resume-link:hover {
-  opacity: 0.8;
-}
 
 .title {
   font-weight: 700;

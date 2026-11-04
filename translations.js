@@ -48,6 +48,8 @@ const translations = {
     },
     projects: {
       title: "Проекты",
+      tabsAria: "Категории проектов",
+      filterWordpress: "WordPress (Темы & Плагины)",
       filterThemes: "Темы WordPress",
       filterPlugins: "Плагины WordPress",
       filterFrontend: "Фронтенд & Интерфейсы",
@@ -111,10 +113,10 @@ const translations = {
           tech: "HTML5, CSS3 Animations, JavaScript (ES6+), Mobile-First"
         },
         spinpulse: {
-          badge: "Canvas & WebGL",
-          title: "SpinPulse Gaming UI",
-          desc: "Интерактивный игровой интерфейс слот-машины на чистом HTML5 Canvas с реалистичной физикой барабанов, звуковым движком Web Audio API и адаптивным управлением.",
-          tech: "HTML5 Canvas, Web Audio API, JavaScript, CSS3"
+          badge: "iGaming / Casino Lobby",
+          title: "SpinPulse Gaming Lobby",
+          desc: "Интерфейс игрового лобби онлайн-казино на чистом JavaScript (ES6+): запуск официальных демо-слотов (Pragmatic Play), живой тикер джекпотов, виртуальный кошелёк, турниры и звуковой пул Web Audio API.",
+          tech: "JavaScript (ES6+), Web Audio API, HTML5 Canvas, BEM, Vite"
         },
         nova: {
           badge: "Fintech / UI",
@@ -253,6 +255,8 @@ const translations = {
     },
     projects: {
       title: "Projects",
+      tabsAria: "Project categories",
+      filterWordpress: "WordPress (Themes & Plugins)",
       filterThemes: "WordPress Themes",
       filterPlugins: "WordPress Plugins",
       filterFrontend: "Frontend & Interfaces",
@@ -316,10 +320,10 @@ const translations = {
           tech: "HTML5, CSS3 Animations, JavaScript (ES6+), Mobile-First"
         },
         spinpulse: {
-          badge: "Canvas & WebGL",
-          title: "SpinPulse Gaming UI",
-          desc: "Interactive casino slot machine interface built on pure HTML5 Canvas with realistic reel physics, Web Audio API sound effects, and responsive layout.",
-          tech: "HTML5 Canvas, Web Audio API, JavaScript, CSS3"
+          badge: "iGaming / Casino Lobby",
+          title: "SpinPulse Gaming Lobby",
+          desc: "High-performance online casino gaming lobby built with vanilla JavaScript (ES6+): official slot demo launcher (Pragmatic Play), progressive jackpot ticker, virtual wallet session, tournaments, and Web Audio effects.",
+          tech: "JavaScript (ES6+), Web Audio API, HTML5 Canvas, BEM, Vite"
         },
         nova: {
           badge: "Fintech / UI",

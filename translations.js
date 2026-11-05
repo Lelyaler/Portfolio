@@ -20,25 +20,24 @@ const translations = {
       subtitlePrefix: "Я —",
       roles: [
         "WordPress & PHP разработчик",
-        "Gutenberg & Frontend специалист",
-        "Специалист по Core Web Vitals & SEO"
+        "Frontend разработчик"
       ],
       projectsBtn: "Проекты",
       contactsBtn: "Контакты"
     },
     about: {
       title: "Обо мне",
-      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на ООП PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.",
-      p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
-      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.",
+      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.",
+      p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ Беларуси)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на PHP, создавала блоки Gutenberg на ACF Pro и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
+      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce. Проектирую интерфейсы с точностью Pixel Perfect по принципу Mobile First (90%+ мобильного трафика) на чистом JavaScript (ES6+) и современных CSS-инструментах (SCSS, Tailwind, БЭМ). Настраиваю проекты полного цикла: подбор и управление DNS, SSL-сертификаты, развёртывание на VPS и хостингах, контейнеризация в Docker, сборка проектов через Vite и Webpack.",
       comp1Title: "Кастомный WordPress & PHP",
-      comp1Desc: "Разработка тем с нуля на ООП PHP, написание плагинов, работа с WP_Query, хуками и фильтрами. Интеграция сторонних сервисов.",
+      comp1Desc: "Разработка тем с нуля на PHP, написание плагинов, хуки и фильтры. Интеграция сторонних сервисов.",
       comp2Title: "Gutenberg & Админка",
-      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg. Настройка гибкой и удобной админки через ACF Pro, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.",
+      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg на ACF Pro. Настройка гибкой и удобной админки, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.",
       comp3Title: "Mobile-First & Вёрстка",
-      comp3Desc: "Адаптивная семантическая вёрстка (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.",
+      comp3Desc: "Адаптивная семантическая вёрстка с точностью Pixel Perfect (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.",
       comp4Title: "Деплой, Хостинг & SEO",
-      comp4Desc: "Настройка CI/CD (GitLab CI, GitHub Actions) и деплой на VPS (Nginx, SSH). Работа с Docker и MySQL. Внедрение Schema.org и техническое SEO."
+      comp4Desc: "Подбор и управление DNS, SSL-сертификаты, деплой на VPS и хостинги. Контейнеризация в Docker, техническое SEO и микроразметка Schema.org."
     },
     skills: {
       title: "Навыки",
@@ -80,7 +79,7 @@ const translations = {
           badge: "Плагин WP",
           title: "WP Cookie Notice",
           desc: "Легковесный плагин предупреждения о куках (GDPR). Страница настроек на нативном WordPress Settings API, встроенный wp-color-picker, чистый Vanilla JS (~1.2 КБ) и нулевой сдвиг макета (CLS).",
-          tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3"
+          tech: "Plugin API, PHP, Settings API, Vanilla JS, CSS3"
         },
         metaTags: {
           badge: "SEO-плагин",
@@ -92,7 +91,7 @@ const translations = {
           badge: "iGaming / MultiGEO",
           title: "MultiGEO & Satellite Engine",
           desc: "Модуль локализации и управления сателлитными сетками. Автоматическое клонирование посадочных страниц под целевые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN.",
-          tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
+          tech: "PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
         },
         cyberpunkFrontend: {
           badge: "Promo / Анимации",
@@ -203,7 +202,10 @@ const translations = {
     },
     ui: {
       scrollTop: "Наверх",
-      langSwitchLabel: "Выбор языка"
+      langSwitchLabel: "Выбор языка",
+      menuOpen: "Открыть меню",
+      menuClose: "Закрыть меню",
+      menuOpenAria: "Открыть меню"
     }
   },
   en: {
@@ -227,31 +229,30 @@ const translations = {
       subtitlePrefix: "I am a",
       roles: [
         "WordPress & PHP Developer",
-        "Gutenberg & Frontend Engineer",
-        "Performance & SEO Specialist"
+        "Frontend Developer"
       ],
       projectsBtn: "Projects",
       contactsBtn: "Contacts"
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Developing custom themes and OOP PHP plugins, WooCommerce stores, and native Gutenberg blocks. Engineering interfaces with a strong focus on performance: minimizing bundle size, eliminating render-blocking scripts, and keeping Core Web Vitals in the green zone.",
-      p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on OOP PHP (WP_Query, hooks, filters), built custom Gutenberg blocks and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
-      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores, including REST API integrations and hosting deployment. Focused on clean template architecture, Mobile-First responsive markup (90%+ mobile traffic), and maximum loading speed.",
+      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Developing custom themes and PHP plugins, WooCommerce stores, and Gutenberg blocks. Engineering interfaces with a strong focus on performance: minimizing bundle size, eliminating render-blocking scripts, and keeping Core Web Vitals in the green zone.",
+      p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, Belarus HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on PHP, built custom Gutenberg blocks with ACF Pro and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
+      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores. Designing interfaces with Pixel Perfect precision and Mobile First standards (90%+ mobile traffic) using modern JavaScript (ES6+) and CSS tools (SCSS, Tailwind, BEM). Managing full-cycle project setups: DNS configuration, SSL certificates, deployment to VPS and hosting, containerization with Docker, and project builds with Vite and Webpack.",
       comp1Title: "Custom WordPress & PHP",
-      comp1Desc: "Theme development from scratch on OOP PHP, custom plugin development, WP_Query, hooks, and filters. Third-party API integrations.",
+      comp1Desc: "Theme development from scratch on PHP, custom plugin development, hooks, and filters. Third-party API integrations.",
       comp2Title: "Gutenberg & Admin UI",
-      comp2Desc: "Custom Gutenberg blocks and patterns. Flexible admin dashboard setup via ACF Pro, enabling content managers to easily maintain sites independently.",
+      comp2Desc: "Custom Gutenberg blocks and patterns with ACF Pro. Flexible admin dashboard setup, enabling content managers to easily maintain sites independently.",
       comp3Title: "Mobile-First & Markup",
-      comp3Desc: "Responsive semantic layout (BEM, SCSS, Tailwind CSS) prioritizing mobile traffic (90%+). Rapid project builds using Vite and Webpack.",
+      comp3Desc: "Responsive semantic layout with Pixel Perfect precision (BEM, SCSS, Tailwind CSS) prioritizing mobile traffic (90%+). Rapid project builds using Vite and Webpack.",
       comp4Title: "Deployment, Hosting & SEO",
-      comp4Desc: "CI/CD setup (GitLab CI, GitHub Actions) and VPS deployment (Nginx, SSH). Docker and MySQL environments. Schema.org implementation and technical SEO."
+      comp4Desc: "DNS and SSL management, deployment to VPS and hosting. Docker containerization, technical SEO, and Schema.org structured data."
     },
     skills: {
       title: "Skills",
       groupWp: "WordPress & Backend",
-      groupFrontend: "Frontend & UI Engineering",
-      groupTooling: "DevOps & Tooling"
+      groupFrontend: "Frontend & Interfaces",
+      groupTooling: "Tools & Deployment"
     },
     projects: {
       title: "Projects",
@@ -287,7 +288,7 @@ const translations = {
           badge: "WordPress Plugin",
           title: "WP Cookie Notice",
           desc: "Lightweight GDPR cookie consent plugin. Admin options built with native WordPress Settings API, integrated wp-color-picker, Vanilla JS (~1.2 KB), and zero Cumulative Layout Shift.",
-          tech: "Plugin API, OOP PHP, Settings API, Vanilla JS, CSS3"
+          tech: "Plugin API, PHP, Settings API, Vanilla JS, CSS3"
         },
         metaTags: {
           badge: "SEO Plugin",
@@ -299,7 +300,7 @@ const translations = {
           badge: "iGaming / MultiGEO",
           title: "MultiGEO & Satellite Engine",
           desc: "Multi-region localization and satellite management engine. Automated landing page replication across target GEOs, differentiated bot routing (Googlebot vs YandexBot), and secure REST API for PBN networks.",
-          tech: "OOP PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
+          tech: "PHP, REST API, ACF Pro Sync, Hreflang, Bot Targeting"
         },
         cyberpunkFrontend: {
           badge: "Promo / Animations",
@@ -410,7 +411,10 @@ const translations = {
     },
     ui: {
       scrollTop: "Back to top",
-      langSwitchLabel: "Language selection"
+      langSwitchLabel: "Language selection",
+      menuOpen: "Open menu",
+      menuClose: "Close menu",
+      menuOpenAria: "Open menu"
     }
   }
 };

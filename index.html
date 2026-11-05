@@ -44,13 +44,16 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=52" />
+    <link rel="stylesheet" href="style.css?v=53" />
     <title>Валерия Чернявская — WordPress &amp; Frontend Developer Portfolio</title>
     <meta
       name="description"
       content="Портфолио WordPress &amp; Frontend-разработчика Валерии Чернявской. Кастомные темы и плагины на PHP, блоки Gutenberg, WooCommerce, Core Web Vitals и интерактивный фронтенд."
     />
     <link rel="canonical" href="https://lelyaler.github.io/Portfolio/" />
+    <link rel="alternate" hreflang="ru" href="https://lelyaler.github.io/Portfolio/?lang=ru" />
+    <link rel="alternate" hreflang="en" href="https://lelyaler.github.io/Portfolio/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://lelyaler.github.io/Portfolio/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lelyaler.github.io/Portfolio/" />
     <meta property="og:title" content="Валерия Чернявская — WordPress &amp; Frontend Developer Portfolio" />
@@ -117,7 +120,7 @@
         <div class="header__logo-block">
           <a href="./" class="header__logo" aria-label="Portfolio">Lelyaler</a>
         </div>
-        <nav class="header__nav">
+        <nav class="header__nav" id="header-nav">
           <ul class="header__nav-list">
             <li class="header__nav-item">
               <a href="#about" class="header__nav-link" data-i18n="nav.about">Обо мне</a>
@@ -159,6 +162,19 @@
               >EN</button
             >
           </div>
+          <button
+            class="header__burger"
+            id="header-burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="header-nav"
+            data-i18n-attr="aria-label:ui.menuOpenAria"
+          >
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+          </button>
         </div>
       </header>
       <main>
@@ -196,37 +212,37 @@
           <div class="about__main">
             <h2 class="title" data-splitting="chars" data-i18n="about.title">Обо мне</h2>
             <p class="about__description" data-splitting="words" data-i18n="about.p1">
-              WordPress &amp; Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на ООП PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.
+              WordPress &amp; Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.
             </p>
             <p class="about__description" data-splitting="words" data-i18n="about.p2" data-i18n-html="true">
-              Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на ООП PHP (WP_Query, хуки, фильтры), создавала блоки Gutenberg и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.
+              Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ Беларуси)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на PHP, создавала блоки Gutenberg на ACF Pro и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.
             </p>
             <p class="about__description" data-splitting="words" data-i18n="about.p3">
-              Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce, включая интеграции по REST API и развёртывание на хостингах. Фокусируюсь на чистой архитектуре шаблонов, Mobile-First вёрстке (90%+ мобильного трафика) и максимальной скорости загрузки.
+              Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce. Проектирую интерфейсы с точностью Pixel Perfect по принципу Mobile First (90%+ мобильного трафика) на чистом JavaScript (ES6+) и современных CSS-инструментах (SCSS, Tailwind, БЭМ). Настраиваю проекты полного цикла: подбор и управление DNS, SSL-сертификаты, развёртывание на VPS и хостингах, контейнеризация в Docker, сборка проектов через Vite и Webpack.
             </p>
             <div class="about__competencies">
               <div class="about__competency-card">
                 <h3 class="about__competency-title" data-i18n="about.comp1Title">Кастомный WordPress &amp; PHP</h3>
                 <p class="about__competency-desc" data-i18n="about.comp1Desc">
-                  Разработка тем с нуля на ООП PHP, написание плагинов, работа с WP_Query, хуками и фильтрами. Интеграция сторонних сервисов.
+                  Разработка тем с нуля на PHP, написание плагинов, хуки и фильтры. Интеграция сторонних сервисов.
                 </p>
               </div>
               <div class="about__competency-card">
                 <h3 class="about__competency-title" data-i18n="about.comp2Title">Gutenberg &amp; Админка</h3>
                 <p class="about__competency-desc" data-i18n="about.comp2Desc">
-                  Создание кастомных блоков и паттернов Gutenberg. Настройка гибкой и удобной админки через ACF Pro, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.
+                  Создание кастомных блоков и паттернов Gutenberg на ACF Pro. Настройка гибкой и удобной админки, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.
                 </p>
               </div>
               <div class="about__competency-card">
                 <h3 class="about__competency-title" data-i18n="about.comp3Title">Mobile-First &amp; Вёрстка</h3>
                 <p class="about__competency-desc" data-i18n="about.comp3Desc">
-                  Адаптивная семантическая вёрстка (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.
+                  Адаптивная семантическая вёрстка с точностью Pixel Perfect (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.
                 </p>
               </div>
               <div class="about__competency-card">
                 <h3 class="about__competency-title" data-i18n="about.comp4Title">Деплой, Хостинг &amp; SEO</h3>
                 <p class="about__competency-desc" data-i18n="about.comp4Desc">
-                  Настройка CI/CD (GitLab CI, GitHub Actions) и деплой на VPS (Nginx, SSH). Работа с Docker и MySQL. Внедрение Schema.org и техническое SEO.
+                  Подбор и управление DNS, SSL-сертификаты, деплой на VPS и хостинги. Контейнеризация в Docker, техническое SEO и микроразметка Schema.org.
                 </p>
               </div>
             </div>
@@ -995,15 +1011,12 @@
 
             <!-- 13. WP Cookie Notice (Plugin) -->
             <div class="wp-card is-hidden" data-category="wordpress">
-              <div class="wp-card__mockup wp-card__mockup--cookie" aria-hidden="true">
-                <div class="wp-mockup-cookie-box">
-                  <span class="wp-mockup-cookie-text">This site uses essential cookies for compliance &amp; performance.</span>
-                  <div class="wp-mockup-cookie-actions">
-                    <span class="wp-mockup-cookie-btn">Accept</span>
-                    <span class="wp-mockup-cookie-link">Settings</span>
-                  </div>
+              <a class="wp-card__preview" href="https://github.com/Lelyaler/wp-cookie-notice" target="_blank" rel="noopener noreferrer" aria-label="WP Cookie Notice GitHub Repository">
+                <img class="wp-card__preview-img" src="./images/plugin-cookie-notice.webp" alt="WP Cookie Notice Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge">GitHub ↗</span>
                 </div>
-              </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--plugin" data-i18n="projects.cards.cookieNotice.badge">Плагин WP</span>
                 <span class="wp-card__feature">~1.2 KB Vanilla JS</span>
@@ -1014,7 +1027,7 @@
               </p>
               <div class="wp-card__tags">
                 <span class="wp-card__tag">Plugin API</span>
-                <span class="wp-card__tag">OOP PHP</span>
+                <span class="wp-card__tag">PHP</span>
                 <span class="wp-card__tag">Settings API</span>
                 <span class="wp-card__tag">Vanilla JS</span>
                 <span class="wp-card__tag">CSS3</span>
@@ -1026,22 +1039,12 @@
 
             <!-- 14. Custom Meta Tags Manager (Plugin) -->
             <div class="wp-card is-hidden" data-category="wordpress">
-              <div class="wp-card__mockup wp-card__mockup--seo" aria-hidden="true">
-                <div class="wp-mockup-seo-table">
-                  <div class="wp-mockup-seo-row">
-                    <span class="wp-mockup-label">og:type:</span>
-                    <span class="wp-mockup-val">website / article</span>
-                  </div>
-                  <div class="wp-mockup-seo-row">
-                    <span class="wp-mockup-label">robots:</span>
-                    <span class="wp-mockup-val wp-mockup-val--green">index, follow, max-snippet</span>
-                  </div>
-                  <div class="wp-mockup-seo-row">
-                    <span class="wp-mockup-label">schema:</span>
-                    <span class="wp-mockup-val wp-mockup-val--blue">application/ld+json ✓</span>
-                  </div>
+              <a class="wp-card__preview" href="https://github.com/Lelyaler/custom-meta-tags-manager" target="_blank" rel="noopener noreferrer" aria-label="Custom Meta Tags Manager GitHub Repository">
+                <img class="wp-card__preview-img" src="./images/plugin-meta-tags.webp" alt="Custom Meta Tags Manager Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge">GitHub ↗</span>
                 </div>
-              </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--seo" data-i18n="projects.cards.metaTags.badge">SEO-плагин</span>
                 <span class="wp-card__feature">Schema &amp; OpenGraph</span>
@@ -1064,23 +1067,12 @@
 
             <!-- 15. MultiGEO & Satellite Engine (Plugin) -->
             <div class="wp-card is-hidden" data-category="wordpress">
-              <div class="wp-card__mockup wp-card__mockup--multigeo" aria-hidden="true">
-                <div class="wp-mockup-bar">
-                  <span class="wp-mockup-tag">MultiGEO / PBN Engine</span>
-                  <span class="wp-mockup-status">REST API v1</span>
+              <a class="wp-card__preview" href="https://github.com/Lelyaler/wp-multigeo-engine" target="_blank" rel="noopener noreferrer" aria-label="MultiGEO &amp; Satellite Engine GitHub Repository">
+                <img class="wp-card__preview-img" src="./images/plugin-multigeo.webp" alt="MultiGEO &amp; Satellite Engine Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
+                <div class="wp-card__preview-overlay">
+                  <span class="wp-card__preview-badge">GitHub ↗</span>
                 </div>
-                <div class="wp-mockup-geo-grid">
-                  <div class="wp-mockup-geo-node">
-                    <span class="wp-mockup-flag">🇷🇺 RU</span>
-                    <span class="wp-mockup-route">YandexBot ➔ Root</span>
-                  </div>
-                  <div class="wp-mockup-geo-arrow">⇄</div>
-                  <div class="wp-mockup-geo-node">
-                    <span class="wp-mockup-flag">🇧🇷 PT-BR</span>
-                    <span class="wp-mockup-route">Googlebot ➔ /br/</span>
-                  </div>
-                </div>
-              </div>
+              </a>
               <div class="wp-card__header">
                 <span class="wp-card__badge wp-card__badge--multigeo" data-i18n="projects.cards.multigeo.badge">iGaming / MultiGEO</span>
                 <span class="wp-card__feature">REST API Core</span>
@@ -1090,7 +1082,7 @@
                 Модуль локализации и управления сателлитными сетками. Автоматическое клонирование посадочных страниц под целевые ГЕО, дифференцированная каноникализация (Googlebot vs YandexBot) и защищённый REST API для PBN.
               </p>
               <div class="wp-card__tags">
-                <span class="wp-card__tag">OOP PHP</span>
+                <span class="wp-card__tag">PHP</span>
                 <span class="wp-card__tag">REST API</span>
                 <span class="wp-card__tag">ACF Pro Sync</span>
                 <span class="wp-card__tag">Hreflang</span>
@@ -1325,7 +1317,7 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <script defer src="translations.js?v=47"></script>
-    <script defer src="main.js?v=47"></script>
+    <script defer src="translations.js?v=49"></script>
+    <script defer src="main.js?v=49"></script>
   </body>
 </html>

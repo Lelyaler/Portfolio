@@ -49,13 +49,11 @@ function getPhraseArray(lang = currentLang) {
   return lang === "ru"
     ? [
         "WordPress & PHP разработчик",
-        "Gutenberg & Frontend специалист",
-        "Специалист по Core Web Vitals & SEO",
+        "Frontend разработчик",
       ]
     : [
         "WordPress & PHP Developer",
-        "Gutenberg & Frontend Specialist",
-        "Performance & SEO Specialist",
+        "Frontend Developer",
       ];
 }
 
@@ -664,4 +662,56 @@ if (wpTabBtns.length && wpCards.length) {
   applyCategoryFilter(initialFilter, false);
 
   window.addEventListener("resize", updateLoneCards);
+}
+
+// Mobile Hamburger Menu
+const headerBurger = document.getElementById("header-burger");
+const headerNav = document.getElementById("header-nav");
+
+if (headerBurger && headerNav) {
+  const closeMenu = () => {
+    headerBurger.classList.remove("is-open");
+    headerNav.classList.remove("is-open");
+    headerBurger.setAttribute("aria-expanded", "false");
+    const openLabel = getTranslation("ui.menuOpen") || "Открыть меню";
+    headerBurger.setAttribute("aria-label", openLabel);
+  };
+
+  const openMenu = () => {
+    headerBurger.classList.add("is-open");
+    headerNav.classList.add("is-open");
+    headerBurger.setAttribute("aria-expanded", "true");
+    const closeLabel = getTranslation("ui.menuClose") || "Закрыть меню";
+    headerBurger.setAttribute("aria-label", closeLabel);
+  };
+
+  headerBurger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = headerBurger.classList.contains("is-open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  headerNav.querySelectorAll(".header__nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!headerNav.contains(e.target) && !headerBurger.contains(e.target)) {
+      if (headerBurger.classList.contains("is-open")) {
+        closeMenu();
+      }
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && headerBurger.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
 }

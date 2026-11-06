@@ -27,17 +27,17 @@ const translations = {
     },
     about: {
       title: "Обо мне",
-      p1: "WordPress & Frontend Developer с 4 годами коммерческого опыта. Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю время отклика, оптимизирую рендеринг и вывожу Core Web Vitals в зелёную зону.",
-      p2: "Последние 2 года работала в <strong>MaxBitSolution (iGaming, резидент ПВТ Беларуси)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на PHP, создавала блоки Gutenberg на ACF Pro и плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала индексацию страниц.",
-      p3: "Параллельно разрабатываю клиентские проекты полного цикла: от промо-лендингов до интернет-магазинов на WooCommerce. Проектирую интерфейсы с точностью Pixel Perfect по принципу Mobile First (90%+ мобильного трафика) на чистом JavaScript (ES6+) и современных CSS-инструментах (SCSS, Tailwind, БЭМ). Настраиваю проекты полного цикла: подбор и управление DNS, SSL-сертификаты, развёртывание на VPS и хостингах, контейнеризация в Docker, сборка проектов через Vite и Webpack.",
+      p1: "WordPress & Frontend Developer с 4+ годами опыта в веб-разработке (2 года в продуктовой iGaming-компании и клиентские проекты). Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю LCP, устраняю сдвиги вёрстки (CLS) и оптимизирую Core Web Vitals.",
+      p2: "Работала в <strong>MaxBitSolution (iGaming продуктовая компания)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на PHP, создавала блоки Gutenberg на ACF Pro и специализированные плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала техническое SEO страниц.",
+      p3: "Параллельно разрабатываю клиентские проекты: от промо-лендингов до интернет-магазинов на WooCommerce. Создаю адаптивные интерфейсы с приоритетом на мобильные устройства (Mobile First) на JavaScript (ES6+), SCSS и Tailwind CSS по методологии БЭМ. Настраиваю проекты под ключ: сборка через Vite и Webpack, контейнеризация в Docker, деплой на VPS (Linux/SSH), управление DNS и SSL-сертификатами.",
       comp1Title: "Кастомный WordPress & PHP",
-      comp1Desc: "Разработка тем с нуля на PHP, написание плагинов, хуки и фильтры. Интеграция сторонних сервисов.",
+      comp1Desc: "Разработка тем и плагинов с нуля на PHP, использование хуков и фильтров, кастомные REST API эндпоинты.",
       comp2Title: "Gutenberg & Админка",
-      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg на ACF Pro. Настройка гибкой и удобной админки, чтобы контент-менеджеры могли легко управлять сайтом без помощи разработчика.",
+      comp2Desc: "Создание кастомных блоков и паттернов Gutenberg на ACF Pro. Настройка удобного и интуитивного интерфейса редактирования для контент-менеджеров без участия разработчика.",
       comp3Title: "Mobile-First & Вёрстка",
-      comp3Desc: "Адаптивная семантическая вёрстка с точностью Pixel Perfect (БЭМ, SCSS, Tailwind CSS) с приоритетом на мобильный трафик (90%+). Быстрая сборка проектов через Vite и Webpack.",
+      comp3Desc: "Адаптивная семантическая вёрстка по БЭМ (SCSS, Tailwind CSS) с фокусом на мобильный трафик (90%+), доступность и быструю отрисовку.",
       comp4Title: "Деплой, Хостинг & SEO",
-      comp4Desc: "Подбор и управление DNS, SSL-сертификаты, деплой на VPS и хостинги. Контейнеризация в Docker, техническое SEO и микроразметка Schema.org."
+      comp4Desc: "Подбор и управление DNS, SSL-сертификаты, деплой на VPS (Linux/SSH), контейнеризация в Docker, техническое SEO и микроразметка Schema.org."
     },
     skills: {
       title: "Навыки",
@@ -225,7 +225,7 @@ const translations = {
       resume: "CV"
     },
     hero: {
-      title: "Hi, I'm Lera",
+      title: "Hi, I'm Valeriya",
       subtitlePrefix: "I am a",
       roles: [
         "WordPress & PHP Developer",
@@ -236,17 +236,17 @@ const translations = {
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4 years of commercial experience. Developing custom themes and PHP plugins, WooCommerce stores, and Gutenberg blocks. Engineering interfaces with a strong focus on performance: minimizing bundle size, eliminating render-blocking scripts, and keeping Core Web Vitals in the green zone.",
-      p2: "For the past 2 years, worked at <strong>MaxBitSolution (iGaming, Belarus HTP resident)</strong> in close collaboration with the SEO department. Developed custom themes on PHP, built custom Gutenberg blocks with ACF Pro and business-tailored plugins. Implemented Schema.org (JSON-LD) semantic markup and optimized page indexing.",
-      p3: "Concurrently delivering end-to-end client projects: from promo landings to WooCommerce stores. Designing interfaces with Pixel Perfect precision and Mobile First standards (90%+ mobile traffic) using modern JavaScript (ES6+) and CSS tools (SCSS, Tailwind, BEM). Managing full-cycle project setups: DNS configuration, SSL certificates, deployment to VPS and hosting, containerization with Docker, and project builds with Vite and Webpack.",
+      p1: "WordPress & Frontend Developer with 4+ years of web development experience (2 years in an iGaming product company plus client projects). Developing custom PHP themes and plugins, WooCommerce stores, and Gutenberg blocks. I engineer interfaces focused on performance: reducing LCP, eliminating layout shifts (CLS), and optimizing Core Web Vitals.",
+      p2: "Worked at <strong>MaxBitSolution (iGaming product company)</strong> in close collaboration with the SEO department. Developed custom PHP themes, custom Gutenberg blocks with ACF Pro, and business-focused plugins. Implemented Schema.org (JSON-LD) structured data and optimized page indexing.",
+      p3: "Concurrently delivering client projects from concept to launch: from promo landing pages to WooCommerce stores. Designing responsive interfaces with Mobile First standards (90%+ mobile traffic) using modern JavaScript (ES6+), SCSS, and Tailwind CSS following BEM methodology. Managing project workflows: Vite/Webpack bundling, Docker containerization, VPS deployment (Linux/SSH), DNS, and SSL configuration.",
       comp1Title: "Custom WordPress & PHP",
-      comp1Desc: "Theme development from scratch on PHP, custom plugin development, hooks, and filters. Third-party API integrations.",
+      comp1Desc: "Theme and plugin development from scratch in PHP, WordPress hooks & filters, and custom REST API endpoints.",
       comp2Title: "Gutenberg & Admin UI",
-      comp2Desc: "Custom Gutenberg blocks and patterns with ACF Pro. Flexible admin dashboard setup, enabling content managers to easily maintain sites independently.",
-      comp3Title: "Mobile-First & Markup",
-      comp3Desc: "Responsive semantic layout with Pixel Perfect precision (BEM, SCSS, Tailwind CSS) prioritizing mobile traffic (90%+). Rapid project builds using Vite and Webpack.",
+      comp2Desc: "Custom Gutenberg blocks and patterns with ACF Pro. Intuitive editorial experience for content managers without layout breakage.",
+      comp3Title: "Mobile-First & Frontend",
+      comp3Desc: "Responsive semantic markup (BEM, SCSS, Tailwind CSS) prioritizing mobile UX, performance, and accessibility.",
       comp4Title: "Deployment, Hosting & SEO",
-      comp4Desc: "DNS and SSL management, deployment to VPS and hosting. Docker containerization, technical SEO, and Schema.org structured data."
+      comp4Desc: "DNS and SSL management, VPS deployment (Linux/SSH), Docker containerization, technical SEO, and Schema.org structured data."
     },
     skills: {
       title: "Skills",

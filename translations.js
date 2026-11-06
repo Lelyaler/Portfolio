@@ -35,7 +35,7 @@ const translations = {
       comp2Title: "Gutenberg & Админка",
       comp2Desc: "Создание кастомных блоков и паттернов Gutenberg на ACF Pro. Настройка удобного и интуитивного интерфейса редактирования для контент-менеджеров без участия разработчика.",
       comp3Title: "Mobile-First & Вёрстка",
-      comp3Desc: "Адаптивная семантическая вёрстка под мобильный трафик (90%+). Отдаю предпочтение чистому CSS3 и нативному JS для максимальной скорости и отсутствия лишнего оверхеда, а при требованиях проекта уверенно использую SCSS, Tailwind CSS и БЭМ.",
+      comp3Desc: "Адаптивная семантическая вёрстка под мобильный трафик (90%+). Отдаю предпочтение чистому CSS3 и нативному JS для максимальной скорости и отсутствия лишнего оверхеда, а при необходимости под требования проекта использую SCSS, Tailwind CSS и методологию БЭМ.",
       comp4Title: "Деплой, Хостинг & SEO",
       comp4Desc: "Подбор и управление DNS, SSL-сертификаты, деплой на VPS (Linux/SSH), контейнеризация в Docker, техническое SEO и микроразметка Schema.org."
     },
@@ -236,15 +236,15 @@ const translations = {
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4+ years of web development experience (2 years in iGaming plus client projects). I specialize in developing custom PHP themes and plugins, WooCommerce stores, and Gutenberg blocks, with a strong focus on performance: reducing LCP, eliminating layout shifts (CLS), and optimizing Core Web Vitals.",
-      p2: "At <strong>MaxBitSolution (iGaming, Belarus HTP resident)</strong>, I worked in close collaboration with the SEO department. Developed custom PHP themes, custom Gutenberg blocks with ACF Pro, and business-tailored plugins, while implementing Schema.org (JSON-LD) structured data and resolving technical indexing issues.",
-      p3: "Concurrently delivering turnkey client projects from concept to launch: from promo landing pages to WooCommerce stores. Managing the full development and deployment lifecycle: Vite/Webpack bundling, Docker containerization, VPS deployment (Linux/SSH), DNS setup, and SSL configuration.",
+      p1: "WordPress & Frontend Developer with 4+ years of web development experience (2 years in iGaming and client projects). I specialize in developing custom PHP themes and plugins, WooCommerce stores, and Gutenberg blocks, with a strong focus on performance: reducing LCP, eliminating layout shifts (CLS), and optimizing Core Web Vitals.",
+      p2: "At <strong>MaxBitSolution (iGaming, Belarus HTP resident)</strong>, I worked in close collaboration with the SEO department. Developed custom PHP themes, custom Gutenberg blocks with ACF Pro, and plugins tailored to business requirements, while implementing Schema.org (JSON-LD) structured data and resolving technical indexing issues.",
+      p3: "I also deliver full-cycle client projects from concept to launch: from promo landing pages to WooCommerce stores. Managing the full development and deployment lifecycle: Vite/Webpack bundling, Docker containerization, VPS deployment (Linux/SSH), DNS setup, and SSL configuration.",
       comp1Title: "Custom WordPress & PHP",
       comp1Desc: "Theme and plugin development from scratch in PHP, WordPress hooks & filters, and custom REST API endpoints.",
       comp2Title: "Gutenberg & Admin UI",
-      comp2Desc: "Custom Gutenberg blocks and patterns with ACF Pro. Intuitive editorial experience for content managers while preserving layout integrity.",
+      comp2Desc: "Custom Gutenberg blocks and patterns with ACF Pro. Intuitive editorial experience for content managers without risking broken layouts.",
       comp3Title: "Mobile-First & Frontend",
-      comp3Desc: "Responsive semantic markup prioritizing mobile traffic (90%+). I prefer clean CSS3 and vanilla JS for peak performance and zero overhead, while proficiently using SCSS, Tailwind CSS, and BEM whenever project guidelines require.",
+      comp3Desc: "Responsive semantic markup with a mobile-first focus (90%+). I prefer clean CSS3 and vanilla JS for peak performance and zero overhead, while working with SCSS, Tailwind CSS, and BEM whenever project requirements call for them.",
       comp4Title: "Deployment, Hosting & SEO",
       comp4Desc: "DNS and SSL management, VPS deployment (Linux/SSH), Docker containerization, technical SEO, and Schema.org structured data."
     },
@@ -269,7 +269,7 @@ const translations = {
         cyberpunkTheme: {
           badge: "Custom Theme",
           title: "Cyberpunk Promo Theme",
-          desc: "Custom WordPress theme built with pure PHP template hierarchy (zero heavy builders). Real-time UI styling via WP Theme Customizer API, ACF Pro with Local JSON synchronization, and 98+ Google PageSpeed score.",
+          desc: "Custom WordPress theme built from scratch in PHP without heavy page builders. Features real-time UI styling via WP Theme Customizer API, ACF Pro with Local JSON sync, and a 98+ Google PageSpeed score.",
           tech: "WordPress, PHP, ACF Pro, Customizer API, WebP"
         },
         sneakmaxTheme: {

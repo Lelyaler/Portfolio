@@ -27,7 +27,7 @@ const translations = {
     },
     about: {
       title: "Обо мне",
-      p1: "WordPress & Frontend Developer с 4+ годами опыта в веб-разработке (2 года в iGaming, резидент ПВТ РБ, и клиентские проекты). Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю LCP, устраняю сдвиги вёрстки (CLS) и оптимизирую Core Web Vitals.",
+      p1: "WordPress & Frontend Developer с 4+ годами опыта в веб-разработке (2 года в iGaming и клиентские проекты). Разрабатываю кастомные темы и плагины на PHP, интернет-магазины на WooCommerce и блоки Gutenberg. Проектирую интерфейсы с упором на производительность: сокращаю LCP, устраняю сдвиги вёрстки (CLS) и оптимизирую Core Web Vitals.",
       p2: "Работала в <strong>MaxBitSolution (iGaming, резидент ПВТ Беларуси)</strong> в тесной связке с SEO-отделом. Разрабатывала кастомные темы на PHP, создавала блоки Gutenberg на ACF Pro и специализированные плагины под бизнес-задачи. Внедряла семантическую микроразметку Schema.org (JSON-LD) и оптимизировала техническое SEO страниц.",
       p3: "Параллельно разрабатываю клиентские проекты: от промо-лендингов до интернет-магазинов на WooCommerce. Отдаю предпочтение чистому коду — нативному JavaScript (ES6+) и чистому CSS3 для исключения лишнего оверхеда и максимальной скорости загрузки. При необходимости по требованиям проекта использую SCSS, Tailwind CSS и методологию БЭМ. Настраиваю проекты под ключ: сборка через Vite и Webpack, контейнеризация в Docker, деплой на VPS (Linux/SSH), управление DNS и SSL-сертификатами.",
       comp1Title: "Кастомный WordPress & PHP",
@@ -236,7 +236,7 @@ const translations = {
     },
     about: {
       title: "About Me",
-      p1: "WordPress & Frontend Developer with 4+ years of web development experience (2 years in iGaming, Belarus HTP resident, plus client projects). Developing custom PHP themes and plugins, WooCommerce stores, and Gutenberg blocks. I engineer interfaces focused on performance: reducing LCP, eliminating layout shifts (CLS), and optimizing Core Web Vitals.",
+      p1: "WordPress & Frontend Developer with 4+ years of web development experience (2 years in iGaming plus client projects). Developing custom PHP themes and plugins, WooCommerce stores, and Gutenberg blocks. I engineer interfaces focused on performance: reducing LCP, eliminating layout shifts (CLS), and optimizing Core Web Vitals.",
       p2: "Worked at <strong>MaxBitSolution (iGaming, Belarus HTP resident)</strong> in close collaboration with the SEO department. Developed custom PHP themes, custom Gutenberg blocks with ACF Pro, and business-focused plugins. Implemented Schema.org (JSON-LD) structured data and optimized page indexing.",
       p3: "Concurrently delivering client projects from concept to launch: from promo landing pages to WooCommerce stores. I advocate for clean, lightweight native code — pure JavaScript (ES6+) and modern CSS3 to eliminate bloat and maximize loading speed. When project requirements call for it, I work with SCSS, Tailwind CSS, and BEM methodology. Managing project workflows: Vite/Webpack bundling, Docker containerization, VPS deployment (Linux/SSH), DNS, and SSL configuration.",
       comp1Title: "Custom WordPress & PHP",

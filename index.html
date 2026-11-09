@@ -9,14 +9,14 @@
         try {
           var params = new URLSearchParams(window.location.search);
           var urlLang = params.get('lang');
+          var saved = localStorage.getItem('portfolio_lang');
           var lang;
           if (urlLang) {
-            var lower = urlLang.toLowerCase();
-            lang = (lower === 'en' || lower === 'eng') ? 'en' : 'ru';
+            lang = /^en/i.test(urlLang) ? 'en' : 'ru';
+          } else if (saved === 'ru' || saved === 'en') {
+            lang = saved;
           } else {
-            var saved = localStorage.getItem('portfolio_lang');
-            var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-            lang = saved || (navLang.toLowerCase().startsWith('ru') ? 'ru' : 'en');
+            lang = /^ru/i.test(navigator.language || '') ? 'ru' : 'en';
           }
           document.documentElement.lang = lang;
           window.__initialLang = lang;
@@ -44,7 +44,7 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=53" />
+    <link rel="stylesheet" href="style.css?v=54" />
     <title>Валерия Чернявская — WordPress &amp; Frontend Developer Portfolio</title>
     <meta
       name="description"
@@ -138,11 +138,12 @@
         </nav>
         <div class="header__actions">
           <a
-            class="button button-yellow header__btn header__btn--resume header__btn--anketa"
+            class="button button-yellow header__btn header__btn--resume"
             href="https://lelyaler.github.io/anketa/"
             target="_blank"
             rel="noopener noreferrer"
             data-i18n="nav.resume"
+            data-i18n-attr="href:contacts.resumeLink"
             >Резюме</a
           >
           <div class="lang-switch" role="group" aria-label="Выбор языка" data-i18n-attr="aria-label:ui.langSwitchLabel">
@@ -169,7 +170,7 @@
             aria-label="Открыть меню"
             aria-expanded="false"
             aria-controls="header-nav"
-            data-i18n-attr="aria-label:ui.menuOpenAria"
+            data-i18n-attr="aria-label:ui.menuOpen"
           >
             <span class="header__burger-line"></span>
             <span class="header__burger-line"></span>
@@ -554,7 +555,7 @@
           </div>
 
           <div class="wp-solutions__grid">
-            <!-- 1. SpinPulse Gaming Lobby (Frontend) -->
+            <!-- SpinPulse Gaming Lobby -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/SpinPulse/" target="_blank" rel="noopener noreferrer" aria-label="SpinPulse Gaming Lobby Live Demo">
                 <img class="wp-card__preview-img" src="./images/SpinPulse.webp" alt="SpinPulse" width="480" height="270" loading="lazy" decoding="async" />
@@ -583,7 +584,7 @@
               </div>
             </div>
 
-            <!-- 2. NOVA Pay Fintech Landing (Frontend) -->
+            <!-- NOVA Pay Fintech Landing -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Nova-pay/" target="_blank" rel="noopener noreferrer" aria-label="NOVA Pay Fintech Landing Live Demo">
                 <img class="wp-card__preview-img" src="./images/nova-fintech.webp" alt="NOVA Pay" width="480" height="270" loading="lazy" decoding="async" />
@@ -611,7 +612,7 @@
               </div>
             </div>
 
-            <!-- 3. Cyberpunk Promo (Frontend) -->
+            <!-- Cyberpunk Promo -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Cyberpunk-only-html-css-js-/" target="_blank" rel="noopener noreferrer" aria-label="Cyberpunk Promo Live Demo">
                 <img class="wp-card__preview-img" src="./images/Cyberpunk.webp" alt="Cyberpunk Promo" width="480" height="270" loading="lazy" decoding="async" />
@@ -640,7 +641,7 @@
               </div>
             </div>
 
-            <!-- 4. GameVault Portal (Frontend) -->
+            <!-- GameVault Portal -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/GameVault/" target="_blank" rel="noopener noreferrer" aria-label="GameVault Portal Live Demo">
                 <img class="wp-card__preview-img" src="./images/game-vault.webp" alt="GameVault Portal" width="480" height="270" loading="lazy" decoding="async" />
@@ -668,7 +669,7 @@
               </div>
             </div>
 
-            <!-- 5. Crypto-sticky Platform (Frontend) -->
+            <!-- Crypto-sticky Platform -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/crypto-sticky/" target="_blank" rel="noopener noreferrer" aria-label="Crypto-sticky Platform Live Demo">
                 <img class="wp-card__preview-img" src="./images/pg.webp" alt="Crypto-sticky" width="480" height="270" loading="lazy" decoding="async" />
@@ -696,7 +697,7 @@
               </div>
             </div>
 
-            <!-- 6. Techwear Store (Frontend) -->
+            <!-- Techwear Store -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/techwear-store/" target="_blank" rel="noopener noreferrer" aria-label="Techwear Store Live Demo">
                 <img class="wp-card__preview-img" src="./images/techwear.webp" alt="Techwear Store" width="480" height="270" loading="lazy" decoding="async" />
@@ -724,7 +725,7 @@
               </div>
             </div>
 
-            <!-- 7. Cybersecurity Operations Center (Frontend) -->
+            <!-- Cybersecurity Operations Center -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Security-Operations/" target="_blank" rel="noopener noreferrer" aria-label="Cybersecurity Operations Center Live Demo">
                 <img class="wp-card__preview-img" src="./images/Security-Operations.webp" alt="Cybersecurity Operations Center" width="480" height="270" loading="lazy" decoding="async" />
@@ -753,7 +754,7 @@
               </div>
             </div>
 
-            <!-- 8. Sneakmax Sneaker Store (Frontend) -->
+            <!-- Sneakmax Sneaker Store -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Sneakmax/" target="_blank" rel="noopener noreferrer" aria-label="Sneakmax Sneaker Store Live Demo">
                 <img class="wp-card__preview-img" src="./images/sneakmax.webp" alt="Sneakmax Sneaker Store" width="480" height="270" loading="lazy" decoding="async" />
@@ -782,7 +783,7 @@
               </div>
             </div>
 
-            <!-- 9. Edufree EdTech Landing (Frontend) -->
+            <!-- Edufree EdTech Landing -->
             <div class="wp-card" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/tailwind-site/" target="_blank" rel="noopener noreferrer" aria-label="Edufree EdTech Landing Live Demo">
                 <img class="wp-card__preview-img" src="./images/Edufree.webp" alt="Edufree EdTech Landing" width="480" height="270" loading="lazy" decoding="async" />
@@ -810,7 +811,7 @@
               </div>
             </div>
 
-            <!-- 10. Legal Services (Frontend) -->
+            <!-- Legal Services -->
             <div class="wp-card is-hidden wp-card--extra" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Legal-website/" target="_blank" rel="noopener noreferrer" aria-label="Legal Services Live Demo">
                 <img class="wp-card__preview-img" src="./images/legal.webp" alt="Legal Services" width="480" height="270" loading="lazy" decoding="async" />
@@ -839,7 +840,7 @@
               </div>
             </div>
 
-            <!-- 11. 505: Survive Game Landing (Frontend) -->
+            <!-- 505: Survive Game Landing -->
             <div class="wp-card is-hidden wp-card--extra" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/505/?lang=ENG" target="_blank" rel="noopener noreferrer" aria-label="Survive at all costs (505) Live Demo">
                 <img class="wp-card__preview-img" src="./images/5051.webp" alt="Survive at all costs (505)" width="480" height="270" loading="lazy" decoding="async" />
@@ -868,7 +869,7 @@
               </div>
             </div>
 
-            <!-- 12. 2rism Travel Discovery Platform (Frontend) -->
+            <!-- 2rism Travel Discovery Platform -->
             <div class="wp-card is-hidden wp-card--extra" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Travel-website/" target="_blank" rel="noopener noreferrer" aria-label="2rism Travel Platform Live Demo">
                 <img class="wp-card__preview-img" src="./images/Travel.webp" alt="2rism Travel Platform" width="480" height="270" loading="lazy" decoding="async" />
@@ -897,7 +898,7 @@
               </div>
             </div>
 
-            <!-- 13. House of Gambling (Frontend) -->
+            <!-- House of Gambling -->
             <div class="wp-card is-hidden wp-card--extra" data-category="frontend">
               <a class="wp-card__preview" href="https://lelyaler.github.io/Animation-web/" target="_blank" rel="noopener noreferrer" aria-label="House of Gambling Live Demo">
                 <img class="wp-card__preview-img" src="./images/animation.webp" alt="House of Gambling" width="480" height="270" loading="lazy" decoding="async" />
@@ -925,7 +926,7 @@
               </div>
             </div>
 
-            <!-- 10. Cyberpunk Promo Theme (Theme) -->
+            <!-- Cyberpunk Promo Theme -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/Cyberpunk-wordpress" target="_blank" rel="noopener noreferrer" aria-label="Cyberpunk Promo Theme GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/Cyberpunk.webp" alt="Cyberpunk Promo Theme" width="480" height="270" loading="lazy" decoding="async" />
@@ -953,7 +954,7 @@
               </div>
             </div>
 
-            <!-- 11. Sneakmax WooCommerce Theme (Theme) -->
+            <!-- Sneakmax WooCommerce Theme -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/sneakmax-woocommerce" target="_blank" rel="noopener noreferrer" aria-label="Sneakmax WooCommerce Theme GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/sneakmax.webp" alt="Sneakmax WooCommerce Theme" width="480" height="270" loading="lazy" decoding="async" />
@@ -981,7 +982,7 @@
               </div>
             </div>
 
-            <!-- 12. Legal Corporate Theme (Theme) -->
+            <!-- Legal Corporate Theme -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/legal-wordpress" target="_blank" rel="noopener noreferrer" aria-label="Legal Corporate Theme GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/legal.webp" alt="Legal Corporate Theme" width="480" height="270" loading="lazy" decoding="async" />
@@ -1009,7 +1010,7 @@
               </div>
             </div>
 
-            <!-- 13. WP Cookie Notice (Plugin) -->
+            <!-- WP Cookie Notice -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/wp-cookie-notice" target="_blank" rel="noopener noreferrer" aria-label="WP Cookie Notice GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/plugin-cookie-notice.webp" alt="WP Cookie Notice Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
@@ -1037,7 +1038,7 @@
               </div>
             </div>
 
-            <!-- 14. Custom Meta Tags Manager (Plugin) -->
+            <!-- Custom Meta Tags Manager -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/custom-meta-tags-manager" target="_blank" rel="noopener noreferrer" aria-label="Custom Meta Tags Manager GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/plugin-meta-tags.webp" alt="Custom Meta Tags Manager Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
@@ -1065,7 +1066,7 @@
               </div>
             </div>
 
-            <!-- 15. MultiGEO & Satellite Engine (Plugin) -->
+            <!-- MultiGEO & Satellite Engine -->
             <div class="wp-card is-hidden" data-category="wordpress">
               <a class="wp-card__preview" href="https://github.com/Lelyaler/wp-multigeo-engine" target="_blank" rel="noopener noreferrer" aria-label="MultiGEO &amp; Satellite Engine GitHub Repository">
                 <img class="wp-card__preview-img" src="./images/plugin-multigeo.webp" alt="MultiGEO &amp; Satellite Engine Admin Preview" width="480" height="270" loading="lazy" decoding="async" />
@@ -1317,7 +1318,7 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <script defer src="translations.js?v=49"></script>
-    <script defer src="main.js?v=49"></script>
+    <script defer src="translations.js?v=50"></script>
+    <script defer src="main.js?v=50"></script>
   </body>
 </html>

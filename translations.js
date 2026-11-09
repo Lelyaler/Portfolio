@@ -204,8 +204,7 @@ const translations = {
       scrollTop: "Наверх",
       langSwitchLabel: "Выбор языка",
       menuOpen: "Открыть меню",
-      menuClose: "Закрыть меню",
-      menuOpenAria: "Открыть меню"
+      menuClose: "Закрыть меню"
     }
   },
   en: {
@@ -413,15 +412,7 @@ const translations = {
       scrollTop: "Back to top",
       langSwitchLabel: "Language selection",
       menuOpen: "Open menu",
-      menuClose: "Close menu",
-      menuOpenAria: "Open menu"
+      menuClose: "Close menu"
     }
   }
 };
-
-if (typeof window !== "undefined") {
-  window.translations = translations;
-}
-if (typeof module !== "undefined") {
-  module.exports = translations;
-}

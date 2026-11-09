@@ -1,78 +1,28 @@
-// GSAP & ScrollTrigger Initialization
-if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+
+// язык определяется inline-скриптом в <head>, чтобы не мигал контент
+let currentLang = window.__initialLang || "ru";
+
+function t(path, lang = currentLang) {
+  return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), translations[lang]);
 }
 
-// --- i18n Internationalization ---
-function getInitialLanguage() {
-  try {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get("lang");
-    if (urlLang) {
-      const lower = urlLang.toLowerCase();
-      if (lower === "ru" || lower === "en") return lower;
-      if (lower === "eng") return "en";
-    }
-  } catch (e) {}
-  if (window.__initialLang) return window.__initialLang;
-  try {
-    const saved = localStorage.getItem("portfolio_lang");
-    if (saved === "ru" || saved === "en") return saved;
-    const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    return navLang.toLowerCase().startsWith("ru") ? "ru" : "en";
-  } catch (e) {
-    return "ru";
-  }
-}
-
-let currentLang = getInitialLanguage();
-
-function getTranslation(path, lang = currentLang) {
-  const dict = (typeof window !== "undefined" && window.translations && window.translations[lang])
-    || (typeof translations !== "undefined" && translations[lang]);
-  if (!dict) return null;
-  return path.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), dict);
-}
-
-// --- Typewriter State & Functions ---
+// typewriter
 const typeText = document.querySelector(".information__subtitle-text");
 const pipe = document.querySelector(".pipe");
 let textInterval = null;
+let pipeInterval = null;
 let counter = 0;
 let symbolCounter = 0;
 let pipeCheck = true;
-let pipeInterval = null;
-
-function getPhraseArray(lang = currentLang) {
-  const roles = getTranslation("hero.roles", lang);
-  if (Array.isArray(roles) && roles.length) return roles;
-  return lang === "ru"
-    ? [
-        "WordPress & PHP разработчик",
-        "Frontend разработчик",
-      ]
-    : [
-        "WordPress & PHP Developer",
-        "Frontend Developer",
-      ];
-}
-
-let phraseArray = getPhraseArray(currentLang);
+let phraseArray = t("hero.roles");
 
 function getPipe() {
-  if (!pipe || !pipe.style) return;
-  if (pipeCheck) {
-    pipeCheck = false;
-    pipe.style.display = "none";
-  } else {
-    pipeCheck = true;
-    pipe.style.display = "inline-block";
-  }
+  pipeCheck = !pipeCheck;
+  pipe.style.display = pipeCheck ? "inline-block" : "none";
 }
 
 function changeTypeText() {
-  if (!typeText) return;
-  if (!phraseArray || !phraseArray.length) phraseArray = getPhraseArray(currentLang);
   if (counter >= phraseArray.length) counter = 0;
   if (symbolCounter === 0) {
     pipeCheck = true;
@@ -83,7 +33,7 @@ function changeTypeText() {
   }
   if (symbolCounter > 0) {
     pipeCheck = true;
-    if (pipe && pipe.style) pipe.style.display = "inline-block";
+    pipe.style.display = "inline-block";
     pipeInterval = setInterval(getPipe, 500);
     setTimeout(() => {
       textInterval = setInterval(printText, 60, -1);
@@ -102,616 +52,345 @@ function changeTypeText() {
     }
   }
   function printText(num) {
-    const currentPhrase = phraseArray[counter] || "";
-    typeText.textContent = currentPhrase.slice(0, symbolCounter);
+    const phrase = phraseArray[counter];
+    typeText.textContent = phrase.slice(0, symbolCounter);
     symbolCounter += num;
-    typeTextAnimation(currentPhrase);
+    typeTextAnimation(phrase);
   }
 }
 
-function applyTranslations(lang, isDynamicChange = false) {
+function restartTypewriter() {
+  clearInterval(textInterval);
+  clearInterval(pipeInterval);
+  counter = 0;
+  symbolCounter = 0;
+  typeText.textContent = "";
+  changeTypeText();
+}
+
+// i18n
+function setMeta(selector, value) {
+  const el = document.querySelector(selector);
+  if (el && value) el.setAttribute("content", value);
+}
+
+function applyTranslations(lang) {
   document.documentElement.lang = lang;
+  document.title = t("meta.title", lang);
+  setMeta('meta[name="description"]', t("meta.description", lang));
+  setMeta('meta[property="og:title"]', t("meta.ogTitle", lang));
+  setMeta('meta[property="og:description"]', t("meta.ogDesc", lang));
+  setMeta('meta[property="og:locale"]', lang === "ru" ? "ru_RU" : "en_US");
+  setMeta('meta[name="twitter:title"]', t("meta.twitterTitle", lang));
+  setMeta('meta[name="twitter:description"]', t("meta.twitterDesc", lang));
 
-  // Title & Meta tags
-  const title = getTranslation("meta.title", lang);
-  if (title) document.title = title;
-
-  const metaDesc = document.querySelector('meta[name="description"]');
-  const transDesc = getTranslation("meta.description", lang);
-  if (metaDesc && transDesc) metaDesc.setAttribute("content", transDesc);
-
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  const transOgTitle = getTranslation("meta.ogTitle", lang);
-  if (ogTitle && transOgTitle) ogTitle.setAttribute("content", transOgTitle);
-
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  const transOgDesc = getTranslation("meta.ogDesc", lang);
-  if (ogDesc && transOgDesc) ogDesc.setAttribute("content", transOgDesc);
-
-  const ogLocale = document.querySelector('meta[property="og:locale"]');
-  if (ogLocale) ogLocale.setAttribute("content", lang === "ru" ? "ru_RU" : "en_US");
-
-  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-  const transTwTitle = getTranslation("meta.twitterTitle", lang);
-  if (twitterTitle && transTwTitle) twitterTitle.setAttribute("content", transTwTitle);
-
-  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-  const transTwDesc = getTranslation("meta.twitterDesc", lang);
-  if (twitterDesc && transTwDesc) twitterDesc.setAttribute("content", transTwDesc);
-
-  // Resume button link
-  const resumeBtn = document.querySelector(".header__btn--resume, .header__btn--anketa");
-  if (resumeBtn) {
-    resumeBtn.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-  }
-
-
-  // Contact resume item
-  const contactResumeLink = document.querySelector(".about__contacts-resume-link");
-  const contactResumeTitle = document.querySelector(".about__contacts-resume-title");
-  const contactResumeDesc = document.querySelector(".about__contacts-resume-desc");
-  if (contactResumeLink) {
-    contactResumeLink.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-    contactResumeLink.setAttribute("aria-label", lang === "en" ? "Open CV online" : "Открыть резюме онлайн");
-  }
-  if (contactResumeTitle) {
-    contactResumeTitle.textContent = lang === "en" ? "CV" : "Резюме";
-  }
-  if (contactResumeDesc) {
-    contactResumeDesc.textContent = lang === "en" ? "Open CV" : "Открыть резюме";
-    contactResumeDesc.href = lang === "en" ? "https://lelyaler.github.io/cv/" : "https://lelyaler.github.io/anketa/";
-  }
-
-  // Text content elements with data-i18n
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    const val = getTranslation(key, lang);
-    if (val !== null && typeof val === "string") {
-      if (el.dataset.i18nHtml === "true") {
-        el.innerHTML = val;
-      } else {
-        el.textContent = val;
-      }
+    const val = t(el.dataset.i18n, lang);
+    if (typeof val !== "string") return;
+    if (el.dataset.i18nHtml === "true") {
+      el.innerHTML = val;
+    } else {
+      el.textContent = val;
     }
   });
 
-  // Attribute elements with data-i18n-attr
+  // формат: data-i18n-attr="href:contacts.resumeLink,aria-label:contacts.resumeAria"
   document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
-    const attrPairs = el.getAttribute("data-i18n-attr").split(",");
-    attrPairs.forEach((pair) => {
-      const [attr, key] = pair.split(":");
-      if (attr && key) {
-        const val = getTranslation(key.trim(), lang);
-        if (val !== null && typeof val === "string") {
-          el.setAttribute(attr.trim(), val);
-        }
-      }
+    el.dataset.i18nAttr.split(",").forEach((pair) => {
+      const [attr, key] = pair.split(":").map((s) => s.trim());
+      const val = t(key, lang);
+      if (typeof val === "string") el.setAttribute(attr, val);
     });
   });
 
-  // Project archive button label
-  const projectsExpandBtn = document.getElementById("projects-expand-btn");
-  const extraCards = document.querySelectorAll(".wp-card--extra");
-  if (projectsExpandBtn && extraCards.length) {
-    const isProjOpen = projectsExpandBtn.classList.contains("is-open");
-    const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
-    if (textEl) {
-      const closedFn = getTranslation("projects.expandClosed", lang);
-      textEl.textContent = isProjOpen
-        ? (getTranslation("projects.expandOpen", lang) || "Свернуть")
-        : (typeof closedFn === "function" ? closedFn(extraCards.length) : `Показать все проекты (ещё ${extraCards.length})`);
-    }
-  }
-
-  // Language switcher active states
   document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
-    const btnLang = btn.getAttribute("data-lang");
-    const isActive = btnLang === lang;
+    const isActive = btn.dataset.lang === lang;
     btn.classList.toggle("is-active", isActive);
-    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    btn.setAttribute("aria-pressed", isActive);
   });
 
-  // Dynamic language switch updates Splitting & ScrollTrigger
-  if (isDynamicChange && typeof Splitting !== "undefined") {
+  phraseArray = t("hero.roles", lang);
+}
+
+applyTranslations(currentLang);
+
+document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const lang = btn.dataset.lang;
+    if (lang === currentLang) return;
+    currentLang = lang;
+
     try {
-      Splitting({ target: "[data-splitting]", force: true });
-    } catch (e) {}
+      localStorage.setItem("portfolio_lang", lang);
+    } catch (e) {
+      // приватный режим Safari
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    history.replaceState(null, "", url);
+
+    applyTranslations(lang);
+    updateExpandButton();
+
+    // после смены текста Splitting нужно перезапустить
+    Splitting({ target: "[data-splitting]", force: true });
     document.querySelectorAll(".char, .word").forEach((el) => {
       el.style.opacity = "1";
     });
-    if (typeof ScrollTrigger !== "undefined") {
-      setTimeout(() => ScrollTrigger.refresh(), 100);
-    }
-  }
-
-  // Update typewriter roles on language change
-  phraseArray = getPhraseArray(lang);
-  if (isDynamicChange) {
-    clearInterval(textInterval);
-    clearInterval(pipeInterval);
-    counter = 0;
-    symbolCounter = 0;
-    if (typeText) typeText.textContent = "";
-    changeTypeText();
-  }
-}
-
-// Initial translation application
-applyTranslations(currentLang, false);
-
-// Language switcher clicks
-document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const selectedLang = btn.getAttribute("data-lang");
-    if (selectedLang && selectedLang !== currentLang) {
-      currentLang = selectedLang;
-      try {
-        localStorage.setItem("portfolio_lang", currentLang);
-        const url = new URL(window.location.href);
-        url.searchParams.set("lang", currentLang);
-        window.history.replaceState({}, "", url.toString());
-      } catch (e) {}
-      applyTranslations(currentLang, true);
-    }
+    ScrollTrigger.refresh();
+    restartTypewriter();
   });
 });
 
-// Initialize Splitting
-if (typeof Splitting !== "undefined") {
-  Splitting();
-}
-
-// Start Typewriter
+Splitting();
 changeTypeText();
 
-// Smooth Scroll with Lenis
+// плавный скролл
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 let lenis = null;
-if (typeof Lenis !== "undefined") {
+
+if (!prefersReducedMotion) {
   lenis = new Lenis({
-    duration: prefersReducedMotion ? 0 : 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: "vertical",
-    gestureDirection: "vertical",
-    smooth: !prefersReducedMotion,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
+    duration: 1.2,
+    easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
   });
+  lenis.on("scroll", ScrollTrigger.update);
 
   function raf(time) {
-    if (lenis) lenis.raf(time);
+    lenis.raf(time);
     requestAnimationFrame(raf);
   }
-
   requestAnimationFrame(raf);
-
-  if (typeof ScrollTrigger !== "undefined") {
-    lenis.on("scroll", ScrollTrigger.update);
-  }
 }
 
-// GSAP Animations
-if (typeof gsap !== "undefined" && typeof gsap.timeline === "function") {
-  let heroTl = gsap.timeline({
-    default: {
-      ease: "power2.inOut",
-    },
-  });
-
-  heroTl.fromTo(
-    ".header",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      duration: 0.6,
-    }
-  );
-  heroTl.fromTo(
-    ".information",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      duration: 0.6,
-    },
-    "-=0.3"
-  );
-
-  if (typeof ScrollTrigger !== "undefined") {
-    ScrollTrigger.create({
-      trigger: ".about",
-      start: "top bottom-=100",
-      once: true,
-      onEnter: () => {
-        gsap.to(".about .title .char", {
-          stagger: 0.03,
-          opacity: 1,
-          ease: "power2.inOut",
-        });
-        gsap.to(".about .about__description .word", {
-          stagger: 0.015,
-          opacity: 1,
-          ease: "power2.inOut",
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".about",
-      start: "top bottom-=150",
-      once: true,
-      onEnter: () => {
-        gsap.to(".about__list li", {
-          y: 0,
-          opacity: 1,
-          ease: "circ.out",
-          duration: 0.8,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".skills",
-      start: "top bottom-=150",
-      once: true,
-      onEnter: () => {
-        gsap.to(".skills .skills__inner h2 .char", {
-          stagger: 0.03,
-          opacity: 1,
-          ease: "power2.inOut",
-        });
-        gsap.to(".skills__list", {
-          y: 0,
-          opacity: 1,
-          ease: "circ.out",
-          duration: 0.8,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".projects",
-      start: "top bottom-=150",
-      once: true,
-      onEnter: () => {
-        gsap.to(".projects__card:not(.projects__card--hidden)", {
-          y: 0,
-          opacity: 1,
-          ease: "circ.out",
-          duration: 0.8,
-        });
-        gsap.to(".projects h2 .char", {
-          stagger: 0.03,
-          opacity: 1,
-          ease: "power2.inOut",
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".contacts",
-      start: "top bottom-=150",
-      once: true,
-      onEnter: () => {
-        gsap.to(".contacts h2 .char", {
-          stagger: 0.03,
-          opacity: 1,
-          ease: "power2.inOut",
-        });
-        gsap.to(".contacts__list li", {
-          y: 0,
-          opacity: 1,
-          ease: "circ.out",
-          duration: 0.8,
-          stagger: 0.05,
-        });
-      },
-    });
-  }
-}
-
-// Navigation & Smooth Scroll
-function smoothScrollTo(targetSelector) {
-  const target = document.querySelector(targetSelector);
-  if (!target) return;
-  if (typeof lenis !== "undefined" && lenis && !prefersReducedMotion) {
-    lenis.scrollTo(target, { offset: -30 });
+function scrollToTarget(target, offset = 0) {
+  if (lenis) {
+    lenis.scrollTo(target, { offset });
   } else {
-    target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
+    const el = typeof target === "number" ? null : document.querySelector(target);
+    window.scrollTo({ top: el ? el.offsetTop + offset : target, behavior: "smooth" });
   }
 }
 
-document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (href && href.startsWith("#")) {
-      e.preventDefault();
-      smoothScrollTo(href);
-    }
-  });
-});
+// анимации
+const heroTl = gsap.timeline({ defaults: { ease: "power2.inOut", duration: 0.6 } });
+heroTl.fromTo(".header", { opacity: 0 }, { opacity: 1 });
+heroTl.fromTo(".information", { opacity: 0 }, { opacity: 1 }, "-=0.3");
 
-// Interactive skill hover animation
-const skillsArr = document.querySelectorAll(".skills__list-item-inner");
-skillsArr.forEach((skill) => {
-  const triggerFlip = () => {
-    if (skill.classList.contains("animated-skill")) return;
-    skill.classList.add("animated-skill");
-    setTimeout(() => {
-      skill.classList.remove("animated-skill");
-    }, 1500);
-  };
-  skill.addEventListener("mouseover", triggerFlip);
-  skill.addEventListener("touchstart", triggerFlip, { passive: true });
-});
-
-// Scroll to top button
-const scrollTopBtn = document.getElementById("scroll-top-btn");
-if (scrollTopBtn) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 450) {
-      scrollTopBtn.classList.add("is-visible");
-    } else {
-      scrollTopBtn.classList.remove("is-visible");
-    }
-  });
-
-  scrollTopBtn.addEventListener("click", () => {
-    if (typeof lenis !== "undefined" && lenis) {
-      lenis.scrollTo(0);
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  });
+function revealTitle(selector) {
+  gsap.to(selector, { stagger: 0.03, opacity: 1, ease: "power2.inOut" });
 }
 
-// Scrollspy for Header Navigation
+function slideUp(selector, extra = {}) {
+  gsap.to(selector, { y: 0, opacity: 1, ease: "circ.out", duration: 0.8, ...extra });
+}
+
+function onReveal(trigger, offset, callback) {
+  ScrollTrigger.create({ trigger, start: `top bottom-=${offset}`, once: true, onEnter: callback });
+}
+
+onReveal(".about", 100, () => {
+  revealTitle(".about .title .char");
+  gsap.to(".about .about__description .word", { stagger: 0.015, opacity: 1, ease: "power2.inOut" });
+});
+onReveal(".about", 150, () => slideUp(".about__list li"));
+onReveal(".skills", 150, () => {
+  revealTitle(".skills h2 .char");
+  slideUp(".skills__list");
+});
+onReveal(".projects", 150, () => {
+  slideUp(".projects__card:not(.projects__card--hidden)");
+  revealTitle(".projects h2 .char");
+});
+onReveal(".contacts", 150, () => {
+  revealTitle(".contacts h2 .char");
+  slideUp(".contacts__list li", { stagger: 0.05 });
+});
+
+// навигация
+document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
+    scrollToTarget(href, -30);
+  });
+});
+
 const navItems = document.querySelectorAll(".header__nav-item");
 const navSections = document.querySelectorAll("main section[id]");
 
-if (navItems.length && navSections.length) {
-  const updateScrollSpy = () => {
-    const scrollPosition = window.scrollY + 250;
-    let currentId = "";
-
-    navSections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      if (scrollPosition >= top && scrollPosition < top + height) {
-        currentId = section.getAttribute("id");
-      }
-    });
-
-    navItems.forEach((item) => {
-      const link = item.querySelector(".header__nav-link");
-      if (link && link.getAttribute("href") === `#${currentId}`) {
-        item.classList.add("is-active");
-      } else {
-        item.classList.remove("is-active");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", updateScrollSpy, { passive: true });
-  updateScrollSpy();
+function updateScrollSpy() {
+  const pos = window.scrollY + 250;
+  let currentId = "";
+  navSections.forEach((section) => {
+    if (pos >= section.offsetTop && pos < section.offsetTop + section.offsetHeight) {
+      currentId = section.id;
+    }
+  });
+  navItems.forEach((item) => {
+    const href = item.querySelector(".header__nav-link").getAttribute("href");
+    item.classList.toggle("is-active", href === `#${currentId}`);
+  });
 }
 
-// Quick copy to clipboard with tooltip
+const scrollTopBtn = document.getElementById("scroll-top-btn");
+
+window.addEventListener(
+  "scroll",
+  () => {
+    updateScrollSpy();
+    scrollTopBtn.classList.toggle("is-visible", window.scrollY > 450);
+  },
+  { passive: true }
+);
+updateScrollSpy();
+
+scrollTopBtn.addEventListener("click", () => scrollToTarget(0));
+
+// переворот карточки навыка
+document.querySelectorAll(".skills__list-item-inner").forEach((skill) => {
+  const flip = () => {
+    if (skill.classList.contains("animated-skill")) return;
+    skill.classList.add("animated-skill");
+    setTimeout(() => skill.classList.remove("animated-skill"), 1500);
+  };
+  skill.addEventListener("mouseover", flip);
+  skill.addEventListener("touchstart", flip, { passive: true });
+});
+
+// копирование контактов
 document.querySelectorAll(".about__copy-btn").forEach((btn) => {
   let timeoutId = null;
   btn.addEventListener("click", async (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    const textToCopy = btn.getAttribute("data-copy");
-    if (!textToCopy) return;
-
     try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(textToCopy);
-      } else {
-        const textarea = document.createElement("textarea");
-        textarea.value = textToCopy;
-        textarea.style.position = "fixed";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-      }
-
-      btn.classList.add("is-copied");
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        btn.classList.remove("is-copied");
-      }, 1800);
+      await navigator.clipboard.writeText(btn.dataset.copy);
     } catch (err) {
-      console.error("Copy failed", err);
+      console.error("Не удалось скопировать", err);
+      return;
     }
+    btn.classList.add("is-copied");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => btn.classList.remove("is-copied"), 1800);
   });
 });
 
-const wpTabBtns = document.querySelectorAll(".wp-tab-btn");
-const wpCards = document.querySelectorAll(".wp-card[data-category]");
-const projectsExpandBtn = document.getElementById("projects-expand-btn");
-const projectsMoreContainer = document.querySelector(".projects__more-container");
-let isProjectsOpen = false;
+// проекты: вкладки и кнопка "показать все"
 const INITIAL_LIMIT = 9;
+const tabBtns = document.querySelectorAll(".wp-tab-btn");
+const cards = [...document.querySelectorAll(".wp-card[data-category]")];
+const expandBtn = document.getElementById("projects-expand-btn");
+const expandText = expandBtn.querySelector(".projects__expand-btn-text");
+const moreContainer = document.querySelector(".projects__more-container");
+let activeFilter = document.querySelector(".wp-tab-btn.is-active").dataset.filter;
+let isProjectsOpen = false;
 
+function getCategoryCards() {
+  return cards.filter((card) => activeFilter === "all" || card.dataset.category === activeFilter);
+}
+
+// последнюю карточку в неполном ряду центрируем
 function updateLoneCards() {
-  if (!wpCards.length) return;
-  const visibleCards = Array.from(wpCards).filter((c) => !c.classList.contains("is-hidden"));
-  wpCards.forEach((c) => c.classList.remove("is-lone-card"));
-
-  if (!visibleCards.length) return;
-  const width = window.innerWidth;
-  if (width > 1024) {
-    if (visibleCards.length % 3 === 1) {
-      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
-    }
-  } else if (width > 680) {
-    if (visibleCards.length % 2 === 1) {
-      visibleCards[visibleCards.length - 1].classList.add("is-lone-card");
-    }
+  const visible = cards.filter((card) => !card.classList.contains("is-hidden"));
+  const perRow = window.innerWidth > 1024 ? 3 : window.innerWidth > 680 ? 2 : 1;
+  cards.forEach((card) => card.classList.remove("is-lone-card"));
+  if (perRow > 1 && visible.length % perRow === 1) {
+    visible[visible.length - 1].classList.add("is-lone-card");
   }
 }
 
-function updateExpandButton(categoryCards) {
-  if (!projectsExpandBtn || !projectsMoreContainer) return;
-  const extraCount = categoryCards.length - INITIAL_LIMIT;
-  if (extraCount <= 0) {
-    projectsMoreContainer.style.display = "none";
-    return;
-  }
-
-  projectsMoreContainer.style.display = "flex";
-  projectsExpandBtn.classList.toggle("is-open", isProjectsOpen);
-  const textEl = projectsExpandBtn.querySelector(".projects__expand-btn-text");
-  if (textEl) {
-    const closedFn = getTranslation("projects.expandClosed");
-    textEl.textContent = isProjectsOpen
-      ? (getTranslation("projects.expandOpen") || "Свернуть")
-      : (typeof closedFn === "function" ? closedFn(extraCount) : `Показать все проекты (ещё ${extraCount})`);
-  }
+function updateExpandButton() {
+  const extraCount = getCategoryCards().length - INITIAL_LIMIT;
+  moreContainer.style.display = extraCount > 0 ? "flex" : "none";
+  if (extraCount <= 0) return;
+  expandBtn.classList.toggle("is-open", isProjectsOpen);
+  expandText.textContent = isProjectsOpen ? t("projects.expandOpen") : t("projects.expandClosed")(extraCount);
 }
 
-function applyCategoryFilter(filter, animate = false) {
-  const categoryCards = Array.from(wpCards).filter((c) => filter === "all" || c.getAttribute("data-category") === filter);
-
-  wpCards.forEach((card) => {
-    const cat = card.getAttribute("data-category");
-    const matches = filter === "all" || cat === filter;
-    if (!matches) {
-      card.classList.add("is-hidden");
-    }
+function renderProjects(animate = false) {
+  const categoryCards = getCategoryCards();
+  cards.forEach((card) => {
+    if (!categoryCards.includes(card)) card.classList.add("is-hidden");
   });
 
-  let visibleCount = 0;
   categoryCards.forEach((card, index) => {
     const isExtra = index >= INITIAL_LIMIT;
     card.classList.toggle("wp-card--extra", isExtra);
 
     if (isExtra && !isProjectsOpen) {
       card.classList.add("is-hidden");
-    } else {
-      const wasHidden = card.classList.contains("is-hidden");
-      card.classList.remove("is-hidden");
-      if (animate && wasHidden && typeof gsap !== "undefined") {
-        gsap.fromTo(
-          card,
-          { opacity: 0, y: 15 },
-          { opacity: 1, y: 0, duration: 0.35, delay: (visibleCount % 3) * 0.05, ease: "power2.out" }
-        );
-      } else if (!animate) {
-        card.style.opacity = "1";
-        card.style.transform = "none";
-      }
-      visibleCount++;
+      return;
+    }
+
+    const wasHidden = card.classList.contains("is-hidden");
+    card.classList.remove("is-hidden");
+    if (animate && wasHidden) {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.35, delay: (index % 3) * 0.05, ease: "power2.out" }
+      );
+    } else if (!animate) {
+      card.style.opacity = "1";
+      card.style.transform = "none";
     }
   });
 
   updateLoneCards();
-  updateExpandButton(categoryCards);
-
-  if (typeof ScrollTrigger !== "undefined") {
-    setTimeout(() => ScrollTrigger.refresh(), 200);
-  }
+  updateExpandButton();
+  setTimeout(() => ScrollTrigger.refresh(), 200);
 }
 
-if (wpTabBtns.length && wpCards.length) {
-  wpTabBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter");
-      wpTabBtns.forEach((b) => {
-        const isActive = b === btn;
-        b.classList.toggle("is-active", isActive);
-        b.setAttribute("aria-selected", isActive ? "true" : "false");
-      });
-
-      applyCategoryFilter(filter, true);
+tabBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    activeFilter = btn.dataset.filter;
+    tabBtns.forEach((b) => {
+      b.classList.toggle("is-active", b === btn);
+      b.setAttribute("aria-selected", b === btn);
     });
+    renderProjects(true);
   });
+});
 
-  if (projectsExpandBtn) {
-    projectsExpandBtn.addEventListener("click", () => {
-      isProjectsOpen = !isProjectsOpen;
-      const activeTab = document.querySelector(".wp-tab-btn.is-active");
-      const currentFilter = activeTab ? activeTab.getAttribute("data-filter") : "frontend";
-
-      if (!isProjectsOpen) {
-        const projectsSec = document.getElementById("projects");
-        if (projectsSec) {
-          const rect = projectsSec.getBoundingClientRect();
-          if (rect.top < 0) {
-            projectsSec.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-      }
-
-      applyCategoryFilter(currentFilter, isProjectsOpen);
-    });
+expandBtn.addEventListener("click", () => {
+  isProjectsOpen = !isProjectsOpen;
+  if (!isProjectsOpen) {
+    const section = document.getElementById("projects");
+    if (section.getBoundingClientRect().top < 0) scrollToTarget("#projects");
   }
+  renderProjects(isProjectsOpen);
+});
 
-  const initialTab = document.querySelector(".wp-tab-btn.is-active");
-  const initialFilter = initialTab ? initialTab.getAttribute("data-filter") : "frontend";
-  applyCategoryFilter(initialFilter, false);
+window.addEventListener("resize", updateLoneCards);
+renderProjects();
 
-  window.addEventListener("resize", updateLoneCards);
-}
-
-// Mobile Hamburger Menu
-const headerBurger = document.getElementById("header-burger");
+// мобильное меню
+const burger = document.getElementById("header-burger");
 const headerNav = document.getElementById("header-nav");
 
-if (headerBurger && headerNav) {
-  const closeMenu = () => {
-    headerBurger.classList.remove("is-open");
-    headerNav.classList.remove("is-open");
-    headerBurger.setAttribute("aria-expanded", "false");
-    const openLabel = getTranslation("ui.menuOpen") || "Открыть меню";
-    headerBurger.setAttribute("aria-label", openLabel);
-  };
-
-  const openMenu = () => {
-    headerBurger.classList.add("is-open");
-    headerNav.classList.add("is-open");
-    headerBurger.setAttribute("aria-expanded", "true");
-    const closeLabel = getTranslation("ui.menuClose") || "Закрыть меню";
-    headerBurger.setAttribute("aria-label", closeLabel);
-  };
-
-  headerBurger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isOpen = headerBurger.classList.contains("is-open");
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  headerNav.querySelectorAll(".header__nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!headerNav.contains(e.target) && !headerBurger.contains(e.target)) {
-      if (headerBurger.classList.contains("is-open")) {
-        closeMenu();
-      }
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && headerBurger.classList.contains("is-open")) {
-      closeMenu();
-    }
-  });
+function toggleMenu(open) {
+  burger.classList.toggle("is-open", open);
+  headerNav.classList.toggle("is-open", open);
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", t(open ? "ui.menuClose" : "ui.menuOpen"));
 }
+
+burger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleMenu(!burger.classList.contains("is-open"));
+});
+
+headerNav.querySelectorAll(".header__nav-link").forEach((link) => {
+  link.addEventListener("click", () => toggleMenu(false));
+});
+
+document.addEventListener("click", (e) => {
+  if (burger.classList.contains("is-open") && !headerNav.contains(e.target)) {
+    toggleMenu(false);
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") toggleMenu(false);
+});

@@ -1378,6 +1378,12 @@ section[id] {
   border: none;
 }
 
+.wp-card__badge--ai {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: none;
+}
+
 .wp-card__badge--woo {
   background: rgba(150, 88, 138, 0.2);
   color: #c98bc3;

@@ -81,6 +81,12 @@ const translations = {
           desc: "Легковесный плагин предупреждения о куках (GDPR). Страница настроек на нативном WordPress Settings API, встроенный wp-color-picker, чистый Vanilla JS (~1.2 КБ) и нулевой сдвиг макета (CLS).",
           tech: "Plugin API, PHP, Settings API, Vanilla JS, CSS3"
         },
+        seoSentinel: {
+          badge: "AI / GEO / SEO",
+          title: "SEO Sentinel — AI Search & GEO Copilot",
+          desc: "Мультиагентная платформа глубокого технического аудита, анализа поисковых лидеров и Generative Engine Optimization (GEO). Оценка цитируемости нейросетями (Perplexity/ChatGPT), автогенерация Schema.org JSON-LD и обход WAF/Cloudflare.",
+          tech: "PHP 8.2, PSR-4, Agentic Coding, GEO, Schema.org, Tailwind CSS, Docker"
+        },
         metaTags: {
           badge: "SEO-плагин",
           title: "Custom Meta Tags Manager",
@@ -288,6 +294,12 @@ const translations = {
           title: "WP Cookie Notice",
           desc: "Lightweight GDPR cookie consent plugin. Admin options built with native WordPress Settings API, integrated wp-color-picker, Vanilla JS (~1.2 KB), and zero Cumulative Layout Shift.",
           tech: "Plugin API, PHP, Settings API, Vanilla JS, CSS3"
+        },
+        seoSentinel: {
+          badge: "AI / GEO / SEO",
+          title: "SEO Sentinel — AI Search & GEO Copilot",
+          desc: "Multi-agent technical SEO & Generative Engine Optimization (GEO) platform. Evaluates AI search citation readiness (Perplexity, ChatGPT, Google AI Overviews), generates Schema.org JSON-LD, detects SERP content gaps, and bypasses Cloudflare WAF.",
+          tech: "PHP 8.2, PSR-4, Agentic Coding, GEO, Schema.org, Tailwind CSS, Docker"
         },
         metaTags: {
           badge: "SEO Plugin",

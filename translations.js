@@ -1,11 +1,11 @@
 const translations = {
   ru: {
     meta: {
-      title: "Валерия Чернявская — WordPress & Frontend Developer Portfolio",
+      title: "Валерия Чернявская - WordPress & Frontend Developer Portfolio",
       description: "Портфолио WordPress & Frontend-разработчика Валерии Чернявской. Кастомные темы и плагины на PHP, блоки Gutenberg, WooCommerce, Core Web Vitals и интерактивный фронтенд.",
-      ogTitle: "Валерия Чернявская — WordPress & Frontend Developer Portfolio",
+      ogTitle: "Валерия Чернявская - WordPress & Frontend Developer Portfolio",
       ogDesc: "Портфолио WordPress & Frontend-разработчика. Разработка кастомных тем и плагинов на PHP, Gutenberg, WooCommerce, Core Web Vitals и интерактивные интерфейсы.",
-      twitterTitle: "Валерия Чернявская — WordPress & Frontend Developer Portfolio",
+      twitterTitle: "Валерия Чернявская - WordPress & Frontend Developer Portfolio",
       twitterDesc: "Портфолио WordPress & Frontend-разработчика. Разработка кастомных тем и плагинов на PHP, Gutenberg, WooCommerce, Core Web Vitals и интерактивные интерфейсы."
     },
     nav: {
@@ -17,7 +17,7 @@ const translations = {
     },
     hero: {
       title: "Привет, меня зовут Лера",
-      subtitlePrefix: "Я —",
+      subtitlePrefix: "Я -",
       roles: [
         "WordPress & PHP разработчик",
         "Frontend разработчик"
@@ -209,11 +209,11 @@ const translations = {
   },
   en: {
     meta: {
-      title: "Valeriya Cherniavskaya — WordPress & Frontend Developer Portfolio",
+      title: "Valeriya Cherniavskaya - WordPress & Frontend Developer Portfolio",
       description: "Portfolio of WordPress & Frontend Developer Valeriya Cherniavskaya. Custom PHP themes & plugins, Gutenberg blocks, WooCommerce, Core Web Vitals, and interactive frontend.",
-      ogTitle: "Valeriya Cherniavskaya — WordPress & Frontend Developer Portfolio",
+      ogTitle: "Valeriya Cherniavskaya - WordPress & Frontend Developer Portfolio",
       ogDesc: "Portfolio of WordPress & Frontend Developer. Custom PHP themes & plugins, Gutenberg, WooCommerce, Core Web Vitals, and interactive UI engineering.",
-      twitterTitle: "Valeriya Cherniavskaya — WordPress & Frontend Developer Portfolio",
+      twitterTitle: "Valeriya Cherniavskaya - WordPress & Frontend Developer Portfolio",
       twitterDesc: "Portfolio of WordPress & Frontend Developer. Custom PHP themes & plugins, Gutenberg, WooCommerce, Core Web Vitals, and interactive UI engineering."
     },
     nav: {

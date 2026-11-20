@@ -231,7 +231,7 @@ const translations = {
     },
     hero: {
       title: "Hi, I'm Valeriya",
-      subtitlePrefix: "I am a",
+      subtitlePrefix: "I'm a",
       roles: [
         "WordPress & PHP Developer",
         "Frontend Developer"

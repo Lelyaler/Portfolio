@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const isMobileDevice = typeof window !== "undefined" && (window.innerWidth < 768 || "ontouchstart" in window);
+
 // язык определяется inline-скриптом в <head>, чтобы не мигал контент
 let currentLang = window.__initialLang || "ru";
 
@@ -133,7 +135,11 @@ document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
     updateExpandButton();
 
     // после смены текста Splitting нужно перезапустить
-    Splitting({ target: "[data-splitting]", force: true });
+    if (isMobileDevice) {
+      Splitting({ target: "h2[data-splitting]", force: true });
+    } else {
+      Splitting({ target: "[data-splitting]", force: true });
+    }
     document.querySelectorAll(".char, .word").forEach((el) => {
       el.style.opacity = "1";
     });
@@ -142,18 +148,23 @@ document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
   });
 });
 
-Splitting();
+if (isMobileDevice) {
+  Splitting({ target: "h2[data-splitting]" });
+} else {
+  Splitting();
+}
 changeTypeText();
 
-// плавный скролл
+// smooth scroll
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let lenis = null;
 
-if (!prefersReducedMotion) {
+if (!prefersReducedMotion && !isMobileDevice) {
   lenis = new Lenis({
-    duration: 1.2,
-    easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+    duration: 0.8,
+    smoothWheel: true,
   });
+
   lenis.on("scroll", ScrollTrigger.update);
 
   function raf(time) {
@@ -173,16 +184,23 @@ function scrollToTarget(target, offset = 0) {
 }
 
 // анимации
-const heroTl = gsap.timeline({ defaults: { ease: "power2.inOut", duration: 0.6 } });
-heroTl.fromTo(".header", { opacity: 0 }, { opacity: 1 });
-heroTl.fromTo(".information", { opacity: 0 }, { opacity: 1 }, "-=0.3");
+if (!isMobileDevice) {
+  const heroTl = gsap.timeline({ defaults: { ease: "power2.inOut", duration: 0.6 } });
+  heroTl.fromTo(".header", { opacity: 0 }, { opacity: 1 });
+  heroTl.fromTo(".information", { opacity: 0 }, { opacity: 1 }, "-=0.3");
+}
 
 function revealTitle(selector) {
-  gsap.to(selector, { stagger: 0.03, opacity: 1, ease: "power2.inOut" });
+  if (isMobileDevice) {
+    gsap.to(selector, { opacity: 1, duration: 0.3 });
+  } else {
+    gsap.to(selector, { stagger: 0.03, opacity: 1, ease: "power2.inOut" });
+  }
 }
 
 function slideUp(selector, extra = {}) {
-  gsap.to(selector, { y: 0, opacity: 1, ease: "circ.out", duration: 0.8, ...extra });
+  const dur = isMobileDevice ? 0.5 : 0.8;
+  gsap.to(selector, { y: 0, opacity: 1, ease: "circ.out", duration: dur, ...extra });
 }
 
 function onReveal(trigger, offset, callback) {
@@ -191,7 +209,12 @@ function onReveal(trigger, offset, callback) {
 
 onReveal(".about", 100, () => {
   revealTitle(".about .title .char");
-  gsap.to(".about .about__description .word", { stagger: 0.015, opacity: 1, ease: "power2.inOut" });
+  if (isMobileDevice) {
+    gsap.to(".about .about__description", { opacity: 1, duration: 0.4 });
+    document.querySelectorAll(".about .about__description .word").forEach(w => w.style.opacity = "1");
+  } else {
+    gsap.to(".about .about__description .word", { stagger: 0.015, opacity: 1, ease: "power2.inOut" });
+  }
 });
 onReveal(".about", 150, () => slideUp(".about__list li"));
 onReveal(".skills", 150, () => {
@@ -219,32 +242,77 @@ document.querySelectorAll(".header__nav-link, .link-btn").forEach((link) => {
 
 const navItems = document.querySelectorAll(".header__nav-item");
 const navSections = document.querySelectorAll("main section[id]");
+const navLinks = Array.from(navItems).map((item) => ({
+  item,
+  href: item.querySelector(".header__nav-link")?.getAttribute("href") || "",
+}));
 
-function updateScrollSpy() {
-  const pos = window.scrollY + 250;
-  let currentId = "";
-  navSections.forEach((section) => {
-    if (pos >= section.offsetTop && pos < section.offsetTop + section.offsetHeight) {
-      currentId = section.id;
-    }
-  });
-  navItems.forEach((item) => {
-    const href = item.querySelector(".header__nav-link").getAttribute("href");
-    item.classList.toggle("is-active", href === `#${currentId}`);
+let sectionOffsets = [];
+function computeSectionOffsets() {
+  sectionOffsets = Array.from(navSections).map((section) => {
+    const rect = section.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    return {
+      id: section.id,
+      top: top,
+      bottom: top + rect.height,
+    };
   });
 }
+computeSectionOffsets();
+window.addEventListener("resize", computeSectionOffsets, { passive: true });
+window.addEventListener("load", computeSectionOffsets);
+ScrollTrigger.addEventListener("refresh", computeSectionOffsets);
 
+let activeNavId = null;
+let isScrollTopVisible = false;
 const scrollTopBtn = document.getElementById("scroll-top-btn");
 
-window.addEventListener(
-  "scroll",
-  () => {
-    updateScrollSpy();
-    scrollTopBtn.classList.toggle("is-visible", window.scrollY > 450);
-  },
-  { passive: true }
-);
-updateScrollSpy();
+function handleScrollUpdate(scrollY) {
+  const pos = scrollY + 250;
+  let currentId = "";
+  for (let i = 0; i < sectionOffsets.length; i++) {
+    const s = sectionOffsets[i];
+    if (pos >= s.top && pos < s.bottom) {
+      currentId = s.id;
+      break;
+    }
+  }
+  if (currentId !== activeNavId) {
+    activeNavId = currentId;
+    navLinks.forEach(({ item, href }) => {
+      item.classList.toggle("is-active", href === `#${currentId}`);
+    });
+  }
+
+  const shouldBeVisible = scrollY > 450;
+  if (shouldBeVisible !== isScrollTopVisible) {
+    isScrollTopVisible = shouldBeVisible;
+    scrollTopBtn.classList.toggle("is-visible", shouldBeVisible);
+  }
+}
+
+if (lenis) {
+  lenis.on("scroll", (e) => {
+    handleScrollUpdate(typeof e.scroll === "number" ? e.scroll : window.scrollY);
+  });
+} else {
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScrollUpdate(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+}
+handleScrollUpdate(window.scrollY);
 
 scrollTopBtn.addEventListener("click", () => scrollToTarget(0));
 

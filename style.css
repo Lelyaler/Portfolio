@@ -594,7 +594,7 @@ section[id] {
 }
 
 .about {
-  margin-top: 4.5rem;
+  margin-top: 1.5rem;
 }
 .about__main {
   width: 100%;
@@ -1587,13 +1587,13 @@ section[id] {
 .hero-living-section {
   position: relative;
   width: 100%;
-  min-height: calc(90vh - 80px);
+  min-height: calc(72vh - 80px);
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
   align-items: center !important;
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   margin: 0 auto;
   overflow: visible;
 }
@@ -1628,29 +1628,10 @@ section[id] {
 .hero-portrait-wrap {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 48%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  width: 400px;
   touch-action: pan-y;
-}
-
-@media (min-width: 640px) {
-  .hero-portrait-wrap {
-    width: 500px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-portrait-wrap {
-    width: 600px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-portrait-wrap {
-    width: clamp(640px, 78vh, 46vw);
-  }
 }
 
 .hero-portrait-inner {
@@ -1738,7 +1719,7 @@ section[id] {
   justify-content: flex-start;
   align-items: flex-end;
   margin-top: auto;
-  padding-top: 2rem;
+  padding-top: 0.75rem;
   text-align: left;
 }
 
@@ -1797,11 +1778,14 @@ section[id] {
 
 @media (max-width: 768px) {
   .hero-living-section {
-    min-height: 70vh;
+    min-height: 56vh;
+    padding-bottom: 0.75rem;
   }
   .hero-portrait-wrap {
-    top: 44%;
-    width: 340px;
+    top: 40%;
+  }
+  .about {
+    margin-top: 1rem;
   }
   .hero-living-bottom {
     justify-content: flex-start;

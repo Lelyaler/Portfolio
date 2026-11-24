@@ -117,6 +117,12 @@ const translations = {
           desc: "Промо-лендинг для iGaming и партнёрских программ с плавной CSS-анимацией слота, интерактивным калькулятором дохода и мультиязычностью.",
           tech: "HTML5, CSS3 Animations, JavaScript (ES6+), Mobile-First"
         },
+        linkflow: {
+          badge: "SaaS / Enterprise UI",
+          title: "LinkFlow Platform",
+          desc: "Многостраничный enterprise-лендинг платформы оркестрации сигналов и рабочих процессов: бесшовный canvas-бумеранг 30 FPS, методология БЭМ, модульный SCSS, чистый JS и производительность 98+ в Google Lighthouse.",
+          tech: "JavaScript (ES6+), BEM, SCSS, HTML5 Canvas, Web Vitals"
+        },
         spinpulse: {
           badge: "iGaming / Casino Lobby",
           title: "SpinPulse Gaming Lobby",
@@ -330,6 +336,12 @@ const translations = {
           title: "House of Gambling",
           desc: "iGaming & affiliate promo landing page featuring smooth CSS slot animations, an interactive revenue calculator, and multi-language support.",
           tech: "HTML5, CSS3 Animations, JavaScript (ES6+), Mobile-First"
+        },
+        linkflow: {
+          badge: "SaaS / Enterprise UI",
+          title: "LinkFlow Platform",
+          desc: "High-performance multi-page enterprise landing site for signal & event orchestration: seamless 30 FPS canvas boomerang loop, strict BEM methodology, modular SCSS, vanilla JS, and a 98+ Mobile Lighthouse score.",
+          tech: "JavaScript (ES6+), BEM, SCSS, HTML5 Canvas, Web Vitals"
         },
         spinpulse: {
           badge: "iGaming / Casino Lobby",

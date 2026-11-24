@@ -53,7 +53,7 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </noscript>
-    <link rel="stylesheet" href="style.css?v=59" />
+    <link rel="stylesheet" href="style.css?v=65" />
     <title>Валерия Чернявская - WordPress &amp; Frontend Developer Portfolio</title>
     <meta
       name="description"
@@ -1204,6 +1204,19 @@
         </section>
 
         <section id="contacts" class="contacts">
+          <div class="contacts__video-bg">
+            <video
+              class="contacts__video-media"
+              poster="./images/contacts-bg.webp"
+              loop
+              muted
+              playsinline
+              preload="none"
+            >
+              <source data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4">
+            </video>
+            <div class="contacts__video-overlay"></div>
+          </div>
           <div class="contacts__inner">
             <h2 class="title" data-splitting="chars" data-i18n="contacts.title">Контакты</h2>
             <p class="contacts__subtitle" data-i18n="contacts.subtitle">
@@ -1375,10 +1388,10 @@
               </li>
             </ul>
           </div>
+          <footer class="footer contacts__footer">
+            <p class="footer__copy" data-i18n="footer.copy">© 2026 Валерия Чернявская. WordPress &amp; Frontend Developer Portfolio.</p>
+          </footer>
         </section>
-        <footer class="footer">
-          <p class="footer__copy" data-i18n="footer.copy">© 2026 Валерия Чернявская. WordPress &amp; Frontend Developer Portfolio.</p>
-        </footer>
       </main>
     </div>
     <button
@@ -1402,7 +1415,7 @@
       </svg>
     </button>
     <script defer src="translations.js?v=52"></script>
-    <script defer src="main.js?v=57"></script>
+    <script defer src="main.js?v=58"></script>
     <script>
 "use strict";
 (() => {

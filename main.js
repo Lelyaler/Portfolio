@@ -462,3 +462,37 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") toggleMenu(false);
 });
+
+// ленивая загрузка фонового видео контактов
+const contactsVideo = document.querySelector(".contacts__video-media");
+if (contactsVideo) {
+  contactsVideo.addEventListener("playing", () => {
+    contactsVideo.classList.add("is-loaded");
+  });
+
+  const loadVideo = () => {
+    const source = contactsVideo.querySelector("source");
+    if (source && source.dataset.src && !source.src) {
+      source.src = source.dataset.src;
+      contactsVideo.load();
+      contactsVideo.play().catch(() => {});
+    }
+  };
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideo();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "300px 0px" }
+    );
+    videoObserver.observe(contactsVideo);
+  } else {
+    loadVideo();
+  }
+}

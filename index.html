@@ -1239,7 +1239,25 @@
                 </div>
                 <div class="about__contacts-info">
                   <h3 class="about__contacts-title" data-i18n="contacts.nameLabel">Имя</h3>
-                  <span class="about__contacts-description" data-i18n="contacts.nameValue">Валерия Чернявская</span>
+                  <div class="about__contacts-val-row">
+                    <span class="about__contacts-description" data-i18n="contacts.nameValue">Валерия Чернявская</span>
+                    <button
+                      class="about__copy-btn"
+                      type="button"
+                      data-copy="Валерия Чернявская"
+                      aria-label="Скопировать имя"
+                      data-i18n-attr="data-copy:contacts.nameValue,aria-label:contacts.copyNameAria"
+                    >
+                      <svg class="about__copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <svg class="about__check-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fdca40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span class="about__copy-tooltip" data-i18n="contacts.copied">Скопировано!</span>
+                    </button>
+                  </div>
                 </div>
               </li>
               <li class="about__list-item">
@@ -1414,8 +1432,8 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <script defer src="translations.js?v=52"></script>
-    <script defer src="main.js?v=58"></script>
+    <script defer src="translations.js?v=53"></script>
+    <script defer src="main.js?v=59"></script>
     <script>
 "use strict";
 (() => {

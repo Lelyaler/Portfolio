@@ -1346,6 +1346,19 @@ section[id] {
   margin-bottom: 1.5rem;
 }
 
+.wp-solutions .title,
+.projects .title {
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.wp-solutions .title .char,
+.projects .title .char {
+  text-transform: uppercase !important;
+}
+
 
 
 /* tabs */
